@@ -47,7 +47,7 @@ I am broadly interested in Optimization, Probabilistic Machine Learning and Deep
   - Exchange Student 
   - Meta Learning and Reinforcement Learning Algorithms. Adviser: [Prof. Hengrui Cai](https://hengruicai.github.io/)
     
-- **2020.08 - 2024.07**, SUSTech (GPA: 3.44/4.0, [Transcripts](https://nbviewer.org/github/wma17/wma17.github.io/blob/main/docs/Transcript.pdf).)
+- **2020.08 - 2024.07**, SUSTech (GPA: 3.44/4.0, [Transcripts](https://wma17.github.io/_pages/Transcripts_en.pdf).)
   - Undergraduate in Data Science and Big Data Technology, [Department of Statistics and Data Science](https://stat-ds.sustech.edu.cn/?lang=en-us), 
   - Thesis Adviser: [Prof. Chao Wang](https://wangcmath.github.io/)
 
