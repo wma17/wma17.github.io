@@ -17,12 +17,12 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Wang Ma (马旺) is a first-year Ph.D student at Rensselaer Polytechnic Institute ([RPI](https://www.rpi.edu/)) advised by [Prof. Qiang Ji](https://sites.ecse.rpi.edu/~qji/). Before coming to RPI, he obtained his B.S. from Southern University of Science and Technology ([SUSTech](https://sustech.edu.cn/en/)), located in Shenzhen, China, advised by [Prof. Chao Wang](https://wangcmath.github.io/). 
+Hello, I am Wang Ma (马旺), a first-year Ph.D student at Rensselaer Polytechnic Institute ([RPI](https://www.rpi.edu/)) advised by [Prof. Qiang Ji](https://sites.ecse.rpi.edu/~qji/). Before coming to RPI, I obtained my B.S. from Southern University of Science and Technology ([SUSTech](https://sustech.edu.cn/en/)), located in Shenzhen, China, advised by [Prof. Chao Wang](https://wangcmath.github.io/). 
 
 
 <br/>
 
-Wang is broadly interested in Bayesian Deep Learning, Deep Learning Theory and Optimization, . 
+I am broadly interested in Bayesian Deep Learning, Statistical Learning Theory and Optimization, . 
 
 
 <br/>
