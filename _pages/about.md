@@ -17,12 +17,12 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Hello! I am Wang Ma (马旺), an incoming Ph.D student at Rensselaer Polytechnic Institute ([RPI](https://www.rpi.edu/)), fortunate to be advised by [Prof. Qiang Ji](https://sites.ecse.rpi.edu/~qji/). I obtained my B.S. in Data Science from Southern University of Science and Technology ([SUSTech](https://sustech.edu.cn/en/)) in 2024, under the supervision of [Prof. Chao Wang](https://wangcmath.github.io/). During the Spring of 2023, I was an exchange student at UC Irvine and a visitor at [Prof. Hengrui Cai](https://hengruicai.github.io/)'s group.
+Wang Ma (马旺) is a first-year Ph.D student at Rensselaer Polytechnic Institute ([RPI](https://www.rpi.edu/)) advised by [Prof. Qiang Ji](https://sites.ecse.rpi.edu/~qji/). Before coming to RPI, he obtained his B.S. from Southern University of Science and Technology ([SUSTech](https://sustech.edu.cn/en/)), located in Shenzhen, China, advised by [Prof. Chao Wang](https://wangcmath.github.io/). 
 
 
 <br/>
 
-I am broadly interested in Optimization, Probabilistic Machine Learning and Deep Learning Theory. 
+Wang is broadly interested in Bayesian Deep Learning, Deep Learning Theory and Optimization, . 
 
 
 <br/>
@@ -39,16 +39,16 @@ I am broadly interested in Optimization, Probabilistic Machine Learning and Deep
 
 
 # 📖 Education Experience
-- **2024.08 - 2029.06** (Expecter), RPI
+- **2024.08 - 2029.05** (Expected), RPI
   - Ph.D in Computer & System Engineering
-  - Superviser: [Prof. Qiang Ji](https://sites.ecse.rpi.edu/~qji/)
+  - Adviser: [Prof. Qiang Ji](https://sites.ecse.rpi.edu/~qji/)
     
-- **2023.03 - 2023.07**, University of California, Irvine (GPA: 4.0/4.0, [Transcripts](https://nbviewer.org/github/wma17/wma17.github.io/blob/main/docs/Transcripts%20%40UCI.pdf))
+- **2023.03 - 2023.07**, University of California, Irvine (GPA: 4.0/4.0, [Transcripts](https://wma17.github.io/_pages/Transcripts%20%40UCI.pdf))
   - Exchange Student 
   - Meta Learning and Reinforcement Learning Algorithms. Adviser: [Prof. Hengrui Cai](https://hengruicai.github.io/)
     
 - **2020.08 - 2024.07**, SUSTech (GPA: 3.44/4.0, [Transcripts](https://wma17.github.io/_pages/Transcripts_en.pdf).)
-  - Undergraduate in Data Science and Big Data Technology, [Department of Statistics and Data Science](https://stat-ds.sustech.edu.cn/?lang=en-us), 
+  - B.S. in Data Science and Big Data Technology, [Department of Statistics and Data Science](https://stat-ds.sustech.edu.cn/?lang=en-us), 
   - Thesis Adviser: [Prof. Chao Wang](https://wangcmath.github.io/)
 
     
