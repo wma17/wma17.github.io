@@ -22,13 +22,15 @@ Hello, I am Wang Ma (马旺), a first-year Ph.D student at Rensselaer Polytechni
 
 <br/>
 
-I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning and their applications to Computer Vision and Natural Language Processing. Recently, my focus is specifically Uncertainty Quantification for single models and pre-trained models (such as pre-trained large vision or language models).
+I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning and their applications to Computer Vision and Natural Language Processing. Recently, my focus is specifically Uncertainty Quantification for single models and pre-trained models (such as pre-trained large vision or language models) and Uncertainty Disentanglement.
 
 
 <br/>
 
 
 # 📰 News
+- **Mar 2025**: I’m thrilled to share that I will be joining IBM this summer as a visiting student researcher, working on a project focused on Uncertainty Quantification and Reasoning with Large Language Models, under the mentorship of [Dr. Debarun Bhattacharjya](https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en)!
+- **Jan 2025**: One co-authored paper was submitted to ICCV 2025!
 - **Aug 2024**: I started my PhD journey at RPI.
 - **Jul 2024**:  I organized a seminar titled "AI: Optimization, Theory & Responsibility" during the summer of 2024 at SUSTech, under the supervision of [Prof. Chao Wang](https://wangcmath.github.io/). For more details, please visit the [seminar page](https://wma17.github.io/24summer/).
 - **Jul 2024**: I started my journey as a visiting student in [Prof. Chao Wang](https://wangcmath.github.io/)'s group at SUSTech.
