@@ -29,6 +29,7 @@ I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning an
 
 
 # 📰 News
+- **Jan 2026**: Two papers were submitted to **ICML 2026**, related to uncertianty decomposition and black-box uncertianty quantification.
 - **Nov 2025**: Two papers were submitted to **CVPR 2026**, related to Knowledge-augmented Bayesian Deep Learning and causal explanation.
 - **Nov 2025**: My first-authored paper, [*Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles*](https://openreview.net/forum?id=jfq9DUrW90#discussion), was accepted to the [AAAI 2026 AIR-FM Workshop](https://llmrel.github.io/). This work was completed during my externship at **IBM** — many thanks to my mentors for their guidance and support!
 - **Aug 2025**: I completed my summer externship at **IBM**, which was an incredibly valuable and rewarding experience. Grateful for all the support and mentorship during this time!
