@@ -27,8 +27,22 @@ I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning an
 
 <br/>
 
+# 📚 Publications
+
+- **Wang Ma**, Hanjing Wang, Yufei Zhang, Darsha Udayanga, Qiang Ji.  
+  **Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision.**  
+  *CVPR 2026.*  
+  \[PDF (coming soon)\]
+
+- **Wang Ma**, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham, Harsha Kokel, Qiang Ji.  
+  **Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles.**  
+  *AAAI 2026 AIR-FM Workshop.*  
+  \[OpenReview\](https://openreview.net/forum?id=jfq9DUrW90#discussion) *(extended version submitted to ICML 2026)*
+  
+
 
 # 📰 News
+- **Feb 2026**: 🎉 My first-authored paper **Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision** was **accepted to CVPR 2026**.
 - **Jan 2026**: Two papers were submitted to **ICML 2026**, related to uncertianty decomposition and black-box uncertianty quantification.
 - **Nov 2025**: Two papers were submitted to **CVPR 2026**, related to Knowledge-augmented Bayesian Deep Learning and causal explanation.
 - **Nov 2025**: My first-authored paper, [*Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles*](https://openreview.net/forum?id=jfq9DUrW90#discussion), was accepted to the [AAAI 2026 AIR-FM Workshop](https://llmrel.github.io/). This work was completed during my externship at **IBM** — many thanks to my mentors for their guidance and support!
