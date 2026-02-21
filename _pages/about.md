@@ -37,7 +37,7 @@ I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning an
 - **Wang Ma**, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham, Harsha Kokel, Qiang Ji.  
   **Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles.**  
   *AAAI 2026 AIR-FM Workshop.*  
-  \[PDF\](https://openreview.net/forum?id=jfq9DUrW90#discussion) *(extended version submitted to ICML 2026)*
+  [PDF](https://openreview.net/forum?id=jfq9DUrW90#discussion) *(extended version submitted to ICML 2026)*
   
 
 
