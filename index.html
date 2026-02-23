@@ -744,6 +744,89 @@
     }
     .card-list > li:hover::after { border-color: var(--accent); }
 
+    /* Publications: clear layout + expandable abstract */
+    #publications .pub-list { list-style: none; margin: 0; padding: 0; }
+    #publications .pub-item {
+      margin: 0 0 1.25rem;
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      background: linear-gradient(165deg, #ffffff, rgba(252, 248, 255, 0.6));
+      border-left: 4px solid var(--accent);
+      box-shadow: 2px 2px 0 rgba(45, 38, 64, 0.1);
+      overflow: hidden;
+      transition: box-shadow 0.25s ease, border-left-color 0.25s ease;
+    }
+    #publications .pub-item:hover { box-shadow: 0 6px 24px rgba(90, 60, 120, 0.08); border-left-color: var(--accent-hover); }
+    #publications .pub-item[open] { border-left-color: var(--accent); }
+    #publications .pub-item-wrap { list-style: none; margin: 0; }
+    #publications .pub-summary {
+      padding: 1.1rem 1.25rem 1rem;
+      cursor: pointer;
+      display: block;
+      list-style: none;
+      position: relative;
+    }
+    #publications .pub-summary::-webkit-details-marker { display: none; }
+    #publications .pub-summary::marker { content: none; }
+    #publications .pub-summary::after {
+      content: "+";
+      position: absolute;
+      right: 1rem;
+      top: 1.1rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+    }
+    #publications .pub-item[open] .pub-summary::after { content: "−"; }
+    #publications .pub-summary .pub-title,
+    #publications .pub-summary .pub-authors,
+    #publications .pub-summary .pub-venue,
+    #publications .pub-summary .pub-links { display: block; }
+    #publications .pub-title {
+      font-family: var(--font-serif);
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+      margin: 0 0 0.4rem;
+      padding-right: 1.5rem;
+    }
+    #publications .pub-authors {
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin: 0 0 0.35rem;
+      opacity: 0.92;
+    }
+    #publications .pub-authors .author-me {
+      font-weight: 700;
+      color: var(--ink);
+      font-style: italic;
+    }
+    #publications .pub-venue {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 560;
+      margin: 0 0 0.35rem;
+    }
+    #publications .pub-links {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    #publications .pub-links a { border: none; }
+    #publications .pub-details {
+      padding: 0 1.25rem 1.1rem;
+      border-top: 1px solid rgba(200, 180, 220, 0.4);
+    }
+    #publications .pub-abstract {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--ink-muted);
+      margin: 0.75rem 0 0;
+    }
+    #publications .pub-abstract strong { color: var(--ink); }
+
     .news-list { margin: 0; padding-left: 1.25rem; }
     .news-list li { margin-bottom: 0.6rem; position: relative; }
     .news-list li::marker { color: var(--accent); }
@@ -1291,10 +1374,46 @@
       <section class="home-section" id="publications">
         <div class="section-deco section-deco--bl" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 40 L8 12 L24 4 L40 12 L40 40 L8 40Z" stroke="#a890c8" stroke-width="1.5" fill="none"/><path d="M8 24 L40 24 M16 12 L16 40 M32 12 L32 40" stroke="#b8a0d8" stroke-width="1" fill="none"/></svg></div>
         <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 2h10v16H6z" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M6 6h10M6 10h8M6 14h6" stroke="currentColor" stroke-width="0.9" fill="none"/></svg>Publications</h2>
-        <ul class="card-list">
-          <li><strong>Wang Ma</strong>, Hanjing Wang, Yufei Zhang, Darsha Udayanga, Qiang Ji.<br><strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision.</strong><br><em>CVPR 2026.</em><br>PDF (coming soon)</li>
-          <li>Hanjing Wang,<strong>Wang Ma</strong>, Naiyu Yin, Qiang Ji.<br><strong>Causal Saliency Map For Post-hoc Model Explanation.</strong><br><em>CVPR 2026 Findings.</em><br>PDF (coming soon)</li>
-          <li><strong>Wang Ma</strong>, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham, Harsha Kokel, Qiang Ji.<br><strong>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles.</strong><br><em>AAAI 2026 AIR-FM Workshop.</em><br><a href="https://openreview.net/forum?id=jfq9DUrW90#discussion">PDF</a> (extended version submitted to ICML 2026)</li>
+        <ul class="pub-list">
+          <li class="pub-item-wrap">
+            <details class="pub-item">
+              <summary class="pub-summary">
+                <span class="pub-title">Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision.</span>
+                <span class="pub-authors"><span class="author-me">Wang Ma</span>, Hanjing Wang, Yufei Zhang, Darsha Udayanga, Qiang Ji.</span>
+                <span class="pub-venue">CVPR 2026.</span>
+                <span class="pub-links">PDF (coming soon)</span>
+              </summary>
+              <div class="pub-details">
+                <p class="pub-abstract">Bayesian deep learning (BDL) integrates Bayesian inference with deep learning, improving predictive performance while enabling principled uncertainty quantification. However, existing BDLs often rely on non-informative random priors, limiting the benefits of Bayesian inference. In contrast, knowledge-augmented deep learning explicitly injects domain knowledge during training, yet lacks a probabilistic foundation. In this paper, we propose a knowledge-augmented BDL framework that integrates domain knowledge both as an informative prior and as an adaptive likelihood under a unified two-stage hybrid formulation. In the first stage, we learn a knowledge-informed prior p(θ|K) by pre-training a model to satisfy domain-specific constraints. In the second stage, we perform Bayesian inference on task data with an adaptive knowledge likelihood p(K|θ,D), which dynamically enforces these constraints during optimization. This unified framework enables knowledge to guide both initialization and training, significantly improving prediction accuracy, robustness, adaptation and uncertainty estimation. Experiments on various computer vision tasks, including semi-synthetic and real-knowledge scenarios, demonstrate that our two-stage framework consistently outperforms state-of-the-art Bayesian and knowledge-augmented baselines.</p>
+              </div>
+            </details>
+          </li>
+          <li class="pub-item-wrap">
+            <details class="pub-item">
+              <summary class="pub-summary">
+                <span class="pub-title">Causal Saliency Map For Post-hoc Model Explanation.</span>
+                <span class="pub-authors">Hanjing Wang, <span class="author-me">Wang Ma</span>, Naiyu Yin, Qiang Ji.</span>
+                <span class="pub-venue">CVPR 2026 Findings.</span>
+                <span class="pub-links">PDF (coming soon)</span>
+              </summary>
+              <div class="pub-details">
+                <p class="pub-abstract">Deep learning models often lack interpretability, making it difficult to trust their decisions in critical applications. Saliency maps help explain predictions by highlighting influential input regions, but standard methods mainly capture correlations and local sensitivity, rather than answering the causal “what if we intervene on this region—will the prediction change?” question. To address this, we leverage causal inference to filter out non-causal yet correlated features, ensuring that only regions the model truly relies on are highlighted. Specifically, we propose causal saliency maps, which identify causally relevant features by detecting Causal Markov Blanket (CMB) features using mutual information. To improve efficiency and fairness, we introduce label-wise mutual information for class-specific maps and a window-wise mutual information estimator for fast computation. Our method can be used as a causal refinement on top of standard saliency. On Insertion & Deletion tests and domain generalization benchmarks, it provides more reliable and interpretable explanations.</p>
+              </div>
+            </details>
+          </li>
+          <li class="pub-item-wrap">
+            <details class="pub-item">
+              <summary class="pub-summary">
+                <span class="pub-title">Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles.</span>
+                <span class="pub-authors"><span class="author-me">Wang Ma</span>, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham, Harsha Kokel, Qiang Ji.</span>
+                <span class="pub-venue">AAAI 2026 AIR-FM Workshop.</span>
+                <span class="pub-links"><a href="https://openreview.net/forum?id=jfq9DUrW90#discussion">PDF</a> (extended version submitted to ICML 2026)</span>
+              </summary>
+              <div class="pub-details">
+                <p class="pub-abstract">Uncertainty quantification (UQ) is essential for building reliable and trustworthy systems with large language models (LLMs). However, conventional Bayesian or ensemble-based UQ methods are computationally intractable at the scale of modern LLMs and often require white-box access to model parameters or logits. This paper introduces a <strong>two-level ensemble framework</strong> for <em>black-box</em> uncertainty estimation that operates entirely at inference time and is theoretically grounded in the <em>law of total variance</em>, decomposing total predictive uncertainty into <em>aleatoric</em> and <em>epistemic</em> components. The inner ensemble captures stochasticity and ambiguity through repeated stochastic decoding, while the outer ensemble approximates parameter-driven uncertainty via semantically perturbed prompts that act as proxy samples from an implicit posterior over plausible inputs. By measuring variability in a continuous embedding space, our framework yields interpretable and scalable uncertainty estimates across diverse LLMs. We further provide finite-sample guarantees for our uncertainty estimators, and bound the gap with Bayesian estimators. Experiments on standard benchmarks show that our black-box estimator achieves AUROC comparable to or surpassing state-of-the-art white-box baselines, while providing a meaningful decomposition that distinguishes linguistic ambiguity from knowledge uncertainty.</p>
+              </div>
+            </details>
+          </li>
         </ul>
       </section>
 
