@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7b68a6"/>
+      <stop offset="1" stop-color="#c890a8"/>
+    </linearGradient>
+  </defs>
+  <!-- ES CON Field style: dual angular peaks -->
+  <path d="M8 28L16 8 24 28H8z" stroke="url(#fg)" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+  <path d="M12 28L16 14 20 28H12z" stroke="url(#fg)" stroke-width="1.2" fill="none" stroke-linejoin="round" opacity="0.85"/>
+</svg>

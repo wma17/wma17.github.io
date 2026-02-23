@@ -4,17 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wang Ma - Homepage</title>
+  <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     :root {
-      --home-bg-top: #f6edff;
-      --home-bg-bottom: #ffeef7;
-      --home-card-bg: #ffffff;
-      --home-card-border: #dddaf8;
-      --home-title: #2f2651;
-      --home-text: #3b3a5f;
-      --home-accent: #3a74c4;
-      --home-shadow: 0 14px 36px rgba(70, 58, 128, 0.12);
+      --lavender: #e8e0f5;
+      --lavender-soft: #f3eef9;
+      --blush: #fce8f0;
+      --blush-soft: #fdf2f7;
+      --grass: #a8d4b8;
+      --grass-soft: #c8e6d4;
+      --leaf: #7eb88a;
+      --leaf-soft: #b0ddb8;
+      --sky-soft: #e8f4ff;
+      --coral: #e8a0a8;
+      --mint: #80c8b0;
+      --gold: #d4b868;
+      --sky-blue: #70b0e0;
+      --ink: #2d2640;
+      --ink-muted: #5a5278;
+      --accent: #7b68a6;
+      --accent-hover: #5c4d82;
+      --home-bg-top: #f8f2ff;
+      --home-bg-bottom: #f5faf7;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(200, 180, 220, 0.4);
+      --shadow-soft: 0 20px 50px -12px rgba(90, 60, 120, 0.14);
+      --shadow-card: 0 8px 32px rgba(80, 55, 120, 0.08);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --font-serif: "Cormorant Garamond", "Songti SC", "SimSun", serif;
+      --font-sans: "DM Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -22,75 +46,351 @@
 
     body {
       margin: 0;
-      font-family: "Avenir Next", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
-      color: var(--home-text);
+      font-family: var(--font-sans);
+      color: var(--ink-muted);
       background:
-        radial-gradient(circle at 84% 8%, rgba(101, 164, 220, 0.22) 0%, rgba(101, 164, 220, 0) 38%),
-        radial-gradient(circle at 12% 88%, rgba(120, 180, 167, 0.2) 0%, rgba(120, 180, 167, 0) 35%),
-        linear-gradient(165deg, var(--home-bg-top) 0%, var(--home-bg-bottom) 100%);
-      line-height: 1.72;
-      font-weight: 430;
+        linear-gradient(180deg, transparent 0%, transparent 70%, rgba(200, 230, 210, 0.15) 88%, rgba(180, 220, 200, 0.25) 100%),
+        radial-gradient(ellipse 120% 80% at 90% 5%, rgba(220, 200, 255, 0.35) 0%, transparent 50%),
+        radial-gradient(ellipse 100% 70% at 5% 95%, rgba(255, 210, 235, 0.3) 0%, transparent 45%),
+        radial-gradient(ellipse 80% 50% at 50% 50%, rgba(245, 235, 255, 0.2) 0%, transparent 60%),
+        linear-gradient(168deg, var(--home-bg-top) 0%, #fef6fb 40%, #f8faf6 75%, var(--home-bg-bottom) 100%);
+      line-height: 1.75;
+      font-weight: 450;
       position: relative;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
-    body:before,
-    body:after {
+    body::before,
+    body::after {
       content: "";
       position: fixed;
       z-index: -1;
       pointer-events: none;
+      filter: blur(60px);
+      opacity: 0.6;
     }
 
-    body:before {
-      width: 780px;
-      height: 220px;
-      top: 78px;
-      right: -140px;
-      border-radius: 60% 40% 55% 45%;
-      transform: rotate(-7deg);
-      background: linear-gradient(90deg, rgba(192, 153, 242, 0.22), rgba(120, 184, 232, 0.18));
+    body::before {
+      width: 520px;
+      height: 520px;
+      top: -120px;
+      right: -100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 170, 240, 0.25) 0%, rgba(180, 220, 255, 0.12) 50%, transparent 70%);
     }
 
-    body:after {
-      width: 840px;
-      height: 240px;
-      bottom: 70px;
-      left: -240px;
-      border-radius: 44% 56% 62% 38%;
-      transform: rotate(8deg);
-      background: linear-gradient(90deg, rgba(122, 190, 194, 0.2), rgba(221, 159, 220, 0.18));
+    body::after {
+      width: 480px;
+      height: 480px;
+      bottom: -100px;
+      left: -120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 182, 218, 0.28) 0%, rgba(230, 200, 255, 0.12) 50%, transparent 70%);
+    }
+
+    /* Subtle dot pattern + pink tint + soft grass dots near bottom */
+    .bg-pattern {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      opacity: 0.5;
+      background-image:
+        radial-gradient(circle at 20% 92%, rgba(180, 220, 200, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 80% 88%, rgba(200, 230, 210, 0.18) 1px, transparent 1px),
+        radial-gradient(circle at center, rgba(220, 160, 200, 0.12) 1px, transparent 1px),
+        radial-gradient(circle at center, rgba(150, 120, 180, 0.14) 1px, transparent 1px);
+      background-size: 40px 40px, 36px 36px, 32px 32px, 28px 28px;
+    }
+
+    /* Falling sakura petals (anime style) – 30 petals, 4x size */
+    .sakura-petal {
+      position: fixed;
+      z-index: 1;
+      pointer-events: none;
+      width: 24px;
+      height: 24px;
+      opacity: 0.75;
+      animation: petal-fall 12s linear infinite;
+    }
+    .sakura-petal:nth-child(1) { left: 3%; animation-delay: 0s; animation-duration: 14s; }
+    .sakura-petal:nth-child(2) { left: 12%; animation-delay: 2s; animation-duration: 11s; }
+    .sakura-petal:nth-child(3) { left: 25%; animation-delay: 4s; animation-duration: 15s; }
+    .sakura-petal:nth-child(4) { left: 38%; animation-delay: 1s; animation-duration: 13s; }
+    .sakura-petal:nth-child(5) { left: 52%; animation-delay: 3s; animation-duration: 16s; }
+    .sakura-petal:nth-child(6) { left: 65%; animation-delay: 5s; animation-duration: 12s; }
+    .sakura-petal:nth-child(7) { left: 78%; animation-delay: 2.5s; animation-duration: 14s; }
+    .sakura-petal:nth-child(8) { left: 88%; animation-delay: 6s; animation-duration: 10s; }
+    .sakura-petal:nth-child(9) { left: 18%; animation-delay: 7s; animation-duration: 17s; }
+    .sakura-petal:nth-child(10) { left: 72%; animation-delay: 0.5s; animation-duration: 11s; }
+    .sakura-petal:nth-child(11) { left: 8%; animation-delay: 1.5s; animation-duration: 13s; }
+    .sakura-petal:nth-child(12) { left: 42%; animation-delay: 3.5s; animation-duration: 15s; }
+    .sakura-petal:nth-child(13) { left: 58%; animation-delay: 5.5s; animation-duration: 12s; }
+    .sakura-petal:nth-child(14) { left: 82%; animation-delay: 0.8s; animation-duration: 14s; }
+    .sakura-petal:nth-child(15) { left: 5%; animation-delay: 4.5s; animation-duration: 16s; }
+    .sakura-petal:nth-child(16) { left: 32%; animation-delay: 2.2s; animation-duration: 11s; }
+    .sakura-petal:nth-child(17) { left: 48%; animation-delay: 6.2s; animation-duration: 13s; }
+    .sakura-petal:nth-child(18) { left: 68%; animation-delay: 1.2s; animation-duration: 17s; }
+    .sakura-petal:nth-child(19) { left: 92%; animation-delay: 4s; animation-duration: 10s; }
+    .sakura-petal:nth-child(20) { left: 15%; animation-delay: 5.8s; animation-duration: 14s; }
+    .sakura-petal:nth-child(21) { left: 35%; animation-delay: 0.3s; animation-duration: 12s; }
+    .sakura-petal:nth-child(22) { left: 62%; animation-delay: 3.8s; animation-duration: 15s; }
+    .sakura-petal:nth-child(23) { left: 75%; animation-delay: 6.5s; animation-duration: 11s; }
+    .sakura-petal:nth-child(24) { left: 2%; animation-delay: 2.8s; animation-duration: 16s; }
+    .sakura-petal:nth-child(25) { left: 28%; animation-delay: 5.2s; animation-duration: 13s; }
+    .sakura-petal:nth-child(26) { left: 45%; animation-delay: 1.8s; animation-duration: 14s; }
+    .sakura-petal:nth-child(27) { left: 55%; animation-delay: 4.2s; animation-duration: 10s; }
+    .sakura-petal:nth-child(28) { left: 85%; animation-delay: 6.8s; animation-duration: 17s; }
+    .sakura-petal:nth-child(29) { left: 10%; animation-delay: 0.6s; animation-duration: 12s; }
+    .sakura-petal:nth-child(30) { left: 95%; animation-delay: 3.2s; animation-duration: 15s; }
+    .sakura-petal svg { width: 100%; height: 100%; display: block; }
+    @keyframes petal-fall {
+      0% { transform: translateY(-10%) rotate(0deg) translateX(0); }
+      25% { transform: translateY(25vh) rotate(90deg) translateX(15px); }
+      50% { transform: translateY(50vh) rotate(180deg) translateX(-10px); }
+      75% { transform: translateY(75vh) rotate(270deg) translateX(20px); }
+      100% { transform: translateY(110vh) rotate(360deg) translateX(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sakura-petal { animation: none; opacity: 0.4; }
+    }
+
+    /* Floating geometric decorations */
+    .deco {
+      position: fixed;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .deco--circle-1 { top: 18%; right: 8%; width: 120px; height: 120px; opacity: 0.4; }
+    .deco--circle-2 { top: 55%; left: 4%; width: 75px; height: 75px; opacity: 0.35; }
+    .deco--circle-3 { bottom: 25%; right: 12%; width: 95px; height: 95px; opacity: 0.35; }
+    .deco--diamond { top: 12%; left: 15%; width: 38px; height: 38px; opacity: 0.5; }
+    .deco--triangle { bottom: 15%; left: 20%; width: 58px; height: 52px; opacity: 0.4; }
+    .deco--hex { top: 75%; right: 18%; width: 52px; height: 48px; opacity: 0.45; }
+    .deco--line-arc { top: 35%; left: 2%; width: 180px; height: 110px; opacity: 0.55; }
+    .deco--line-arc-2 { bottom: 40%; right: 5%; width: 150px; height: 100px; opacity: 0.5; }
+    .deco--peak { top: 22%; left: 10%; width: 66px; height: 54px; opacity: 0.45; }
+    .deco--chevron { bottom: 18%; left: 6%; width: 200px; height: 36px; opacity: 0.55; }
+    .deco--chevron-2 { top: 68%; right: 8%; width: 150px; height: 28px; opacity: 0.5; }
+    .deco--sakura-1 { top: 8%; right: 22%; width: 42px; height: 42px; opacity: 0.6; }
+    .deco--sakura-2 { bottom: 35%; left: 18%; width: 36px; height: 36px; opacity: 0.55; }
+    .deco--sakura-3 { top: 48%; right: 6%; width: 32px; height: 32px; opacity: 0.5; }
+    .deco--sakura-4 { bottom: 22%; right: 25%; width: 40px; height: 40px; opacity: 0.6; }
+    .deco--sakura-5 { top: 35%; left: 8%; width: 38px; height: 38px; opacity: 0.55; }
+    .deco--grass-1 { bottom: 0; left: 0; right: 0; height: 150px; opacity: 0.55; }
+    .deco--grass-2 { bottom: 0; left: 12%; width: 115px; height: 85px; opacity: 0.5; }
+    .deco--grass-3 { bottom: 0; right: 18%; width: 105px; height: 82px; opacity: 0.55; transform: scaleX(-1); }
+    .deco--leaf-1 { top: 60%; left: 5%; width: 48px; height: 30px; opacity: 0.5; animation: leaf-sway 4s ease-in-out infinite; }
+    .deco--leaf-2 { bottom: 30%; right: 12%; width: 42px; height: 24px; opacity: 0.45; transform: rotate(-20deg); animation: leaf-sway 5s ease-in-out infinite 0.5s; }
+    .deco--leaf-3 { top: 25%; right: 25%; width: 36px; height: 22px; opacity: 0.45; transform: rotate(15deg); animation: leaf-sway 4.5s ease-in-out infinite 1s; }
+    .deco--cloud { top: 10%; left: 28%; width: 130px; height: 58px; opacity: 0.4; }
+    .deco--tree { bottom: 0; left: 5%; width: 100px; height: 140px; opacity: 0.5; }
+    .deco--tree-2 { bottom: 0; right: 8%; width: 85px; height: 120px; opacity: 0.48; transform: scaleX(-1); }
+    .deco--butterfly { top: 20%; right: 18%; width: 44px; height: 36px; opacity: 0.65; animation: butterfly 6s ease-in-out infinite; }
+    .deco--butterfly-2 { bottom: 35%; left: 10%; width: 38px; height: 30px; opacity: 0.6; animation: butterfly 7s ease-in-out infinite 1s; }
+    .deco--lake { bottom: 0; left: 32%; width: 260px; height: 95px; opacity: 0.6; }
+    .deco--deer { bottom: 0; left: 42%; width: 70px; height: 90px; opacity: 0.5; }
+    @keyframes butterfly {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-12px) rotate(5deg); }
+    }
+    @keyframes leaf-sway {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes leaf-sway-2 {
+      0%, 100% { transform: rotate(-22deg); }
+      50% { transform: rotate(-18deg); }
+    }
+    @keyframes leaf-sway-3 {
+      0%, 100% { transform: rotate(12deg); }
+      50% { transform: rotate(18deg); }
+    }
+    .deco--leaf-1 { transform-origin: center bottom; }
+    .deco--leaf-2 { transform-origin: center center; animation: leaf-sway-2 5s ease-in-out infinite 0.5s; }
+    .deco--leaf-3 { transform-origin: center center; animation: leaf-sway-3 4.5s ease-in-out infinite 1s; }
+    .anime-chars { position: fixed; bottom: 140px; right: 24px; z-index: 2; display: flex; gap: 8px; align-items: flex-end; pointer-events: none; }
+    .anime-chars img { width: 56px; height: 56px; object-fit: contain; object-position: bottom; }
+
+    /* Sparkles / 星星闪光 */
+    .sparkle {
+      position: fixed;
+      z-index: 2;
+      pointer-events: none;
+      width: 16px;
+      height: 16px;
+      opacity: 0.9;
+      animation: twinkle 2s ease-in-out infinite;
+    }
+    .sparkle:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 25%; right: 15%; animation-delay: 0.4s; }
+    .sparkle:nth-child(3) { top: 8%; left: 50%; animation-delay: 0.8s; }
+    .sparkle:nth-child(4) { top: 40%; left: 5%; animation-delay: 0.2s; }
+    .sparkle:nth-child(5) { bottom: 30%; right: 8%; animation-delay: 0.6s; }
+    .sparkle:nth-child(6) { bottom: 20%; left: 25%; animation-delay: 0.3s; }
+    .sparkle:nth-child(7) { top: 60%; right: 25%; animation-delay: 0.5s; }
+    .sparkle:nth-child(8) { bottom: 45%; left: 12%; animation-delay: 0.7s; }
+    .sparkle:nth-child(9) { top: 12%; right: 35%; animation-delay: 0.1s; }
+    .sparkle:nth-child(10) { bottom: 15%; right: 40%; animation-delay: 0.9s; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+
+    /* Speed lines / 速度线 */
+    .speed-lines {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.2;
+      overflow: hidden;
+    }
+    .speed-lines svg { width: 100%; height: 100%; display: block; }
+
+    /* Speech bubble / 对话框 */
+    .bubble {
+      position: fixed;
+      z-index: 3;
+      pointer-events: none;
+      background: rgba(255,255,255,0.95);
+      border: 2.5px solid var(--ink);
+      border-radius: 20px;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ink);
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+    }
+    .bubble::after {
+      content: "";
+      position: absolute;
+      width: 0; height: 0;
+      border: 10px solid transparent;
+      border-top-color: var(--ink);
+      border-bottom: none;
+      left: 20px;
+      bottom: -10px;
+    }
+    .bubble--1 { top: 120px; left: 18%; }
+    .bubble--2 { bottom: 200px; right: 12%; }
+    .bubble--2::after { left: auto; right: 20px; border-top-color: var(--ink); }
+
+    /* Chibi icon / Q版小图标 */
+    .chibi-icon {
+      position: fixed;
+      z-index: 2;
+      pointer-events: none;
+      width: 40px;
+      height: 40px;
+      opacity: 0.85;
+    }
+    .chibi-icon--1 { top: 140px; right: 22%; }
+    .chibi-icon--2 { bottom: 180px; left: 15%; }
+
+    /* Manga-style thick outline / 漫画式粗描边 */
+    .manga-outline {
+      border: 2.5px solid var(--ink) !important;
+      box-shadow: 4px 4px 0 rgba(45, 38, 64, 0.2) !important;
+    }
+
+    /* Animal emoji runners – 很慢，在文字下层，点击后飞快跑走 */
+    .animal-run {
+      position: fixed;
+      z-index: 0;
+      pointer-events: auto;
+      cursor: pointer;
+      font-size: 28px;
+      line-height: 1;
+      animation-timing-function: linear;
+      opacity: 0.82;
+    }
+    .animal-run--top-left { top: 60px; left: 0; animation: run-right 140s infinite; }
+    .animal-run--top-right { top: 95px; right: 0; animation: run-left 130s infinite; animation-delay: -20s; }
+    .animal-run--bottom-left { bottom: 80px; left: 0; animation: run-right 160s infinite; animation-delay: -40s; }
+    .animal-run--bottom-right { bottom: 115px; right: 0; animation: run-left 150s infinite; animation-delay: -60s; }
+    .animal-run--left-top { left: 12px; top: 25%; animation: run-down 120s infinite; }
+    .animal-run--left-bottom { left: 12px; bottom: 30%; animation: run-up 135s infinite; animation-delay: -30s; }
+    .animal-run--right-top { right: 12px; top: 30%; animation: run-down 145s infinite; animation-delay: -50s; }
+    .animal-run--right-bottom { right: 12px; bottom: 25%; animation: run-up 125s infinite; animation-delay: -70s; }
+    .animal-run--scared {
+      animation: none !important;
+      pointer-events: none !important;
+      opacity: 1 !important;
+    }
+    /* 无限循环：从一侧出去从另一侧进来 */
+    @keyframes run-right {
+      0% { transform: translateX(-50px); }
+      100% { transform: translateX(calc(100vw + 50px)); }
+    }
+    @keyframes run-left {
+      0% { transform: translateX(50px); }
+      100% { transform: translateX(calc(-100vw - 50px)); }
+    }
+    @keyframes run-up {
+      0% { transform: translateY(50px); }
+      100% { transform: translateY(calc(-100vh - 50px)); }
+    }
+    @keyframes run-down {
+      0% { transform: translateY(-50px); }
+      100% { transform: translateY(calc(100vh + 50px)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animal-run { animation: none; opacity: 0.6; }
+      .animal-run--scared { animation: none; }
+      .sparkle { animation: none; opacity: 0.6; }
+    }
+    @media (max-width: 768px) {
+      .bubble--1, .bubble--2 { display: none; }
+      .animal-run { font-size: 22px; }
+    }
+
+    @media (max-width: 900px) {
+      .deco--circle-1, .deco--circle-3, .deco--line-arc-2, .deco--chevron-2, .deco--sakura-1, .deco--cloud, .deco--tree-2, .deco--butterfly, .deco--lake, .deco--deer { display: none; }
+      .anime-chars { right: 12px; bottom: 120px; }
     }
 
     a {
-      color: var(--home-accent);
+      color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid rgba(58, 116, 196, 0.28);
-      transition: all 0.18s ease;
+      border-bottom: 1px solid rgba(123, 104, 166, 0.35);
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    a:hover { color: #275aa0; border-bottom-color: rgba(39, 90, 160, 0.55); }
+    a:hover { color: var(--accent-hover); border-bottom-color: rgba(92, 77, 130, 0.6); }
 
     .masthead {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.86);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #e3dbf5;
+      background: rgba(255, 252, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(220, 200, 235, 0.5);
     }
 
     .masthead__inner {
-      width: min(1500px, 98vw);
+      width: min(1400px, 94vw);
       margin: 0 auto;
-      padding: 0.55rem 0.3rem;
+      padding: 0.7rem 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
+
+    .masthead-logo {
+      display: flex;
+      align-items: center;
+      margin-right: 0.5rem;
+    }
+    .masthead-logo img { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
 
     .nav-list {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
+      gap: 0.25rem;
       margin: 0;
       padding: 0;
       align-items: center;
@@ -98,174 +398,375 @@
 
     .nav-list a {
       display: inline-block;
-      padding: 0.35rem 0.58rem;
+      padding: 0.45rem 0.75rem;
       border: none;
-      border-radius: 10px;
-      color: #4a426c;
+      border-radius: var(--radius-sm);
+      color: var(--ink-muted);
       font-weight: 560;
-      letter-spacing: 0.01em;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
     }
 
-    .nav-list a:hover { background: #efe8ff; color: #2b5ea8; }
+    .nav-list a:hover {
+      background: var(--lavender-soft);
+      color: var(--accent-hover);
+    }
 
     .layout {
-      width: min(1500px, 98vw);
-      margin: 1rem auto 2rem;
+      position: relative;
+      z-index: 10;
+      width: min(1400px, 94vw);
+      margin: 1.5rem auto 3rem;
       display: grid;
-      gap: 1.15rem;
+      gap: 1.5rem;
     }
 
     .sidebar {
-      background: linear-gradient(170deg, rgba(255, 255, 255, 0.98), rgba(246, 242, 255, 0.96));
-      border: 1px solid #e2d8f6;
-      border-radius: 16px;
-      box-shadow: 0 14px 32px rgba(92, 73, 143, 0.12);
-      padding: 0.95rem;
+      position: relative;
+      background: linear-gradient(175deg, #fff8fc 0%, #f0f8ff 40%, #f8fff0 100%);
+      border: 2px solid transparent;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card), 0 0 0 1px rgba(200, 180, 220, 0.4);
+      padding: 1.25rem;
       align-self: start;
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+      background-clip: padding-box;
+    }
+    .sidebar::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--lavender), var(--blush), var(--mint), var(--coral));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .sidebar .corner-deco {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      top: 0;
+      right: 0;
+      opacity: 0.55;
+    }
+    .sidebar .corner-deco--bl { bottom: 0; top: auto; right: auto; left: 0; transform: rotate(-90deg); }
+    .sidebar .sidebar-grass { position: absolute; bottom: 0; left: 0; right: 0; height: 50px; opacity: 0.55; z-index: 0; }
+    .sidebar .sidebar-grass svg { width: 100%; height: 100%; display: block; }
+    .sidebar .sidebar-flowers { position: absolute; bottom: 12px; right: 12px; width: 42px; height: 42px; opacity: 0.7; z-index: 0; }
+    .sidebar .sidebar-flowers svg { width: 100%; height: 100%; display: block; }
+    .sidebar .avatar-wrap,
+    .sidebar .name,
+    .sidebar .bio,
+    .sidebar .meta,
+    .sidebar .social { position: relative; z-index: 1; }
+
+    .avatar-wrap {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(90, 60, 120, 0.12);
+    }
+
+    .avatar-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--lavender), var(--blush));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
 
     .avatar {
       width: 100%;
-      border-radius: 14px;
-      border: 1px solid #e2d7f3;
+      border-radius: inherit;
       display: block;
+      vertical-align: middle;
     }
 
-    .name { margin: 0.75rem 0 0.1rem; font-size: 1.2rem; color: var(--home-title); font-weight: 620; }
-    .bio { margin: 0; color: #5f5688; font-weight: 520; }
-    .meta { margin: 0.6rem 0 0.8rem; color: #6b648a; font-size: 0.95rem; }
+    .name {
+      margin: 1rem 0 0.2rem;
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+
+    .bio {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 560;
+      letter-spacing: 0.01em;
+    }
+
+    .meta {
+      margin: 0.65rem 0 1rem;
+      color: var(--ink-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
 
     .social { list-style: none; margin: 0; padding: 0; }
-    .social li { margin-bottom: 0.35rem; }
+    .social li { margin-bottom: 0.4rem; }
     .social a,
     .qr-trigger {
       border: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      color: #4c4480;
+      gap: 0.5rem;
+      color: var(--ink-muted);
       font-weight: 500;
+      font-size: 0.92rem;
       background: transparent;
-      padding: 0.16rem 0;
+      padding: 0.2rem 0;
       font: inherit;
       cursor: pointer;
+      transition: color 0.2s ease;
     }
 
     .social a:hover,
-    .qr-trigger:hover { color: #2c63b4; }
+    .qr-trigger:hover { color: var(--accent-hover); }
 
-    .content {
+    .content.manga-outline {
       position: relative;
       overflow: hidden;
-      background: var(--home-card-bg);
-      border: 1px solid var(--home-card-border);
-      border-radius: 18px;
-      box-shadow: var(--home-shadow);
-      padding: 1.35rem;
+      background: var(--card-bg);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft), 4px 4px 0 rgba(45, 38, 64, 0.12);
+      padding: 1.6rem;
+      backdrop-filter: blur(6px);
     }
+    .content .corner-deco {
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      top: 0;
+      left: 0;
+      opacity: 0.45;
+    }
+    .content .corner-deco--tr { left: auto; right: 0; transform: scaleX(-1); }
+    .content .corner-deco--br { top: auto; left: auto; right: 0; bottom: 0; transform: scale(-1); }
+    .content .corner-deco--bl { left: 0; top: auto; right: auto; bottom: 0; transform: scaleY(-1); }
+    .content .grass-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 48px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .content .grass-bottom svg { width: 100%; height: 100%; display: block; }
+    .content .grass-bottom { z-index: 0; }
 
-    .content:before {
+    .content::before {
       content: "";
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(84, 69, 139, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(84, 69, 139, 0.03) 1px, transparent 1px);
-      background-size: 24px 24px;
+        linear-gradient(rgba(120, 90, 160, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 90, 160, 0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
       pointer-events: none;
     }
 
-    .content:after {
+    .content::after {
       content: "";
       position: absolute;
-      left: -12%;
-      right: -12%;
-      top: -24px;
-      height: 86px;
-      border-radius: 0 0 45% 55% / 0 0 100% 100%;
-      background: linear-gradient(90deg, rgba(204, 173, 246, 0.16), rgba(138, 194, 230, 0.16));
+      left: -15%;
+      right: -15%;
+      top: -40px;
+      height: 120px;
+      border-radius: 0 0 50% 50% / 0 0 100% 100%;
+      background: linear-gradient(105deg, rgba(220, 200, 255, 0.2), rgba(255, 200, 228, 0.22));
       pointer-events: none;
     }
 
     .content > * { position: relative; z-index: 1; }
 
     .content p,
-    .content li { font-weight: 430; }
+    .content li { font-weight: 450; }
 
     .content strong,
-    .content b { font-weight: 600; color: #2f2c59; }
+    .content b { font-weight: 620; color: var(--ink); }
 
-    .home-hero {
+    .home-hero.manga-outline {
       position: relative;
-      margin-bottom: 1.5rem;
-      padding: 1.3rem;
-      border-radius: 16px;
-      border: 1px solid #ddd5f4;
+      margin-bottom: 2rem;
+      padding: 1.75rem 1.5rem;
+      border-radius: var(--radius-md);
+      border: 2.5px solid var(--ink);
+      box-shadow: 4px 4px 0 rgba(45, 38, 64, 0.15), 0 4px 24px rgba(90, 60, 120, 0.06);
       background:
-        radial-gradient(circle at 92% 8%, rgba(178, 141, 233, 0.16), transparent 42%),
-        linear-gradient(145deg, #fbf8ff 0%, #f0f8ff 56%, #fdf1f7 100%);
+        radial-gradient(circle at 95% 10%, rgba(210, 180, 245, 0.12) 0%, transparent 45%),
+        linear-gradient(150deg, rgba(255, 252, 255, 0.95) 0%, rgba(252, 245, 255, 0.9) 50%, rgba(255, 248, 252, 0.95) 100%);
     }
 
-    .home-hero:after {
+    .home-hero::after {
       content: "";
       position: absolute;
-      right: 18px;
-      top: 16px;
-      width: 108px;
-      height: 108px;
-      border-radius: 22px;
-      border: 1px solid rgba(146, 118, 204, 0.28);
-      background: linear-gradient(140deg, rgba(174, 140, 232, 0.14), rgba(107, 182, 221, 0.1));
-      transform: rotate(10deg);
+      right: 24px;
+      top: 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      border: 1px solid rgba(180, 150, 220, 0.25);
+      background: linear-gradient(145deg, rgba(200, 170, 240, 0.1), rgba(255, 200, 230, 0.08));
       pointer-events: none;
+      animation: blob 8s ease-in-out infinite;
+    }
+    .home-hero .hero-deco {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    .hero-deco--dots { left: 16px; bottom: 16px; }
+    .hero-deco--dots svg { width: 48px; height: 32px; }
+    .hero-deco--cross { right: 140px; top: 24px; }
+    .hero-deco--cross svg { width: 24px; height: 24px; }
+    .hero-deco--sakura { right: 24px; bottom: 20px; }
+    .hero-deco--sakura svg { width: 36px; height: 36px; }
+    .hero-deco--grass { left: 0; right: 0; bottom: 0; height: 32px; opacity: 0.6; }
+    .hero-deco--grass svg { width: 100%; height: 100%; display: block; }
+    @media (max-width: 767px) { .hero-deco--cross { display: none; } .hero-deco--sakura { right: 16px; bottom: 12px; } }
+
+    @keyframes blob {
+      0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(0deg) scale(1); }
+      50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; transform: rotate(5deg) scale(1.05); }
     }
 
     .home-hero p:first-child {
-      color: var(--home-title);
-      font-size: 1.1rem;
-      font-weight: 570;
-      letter-spacing: 0.005em;
+      font-family: var(--font-serif);
+      color: var(--ink);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
       margin-top: 0;
+      line-height: 1.7;
     }
 
-    .home-section { margin-top: 1.7rem; }
+    .home-section { margin-top: 2rem; position: relative; padding: 1rem 0; }
+    .home-section .section-deco {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+    .home-section .section-deco--tr { top: 0; right: 0; width: 56px; height: 56px; }
+    .home-section .section-deco--bl { bottom: 0; left: 0; width: 48px; height: 48px; }
+    #news .section-deco--tr { opacity: 0.6; }
+    #education-experience .section-deco--bl { opacity: 0.55; }
+    #intern-experience .section-deco--tr { opacity: 0.55; }
+    #publications .section-deco--bl { opacity: 0.6; }
+    #more .section-deco--tr { opacity: 0.55; }
+    .home-section h2,
+    .home-section > ul,
+    .home-section > details { position: relative; z-index: 1; }
 
     .home-section h2 {
-      margin: 0 0 1rem;
-      padding: 0.4rem 0 0.6rem;
-      color: var(--home-title);
-      font-size: 1.2rem;
-      font-weight: 620;
-      letter-spacing: 0.008em;
-      border-bottom: 2px solid #dfd7f4;
+      margin: 0 0 1.1rem;
+      padding: 0 0 0.65rem;
+      font-family: var(--font-serif);
+      color: var(--ink);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-bottom: 3px solid var(--ink);
+      border-radius: 0 0 2px 2px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
     }
+
+    .home-section h2::before {
+      content: "";
+      width: 4px;
+      height: 1.2em;
+      background: linear-gradient(180deg, var(--accent), var(--blush));
+      border-radius: 2px;
+    }
+    .section-icon {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      opacity: 1;
+    }
+    #news .section-icon { color: var(--sky-blue); }
+    #education-experience .section-icon { color: var(--mint); }
+    #intern-experience .section-icon { color: var(--coral); }
+    #publications .section-icon { color: var(--accent); }
+    #more .section-icon { color: var(--gold); }
 
     .card-list { list-style: none; margin: 0; padding: 0; }
 
     .card-list > li {
-      margin: 0 0 0.9rem;
-      padding: 0.85rem 0.95rem;
-      border: 1px solid #e7def8;
-      border-radius: 12px;
-      background: linear-gradient(160deg, #ffffff, #fcf8ff);
+      margin: 0 0 1rem;
+      padding: 1rem 1.15rem 1rem 1.35rem;
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      background: linear-gradient(165deg, #ffffff, rgba(252, 248, 255, 0.6));
+      border-left: 4px solid var(--lavender);
+      box-shadow: 2px 2px 0 rgba(45, 38, 64, 0.1);
+      transition: box-shadow 0.25s ease, border-left-color 0.25s ease;
     }
 
-    .news-list { margin: 0; padding-left: 1.1rem; }
-    .news-list li { margin-bottom: 0.55rem; }
+    .card-list > li:hover {
+      box-shadow: 0 6px 24px rgba(90, 60, 120, 0.08);
+      border-left-color: var(--accent);
+    }
+    .card-list > li {
+      position: relative;
+    }
+    .card-list > li::after {
+      content: "";
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      border: 1px solid var(--lavender);
+      border-radius: 1px;
+      transform: rotate(45deg);
+      opacity: 0.7;
+    }
+    .card-list > li:hover::after { border-color: var(--accent); }
+
+    .news-list { margin: 0; padding-left: 1.25rem; }
+    .news-list li { margin-bottom: 0.6rem; position: relative; }
+    .news-list li::marker { color: var(--accent); }
 
     .older-news {
-      margin-top: 0.3rem;
-      padding: 0.6rem 0.8rem;
-      border: 1px solid #ddd6f2;
-      border-radius: 12px;
-      background: linear-gradient(140deg, #fbf8ff, #f3f8ff);
+      margin-top: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(210, 195, 235, 0.5);
+      border-radius: var(--radius-md);
+      background: linear-gradient(160deg, var(--lavender-soft), var(--blush-soft));
     }
 
-    .older-news summary { cursor: pointer; color: var(--home-accent); font-weight: 600; }
-    .older-news[open] summary { margin-bottom: 0.45rem; }
+    .older-news summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 620;
+      letter-spacing: 0.01em;
+    }
+    .older-news[open] summary { margin-bottom: 0.5rem; }
 
-    .more-list { margin: 0; padding-left: 1.1rem; }
-    .more-list ul { margin-top: 0.45rem; }
+    .more-list { margin: 0; padding-left: 1.25rem; }
+    .more-list ul { margin-top: 0.5rem; }
+    .more-list > li { margin-bottom: 1rem; }
 
     .qr-modal {
       position: fixed;
@@ -275,64 +776,406 @@
     }
 
     .qr-modal.is-open { display: block; }
-    .qr-modal__backdrop { position: absolute; inset: 0; background: rgba(12, 23, 38, 0.55); }
+    .qr-modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(45, 38, 64, 0.5);
+      backdrop-filter: blur(6px);
+    }
 
     .qr-modal__dialog {
       position: relative;
-      width: min(420px, 92vw);
-      margin: 7vh auto;
-      border-radius: 14px;
-      background: #fff;
-      padding: 1rem;
-      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.26);
+      width: min(400px, 90vw);
+      margin: 10vh auto;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(175deg, #fff, var(--lavender-soft));
+      padding: 1.25rem;
+      box-shadow: 0 24px 56px rgba(45, 38, 64, 0.25);
+      border: 1px solid var(--card-border);
     }
 
-    .qr-modal__dialog img { width: 100%; border-radius: 10px; display: block; }
+    .qr-modal__dialog img { width: 100%; border-radius: var(--radius-sm); display: block; }
 
     .qr-modal__close {
       position: absolute;
-      top: -10px;
-      right: -10px;
-      width: 32px;
-      height: 32px;
+      top: -8px;
+      right: -8px;
+      width: 34px;
+      height: 34px;
       border: 0;
       border-radius: 50%;
-      background: #2e2c66;
+      background: var(--ink);
       color: #fff;
-      font-size: 20px;
-      line-height: 32px;
+      font-size: 1.25rem;
+      line-height: 34px;
       cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
+    .qr-modal__close:hover { background: var(--accent-hover); transform: scale(1.05); }
 
     @media (min-width: 960px) {
-      .layout { grid-template-columns: 290px minmax(0, 1fr); gap: 1.35rem; }
-      .sidebar { position: sticky; top: 78px; }
-      .content { padding: 2rem; }
+      .layout { grid-template-columns: 300px minmax(0, 1fr); gap: 1.75rem; }
+      .sidebar { position: sticky; top: 82px; }
+      .content { padding: 2.25rem; }
     }
 
     @media (max-width: 767px) {
-      .home-hero:after { display: none; }
+      .home-hero::after { display: none; }
+      .home-hero { padding: 1.25rem; }
     }
   </style>
 </head>
 <body>
+  <div class="bg-pattern" aria-hidden="true"></div>
+  <!-- Speed lines / 速度线 -->
+  <div class="speed-lines" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <path d="M0 100 L400 100 L0 105 L380 105 L0 110 L420 110" stroke="#2d2640" stroke-width="2" fill="none" opacity="0.12"/>
+      <path d="M1200 200 L800 200 L1200 206 L820 206 L1200 212 L790 212" stroke="#2d2640" stroke-width="2" fill="none" opacity="0.1"/>
+      <path d="M0 600 L350 600 L0 608 L370 608" stroke="#2d2640" stroke-width="1.8" fill="none" opacity="0.1"/>
+      <path d="M1200 500 L850 500 L1200 508 L830 508 L1200 516" stroke="#2d2640" stroke-width="1.8" fill="none" opacity="0.12"/>
+      <path d="M0 0 L0 800 M100 0 L100 800 M200 0 L200 800" stroke="#2d2640" stroke-width="1" fill="none" opacity="0.06" transform="skewX(-8)"/>
+      <path d="M1200 0 L1200 800 M1100 0 L1100 800 M1000 0 L1000 800" stroke="#2d2640" stroke-width="1" fill="none" opacity="0.06" transform="translate(1200,0) scale(-1,1) skewX(-8) translate(-1200,0)"/>
+    </svg>
+  </div>
+  <!-- Sparkles / 星星闪光 -->
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#d4b868"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#d4b868"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#d4b868"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#d4b868"/><circle cx="8" cy="8" r="1.5" fill="#f0e0a0"/></svg></div>
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#f0c878"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#f0c878"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#f0c878"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#f0c878"/><circle cx="8" cy="8" r="1.5" fill="#fff8d0"/></svg></div>
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#e8c4dc"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#e8c4dc"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#e8c4dc"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#e8c4dc"/><circle cx="8" cy="8" r="1.5" fill="#fff0f5"/></svg></div>
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#d4b868"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#d4b868"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#d4b868"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#d4b868"/><circle cx="8" cy="8" r="1.5" fill="#f0e0a0"/></svg></div>
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#f0c878"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#f0c878"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#f0c878"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#f0c878"/><circle cx="8" cy="8" r="1.5" fill="#fff8d0"/></svg></div>
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#e8c4dc"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#e8c4dc"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#e8c4dc"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#e8c4dc"/><circle cx="8" cy="8" r="1.5" fill="#fff0f5"/></svg></div>
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#d4b868"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#d4b868"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#d4b868"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#d4b868"/><circle cx="8" cy="8" r="1.5" fill="#f0e0a0"/></svg></div>
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#f0c878"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#f0c878"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#f0c878"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#f0c878"/><circle cx="8" cy="8" r="1.5" fill="#fff8d0"/></svg></div>
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#e8c4dc"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#e8c4dc"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#e8c4dc"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#e8c4dc"/><circle cx="8" cy="8" r="1.5" fill="#fff0f5"/></svg></div>
+  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#d4b868"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#d4b868"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#d4b868"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#d4b868"/><circle cx="8" cy="8" r="1.5" fill="#f0e0a0"/></svg></div>
+  <!-- Speech bubbles / 对话框 -->
+  <div class="bubble bubble--1" aria-hidden="true">Hi! ✨</div>
+  <div class="bubble bubble--2" aria-hidden="true">♪</div>
+  <!-- Chibi icons / Q版小图标 -->
+  <div class="chibi-icon chibi-icon--1" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="22" r="14" fill="#ffe0e8" stroke="#2d2640" stroke-width="2"/><circle cx="14" cy="18" r="2" fill="#2d2640"/><circle cx="26" cy="18" r="2" fill="#2d2640"/><path d="M14 26 Q20 30 26 26" stroke="#2d2640" stroke-width="1.5" fill="none" stroke-linecap="round"/><ellipse cx="12" cy="24" rx="2.5" ry="1.5" fill="#e8a0a0"/><ellipse cx="28" cy="24" rx="2.5" ry="1.5" fill="#e8a0a0"/></svg></div>
+  <div class="chibi-icon chibi-icon--2" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="22" r="14" fill="#e8f0ff" stroke="#2d2640" stroke-width="2"/><circle cx="14" cy="18" r="2" fill="#2d2640"/><circle cx="26" cy="18" r="2" fill="#2d2640"/><path d="M16 27 Q20 24 24 27" stroke="#2d2640" stroke-width="1.2" fill="none" stroke-linecap="round"/><ellipse cx="12" cy="24" rx="2" ry="1.2" fill="#e8a0a0"/><ellipse cx="28" cy="24" rx="2" ry="1.2" fill="#e8a0a0"/></svg></div>
+  <!-- Animal emoji runners / 小动物 emoji 跑 -->
+  <span class="animal-run animal-run--top-left" aria-hidden="true">🐰🐱🐶</span>
+  <span class="animal-run animal-run--top-right" aria-hidden="true">🦋🐻🐣</span>
+  <span class="animal-run animal-run--bottom-left" aria-hidden="true">🦊🐹🌸</span>
+  <span class="animal-run animal-run--bottom-right" aria-hidden="true">🐼🦌✨</span>
+  <span class="animal-run animal-run--left-top" aria-hidden="true">🐸</span>
+  <span class="animal-run animal-run--left-bottom" aria-hidden="true">🐰</span>
+  <span class="animal-run animal-run--right-top" aria-hidden="true">🦋</span>
+  <span class="animal-run animal-run--right-bottom" aria-hidden="true">🐱</span>
+  <!-- Falling sakura petals (anime style) -->
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
+  <!-- Floating geometric decorations -->
+  <div class="deco deco--circle-1" aria-hidden="true">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="38" stroke="url(#g1)" stroke-width="1.5" fill="none"/>
+      <circle cx="40" cy="40" r="28" stroke="url(#g1)" stroke-width="1" opacity="0.6" fill="none"/>
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#b8a0d8"/><stop offset="1" stop-color="#e8c4dc"/>
+      </linearGradient></defs>
+    </svg>
+  </div>
+  <div class="deco deco--circle-2" aria-hidden="true">
+    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="25" cy="25" r="23" stroke="#c4a8e0" stroke-width="1.2" fill="none" stroke-dasharray="4 3"/>
+    </svg>
+  </div>
+  <div class="deco deco--circle-3" aria-hidden="true">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="28" stroke="#d4b8e8" stroke-width="1" fill="none"/>
+      <circle cx="30" cy="30" r="18" stroke="#e8c8e0" stroke-width="0.8" fill="none" opacity="0.8"/>
+    </svg>
+  </div>
+  <div class="deco deco--diamond" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L22 12 12 22 2 12 12 2z" stroke="#9b7fc2" stroke-width="1.2" fill="none"/>
+    </svg>
+  </div>
+  <div class="deco deco--triangle" aria-hidden="true">
+    <svg viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2L38 33H2L20 2z" stroke="#b89cd0" stroke-width="1" fill="none" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="deco deco--hex" aria-hidden="true">
+    <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 0l18 9v14l-18 9-18-9V9L18 0z" stroke="#a88cc8" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="deco deco--line-arc" aria-hidden="true">
+    <svg viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 70 Q60 10 110 70" stroke="#b8a0d8" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <path d="M20 65 Q60 25 100 65" stroke="#d4c0e8" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.7"/>
+    </svg>
+  </div>
+  <div class="deco deco--line-arc-2" aria-hidden="true">
+    <svg viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M90 10 Q50 50 10 60" stroke="#c8b0e0" stroke-width="1" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <!-- ES CON Field style: dual angular peaks -->
+  <div class="deco deco--peak" aria-hidden="true">
+    <svg viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 32L22 4 36 32H8z" stroke="url(#peakGrad)" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+      <path d="M12 32L22 12 32 32H12z" stroke="url(#peakGrad)" stroke-width="1" fill="none" stroke-linejoin="round" opacity="0.8"/>
+      <defs><linearGradient id="peakGrad" x1="0" y1="0" x2="44" y2="36"><stop stop-color="#a88cc8"/><stop offset="1" stop-color="#e8b8d0"/></linearGradient></defs>
+    </svg>
+  </div>
+  <!-- Fighters-style chevron band -->
+  <div class="deco deco--chevron" aria-hidden="true">
+    <svg viewBox="0 0 140 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 18 L7 6 L14 18 M17 18 L24 6 L31 18 M34 18 L41 6 L48 18 M51 18 L58 6 L65 18 M68 18 L75 6 L82 18 M85 18 L92 6 L99 18 M102 18 L109 6 L116 18 M119 18 L126 6 L133 18" stroke="#b8a0d8" stroke-width="1.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M3 16 L10 8 L17 16 M20 16 L27 8 L34 16 M37 16 L44 8 L51 16 M54 16 L61 8 L68 16 M71 16 L78 8 L85 16 M88 16 L95 8 L102 16 M105 16 L112 8 L119 16" stroke="#e0b8d0" stroke-width="0.9" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+    </svg>
+  </div>
+  <div class="deco deco--chevron-2" aria-hidden="true">
+    <svg viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 14 L5 6 L10 14 M12 14 L17 6 L22 14 M24 14 L29 6 L34 14 M36 14 L41 6 L46 14 M48 14 L53 6 L58 14 M60 14 L65 6 L70 14 M72 14 L77 6 L82 14 M84 14 L89 6 L94 14" stroke="#e0b8d0" stroke-width="1" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <!-- Cherry blossom (sakura) -->
+  <div class="deco deco--sakura-1" aria-hidden="true">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 2c0 0-2 4-2 6s1 4 2 4 2-1.5 2-4-2-6-2-6z" fill="#e8c4dc"/>
+      <path d="M14 26c0 0 2-4 2-6s-1-4-2-4-2 1.5-2 4 2 6 2 6z" fill="#e8c4dc"/>
+      <path d="M2 14c0 0 4-2 6-2s4 1 4 2-1.5 2-4 2-6 2-6z" fill="#e8c4dc"/>
+      <path d="M26 14c0 0-4-2-6-2s-4 1-4 2 1.5 2 4 2 6 2 6z" fill="#e8c4dc"/>
+      <path d="M6 6c0 0 2.5 2.5 3.5 4s0 2.5-1 2.5-2-1-3.5-3.5 1-3 1-3z" fill="#e8c4dc"/>
+      <path d="M22 22c0 0-2.5-2.5-3.5-4s0-2.5 1-2.5 2 1 3.5 3.5-1 3-1 3z" fill="#e8c4dc"/>
+      <path d="M22 6c0 0-2.5 2.5-4 3.5s-2.5 0-2.5-1 1-2 3.5-3.5 3-1 3-1z" fill="#e8c4dc"/>
+      <path d="M6 22c0 0 2.5-2.5 4-3.5s2.5 0 2.5 1-1 2-3.5 3.5S6 22 6 22z" fill="#e8c4dc"/>
+      <circle cx="14" cy="14" r="2.5" fill="#f0d0e0"/>
+    </svg>
+  </div>
+  <div class="deco deco--sakura-2" aria-hidden="true">
+    <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11 1c0 0-1.5 3-1.5 4.5s.8 3 1.5 3 1.5-.8 1.5-3S11 1 11 1z" fill="#f0d4e4"/>
+      <path d="M11 21c0 0 1.5-3 1.5-4.5S11.7 13.5 11 13.5s-1.5.8-1.5 3S11 21 11 21z" fill="#f0d4e4"/>
+      <path d="M1 11c0 0 3-1.5 4.5-1.5S13 11 13 11s-.8 1.5-3 1.5S1 11 1 11z" fill="#f0d4e4"/>
+      <path d="M21 11c0 0-3-1.5-4.5-1.5S9 11 9 11s.8 1.5 3 1.5S21 11 21 11z" fill="#f0d4e4"/>
+      <circle cx="11" cy="11" r="2" fill="#f8dce8"/>
+    </svg>
+  </div>
+  <div class="deco deco--sakura-3" aria-hidden="true">
+    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 0s-1 2.5-1 4 .5 2 1 2 1-.5 1-2-1-4-1-4z" fill="#e8c0d8"/>
+      <path d="M10 20s1-2.5 1-4-.5-2-1-2-1 .5-1 2 1 4 1 4z" fill="#e8c0d8"/>
+      <path d="M0 10s2.5-1 4-1 2 .5 2 1-.5 1-2 1-4 1-4z" fill="#e8c0d8"/>
+      <path d="M20 10s-2.5-1-4-1-2 .5-2 1 .5 1 2 1 4 1 4z" fill="#e8c0d8"/>
+      <circle cx="10" cy="10" r="1.8" fill="#f0d0e0"/>
+    </svg>
+  </div>
+  <div class="deco deco--sakura-4" aria-hidden="true">
+    <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 1c0 0-1.2 3.5-1.2 5.2s.4 3.5 1.2 3.5 1.2-1.2 1.2-3.5S13 1 13 1z" fill="#f0d4e4"/>
+      <path d="M13 25c0 0 1.2-3.5 1.2-5.2s-.4-3.5-1.2-3.5-1.2 1.2-1.2 3.5S13 25 13 25z" fill="#f0d4e4"/>
+      <path d="M1 13c0 0 3.5-1.2 5.2-1.2s3.5.4 3.5 1.2-1.2 1.2-3.5 1.2-5.2 1.2-5.2z" fill="#f0d4e4"/>
+      <path d="M25 13c0 0-3.5-1.2-5.2-1.2s-3.5.4-3.5 1.2 1.2 1.2 3.5 1.2 5.2 1.2 5.2z" fill="#f0d4e4"/>
+      <circle cx="13" cy="13" r="2.2" fill="#f8dce8"/>
+    </svg>
+  </div>
+  <div class="deco deco--sakura-5" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/>
+      <path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/>
+      <path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/>
+      <path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/>
+      <circle cx="12" cy="12" r="2" fill="#f0d0e0"/>
+    </svg>
+  </div>
+  <!-- Grass & nature -->
+  <div class="deco deco--grass-1" aria-hidden="true">
+    <svg viewBox="0 0 1200 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 100 Q50 60 100 100 Q150 50 200 100 Q250 55 300 100 Q350 45 400 100 Q450 60 500 100 Q550 50 600 100 Q650 55 700 100 Q750 45 800 100 Q850 60 900 100 Q950 50 1000 100 Q1050 55 1100 100 Q1150 50 1200 100 L1200 110 L0 110 Z" fill="url(#grassGrad)"/>
+      <path d="M0 100 Q30 75 60 100 Q90 65 120 100 Q150 70 180 100 Q210 68 240 100 Q270 72 300 100 Q330 70 360 100 Q390 65 420 100 Q450 72 480 100 Q510 68 540 100 Q570 75 600 100 Q630 70 660 100 Q690 65 720 100 Q750 72 780 100 Q810 68 840 100 Q870 70 900 100 Q930 65 960 100 Q990 72 1020 100 Q1050 68 1080 100 Q1110 75 1140 100 L1200 100 L1200 110 L0 110 Z" fill="url(#grassGrad2)"/>
+      <defs><linearGradient id="grassGrad" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b8e0c8"/><stop offset="1" stop-color="#90c8a0"/></linearGradient>
+      <linearGradient id="grassGrad2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c8ecd4"/><stop offset="1" stop-color="#a8d8b8"/></linearGradient></defs>
+    </svg>
+  </div>
+  <div class="deco deco--grass-2" aria-hidden="true">
+    <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 60 Q15 30 20 60 Q25 25 30 60 Q35 35 40 60 Q45 28 50 60 Q55 32 60 60 Q65 26 70 60" stroke="#8cc89c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M15 60 Q18 38 22 60 Q28 32 35 60 Q42 30 48 60 Q52 35 58 60" stroke="#a0d4ac" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
+    </svg>
+  </div>
+  <div class="deco deco--grass-3" aria-hidden="true">
+    <svg viewBox="0 0 70 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 55 Q12 28 16 55 Q20 22 24 55 Q28 30 32 55 Q36 25 40 55 Q44 32 48 55 Q52 26 56 55 Q60 30 64 55" stroke="#8cc89c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="deco deco--leaf-1" aria-hidden="true">
+    <svg viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 18 Q16 2 30 18 Q16 14 2 18z" fill="#7eb88a" opacity="0.9"/>
+      <path d="M2 18 Q16 10 30 18" stroke="#6aa878" stroke-width="0.6" fill="none" opacity="0.6"/>
+    </svg>
+  </div>
+  <div class="deco deco--leaf-2" aria-hidden="true">
+    <svg viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 14 Q14 0 26 14 Q14 10 2 14z" fill="#8cc89c" opacity="0.9"/>
+    </svg>
+  </div>
+  <div class="deco deco--leaf-3" aria-hidden="true">
+    <svg viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 12 Q12 0 23 12 Q12 8 1 12z" fill="#90cc9e" opacity="0.9"/>
+    </svg>
+  </div>
+  <div class="deco deco--cloud" aria-hidden="true">
+    <svg viewBox="0 0 90 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="35" cy="28" rx="28" ry="12" fill="rgba(255,255,255,0.85)"/>
+      <ellipse cx="55" cy="25" rx="22" ry="10" fill="rgba(255,255,255,0.9)"/>
+      <ellipse cx="45" cy="22" rx="20" ry="9" fill="rgba(255,255,255,0.95)"/>
+    </svg>
+  </div>
+  <div class="deco deco--tree" aria-hidden="true">
+    <svg viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 140 L50 75 M35 95 L65 95 L50 55 L35 95 M42 75 L58 75 L50 45 L42 75 M48 55 L52 55 L50 28 L48 55" stroke="#6a9a6a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M50 120 Q20 100 50 75 Q80 100 50 120" fill="#88b878" opacity="0.9"/>
+      <path d="M50 95 Q25 78 50 55 Q75 78 50 95" fill="#98c888" opacity="0.9"/>
+      <path d="M50 68 Q28 55 50 32 Q72 55 50 68" fill="#a8d498" opacity="0.9"/>
+    </svg>
+  </div>
+  <div class="deco deco--tree-2" aria-hidden="true">
+    <svg viewBox="0 0 85 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M42 120 L42 65 M30 82 L54 82 L42 48 L30 82 M36 65 L48 65 L42 38 L36 65" stroke="#6a9a6a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M42 100 Q18 82 42 65 Q66 82 42 100" fill="#88b878" opacity="0.9"/>
+      <path d="M42 78 Q22 62 42 48 Q62 62 42 78" fill="#98c888" opacity="0.9"/>
+    </svg>
+  </div>
+  <div class="deco deco--butterfly" aria-hidden="true">
+    <svg viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="22" cy="18" rx="4" ry="14" fill="#f0c878"/>
+      <path d="M22 4 Q8 18 22 32 Q36 18 22 4" fill="#e8a0c0" opacity="0.9"/>
+      <path d="M22 4 Q36 18 22 32 Q8 18 22 4" fill="#c890e0" opacity="0.85"/>
+      <circle cx="22" cy="18" r="2" fill="#2d2640"/>
+    </svg>
+  </div>
+  <div class="deco deco--butterfly-2" aria-hidden="true">
+    <svg viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="19" cy="15" rx="3" ry="12" fill="#d8b868"/>
+      <path d="M19 3 Q7 14 19 26 Q31 14 19 3" fill="#e8b0d0" opacity="0.9"/>
+      <path d="M19 3 Q31 14 19 26 Q7 14 19 3" fill="#b0a0e0" opacity="0.85"/>
+    </svg>
+  </div>
+  <div class="deco deco--lake" aria-hidden="true">
+    <svg viewBox="0 0 260 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lakeGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop stop-color="#88c8dc"/><stop offset="0.4" stop-color="#60b0c8"/><stop offset="1" stop-color="#4090a8"/>
+        </linearGradient>
+        <linearGradient id="lakeReflect" x1="0" y1="0" x2="0" y2="1">
+          <stop stop-color="rgba(200,230,240,0.5)" offset="0"/><stop stop-color="rgba(100,180,200,0.1)" offset="1"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="130" cy="58" rx="115" ry="38" fill="url(#lakeGrad)"/>
+      <ellipse cx="130" cy="52" rx="105" ry="32" fill="url(#lakeReflect)"/>
+      <!-- Ripples -->
+      <ellipse cx="130" cy="58" rx="95" ry="30" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" fill="none"/>
+      <ellipse cx="130" cy="58" rx="72" ry="24" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+      <ellipse cx="130" cy="58" rx="48" ry="16" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none"/>
+      <!-- Lily pads -->
+      <ellipse cx="55" cy="72" rx="18" ry="8" fill="#408858" opacity="0.9"/>
+      <ellipse cx="55" cy="72" rx="14" ry="5" fill="#50a068" opacity="0.6"/>
+      <ellipse cx="200" cy="68" rx="16" ry="7" fill="#408858" opacity="0.85"/>
+      <ellipse cx="200" cy="68" rx="12" ry="4" fill="#50a068" opacity="0.5"/>
+      <!-- Reeds -->
+      <path d="M30 95 Q32 60 35 95" stroke="#507848" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M38 95 Q39 65 42 95" stroke="#587850" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M225 95 Q227 62 230 95" stroke="#507848" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="deco deco--deer" aria-hidden="true">
+    <svg viewBox="0 0 70 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="35" cy="70" rx="22" ry="18" fill="#c4a878"/>
+      <path d="M35 52 L35 25 M35 25 L28 8 M35 25 L42 10" stroke="#a08050" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M20 65 Q35 55 50 65" stroke="#8a7048" stroke-width="1.5" fill="none"/>
+      <ellipse cx="35" cy="28" rx="10" ry="12" fill="#c4a878"/>
+      <circle cx="32" cy="24" r="2" fill="#2d2640"/>
+      <circle cx="38" cy="24" r="2" fill="#2d2640"/>
+    </svg>
+  </div>
+  <!-- Optional: add images/doraemon.png, images/chopper.png (or other anime chars) to show here -->
+  <div class="anime-chars" aria-hidden="true">
+    <img src="images/doraemon.png" alt="" class="anime-char" onerror="this.style.display='none'">
+    <img src="images/chopper.png" alt="" class="anime-char" onerror="this.style.display='none'">
+  </div>
+
   <header class="masthead">
     <div class="masthead__inner">
+      <div class="masthead-logo" aria-hidden="true">
+        <img src="images/logo.jpeg" alt="">
+      </div>
       <ul class="nav-list">
         <li><a href="#about-me">About Me</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#education-experience">Experience</a></li>
-        <li><a href="#industrial-experience">Industrial</a></li>
+        <li><a href="#intern-experience">Intern</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#more">More</a></li>
-        <li><a href="/_pages/CV.pdf">CV</a></li>
+        <li><a href="https://wma17.github.io/_pages/CV.pdf">CV</a></li>
       </ul>
     </div>
   </header>
 
   <main class="layout">
     <aside class="sidebar">
-      <img class="avatar" src="images/me.jpg" alt="Wang Ma">
+      <svg class="corner-deco" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M56 0v20c0 20-20 36-56 56" stroke="url(#sideGrad)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M48 0v12c0 12-12 22-48 48" stroke="url(#sideGrad)" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <defs><linearGradient id="sideGrad" x1="0" y1="0" x2="56" y2="56"><stop stop-color="#b8a0d8"/><stop offset="1" stop-color="#e8c4dc"/></linearGradient></defs>
+      </svg>
+      <svg class="corner-deco corner-deco--bl" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M56 0v20c0 20-20 36-56 56" stroke="url(#sideGrad2)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <defs><linearGradient id="sideGrad2" x1="0" y1="0" x2="56" y2="56"><stop stop-color="#b8a0d8"/><stop offset="1" stop-color="#e8c4dc"/></linearGradient></defs>
+      </svg>
+      <div class="sidebar-grass" aria-hidden="true">
+        <svg viewBox="0 0 400 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 50 Q40 25 80 50 Q120 20 160 50 Q200 28 240 50 Q280 22 320 50 Q360 26 400 50 L400 60 L0 60 Z" fill="url(#sideGrass)"/>
+          <defs><linearGradient id="sideGrass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b0dcbc"/><stop offset="1" stop-color="#88c898"/></linearGradient></defs>
+        </svg>
+      </div>
+      <div class="sidebar-flowers" aria-hidden="true">
+        <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="21" cy="21" r="4" fill="#f0d4e4"/>
+          <path d="M21 8c0 0-2 4-2 6s1 4 2 4 2-1 2-4-2-6-2-6z" fill="#e8c4dc"/>
+          <path d="M21 34c0 0 2-4 2-6s-1-4-2-4-2 1-2 4 2 6 2 6z" fill="#e8c4dc"/>
+          <path d="M8 21c0 0 4-2 6-2s4 1 4 2-1 2-4 2-6-2-6-2z" fill="#e8c4dc"/>
+          <path d="M34 21c0 0-4-2-6-2s-4 1-4 2 1 2 4 2 6-2 6-2z" fill="#e8c4dc"/>
+          <circle cx="14" cy="14" r="2.5" fill="#d8b868"/>
+          <circle cx="28" cy="14" r="2.5" fill="#e8a0b0"/>
+        </svg>
+      </div>
+      <div class="avatar-wrap"><img class="avatar" src="images/me.jpg" alt="Wang Ma"></div>
       <h1 class="name">Wang Ma</h1>
       <p class="bio">Ph.D student @ RPI</p>
       <p class="meta">Identity: Ph.D Student<br>Email: maw6@rpi.edu<br>Location: Troy, NY</p>
@@ -349,15 +1192,64 @@
       </ul>
     </aside>
 
-    <article class="content">
+    <article class="content manga-outline">
+      <svg class="corner-deco" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M72 0L72 28C72 52 52 72 0 72" stroke="url(#cornerGrad)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <path d="M64 0L64 20C64 40 48 56 0 64" stroke="url(#cornerGrad)" stroke-width="0.9" fill="none" stroke-linejoin="round" opacity="0.6"/>
+        <defs><linearGradient id="cornerGrad" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#a890c8"/><stop offset="1" stop-color="#e0b8d0"/></linearGradient></defs>
+      </svg>
+      <svg class="corner-deco corner-deco--tr" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M72 0L72 28C72 52 52 72 0 72" stroke="url(#cornerGrad2)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <defs><linearGradient id="cornerGrad2" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#a890c8"/><stop offset="1" stop-color="#e0b8d0"/></linearGradient></defs>
+      </svg>
+      <svg class="corner-deco corner-deco--br" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M72 0L72 28C72 52 52 72 0 72" stroke="url(#cornerGrad3)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <defs><linearGradient id="cornerGrad3" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#a890c8"/><stop offset="1" stop-color="#e0b8d0"/></linearGradient></defs>
+      </svg>
+      <svg class="corner-deco corner-deco--bl" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M72 0L72 28C72 52 52 72 0 72" stroke="url(#cornerGrad4)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <defs><linearGradient id="cornerGrad4" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#a890c8"/><stop offset="1" stop-color="#e0b8d0"/></linearGradient></defs>
+      </svg>
       <span id="about-me"></span>
-      <section class="home-hero">
+      <section class="home-hero manga-outline">
+        <div class="hero-deco hero-deco--dots" aria-hidden="true">
+          <svg viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="8" r="2.5" fill="#b8a0d8"/><circle cx="24" cy="12" r="2" fill="#c8b0e0"/><circle cx="40" cy="8" r="2.5" fill="#d8c0e8"/>
+            <circle cx="12" cy="24" r="1.5" fill="#e0b8d0"/><circle cx="32" cy="22" r="2" fill="#c8a8d8"/>
+          </svg>
+        </div>
+        <div class="hero-deco hero-deco--cross" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4v16M4 12h16" stroke="#9b80c0" stroke-width="1" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="2" stroke="#b090c8" stroke-width="0.8" fill="none"/>
+          </svg>
+        </div>
+        <div class="hero-deco hero-deco--sakura" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2c0 0-2 6-2 8s1 5 2 5 2-2 2-5-2-8-2-8z" fill="#e8c4dc"/>
+            <path d="M18 34c0 0 2-6 2-8s-1-5-2-5-2 2-2 5 2 8 2 8z" fill="#e8c4dc"/>
+            <path d="M2 18c0 0 6-2 8-2s5 1 5 2-2 2-5 2-8 2-8z" fill="#e8c4dc"/>
+            <path d="M34 18c0 0-6-2-8-2s-5 1-5 2 2 2 5 2 8 2 8z" fill="#e8c4dc"/>
+            <path d="M8 8c0 0 3 3 4.5 5s0 3-1 3-2.5-1-5-4.5 1.5-3.5 1.5-3.5z" fill="#e8c4dc"/>
+            <path d="M28 28c0 0-3-3-4.5-5s0-3 1-3 2.5 1 5 4.5-1.5 3.5-1.5 3.5z" fill="#e8c4dc"/>
+            <path d="M28 8c0 0-3 3-5 4.5s-3 0-3-1 1-2.5 4.5-5 3.5-1.5 3.5-1.5z" fill="#e8c4dc"/>
+            <path d="M8 28c0 0 3-3 5-4.5s3 0 3 1-1 2.5-4.5 5S8 28 8 28z" fill="#e8c4dc"/>
+            <circle cx="18" cy="18" r="3" fill="#f5dce8"/>
+          </svg>
+        </div>
+        <div class="hero-deco hero-deco--grass" aria-hidden="true">
+          <svg viewBox="0 0 400 32" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 32 Q20 18 40 32 Q60 14 80 32 Q100 20 120 32 Q140 16 160 32 Q180 18 200 32 Q220 14 240 32 Q260 20 280 32 Q300 16 320 32 Q340 18 360 32 Q380 14 400 32 L400 40 L0 40 Z" fill="url(#heroGrass)"/>
+            <defs><linearGradient id="heroGrass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b0dcbc"/><stop offset="1" stop-color="#88c898"/></linearGradient></defs>
+          </svg>
+        </div>
         <p>Hello, I am Wang Ma (马旺), a second-year Ph.D student at Rensselaer Polytechnic Institute (<a href="https://www.rpi.edu/">RPI</a>) advised by <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>. Before coming to RPI, I obtained my B.S. from Southern University of Science and Technology (<a href="https://sustech.edu.cn/en/">SUSTech</a>), advised by <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>.</p>
         <p>I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning and their applications to Computer Vision and Natural Language Processing. Recently, my focus is specifically Uncertainty Quantification and Uncertainty Disentanglement for single models and pre-trained models (such as pre-trained large vision or language models), and Knowledge-augmented Bayesian Deep Learning.</p>
       </section>
 
       <section class="home-section" id="news">
-        <h2>News</h2>
+        <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><path d="M28 8c0 0-2 6-2 8s1 5 2 5 2-2 2-5-2-8-2-8z" fill="#e8c4dc"/><path d="M28 48c0 0 2-6 2-8s-1-5-2-5-2 2-2 5 2 8 2 8z" fill="#e8c4dc"/><path d="M8 28c0 0 6-2 8-2s5 1 5 2-2 2-5 2-8-2-8-2z" fill="#e8c4dc"/><path d="M48 28c0 0-6-2-8-2s-5 1-5 2 2 2 5 2 8-2 8-2z" fill="#e8c4dc"/><circle cx="28" cy="28" r="4" fill="#f5dce8"/></svg></div>
+        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M11 6v5l3 3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>News</h2>
         <ul class="news-list">
           <li><strong>Feb 2026</strong>: My first-authored paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was accepted to CVPR 2026.</li>
           <li><strong>Jan 2026</strong>: Two papers were submitted to ICML 2026, related to uncertianty decomposition and black-box uncertianty quantification.</li>
@@ -379,7 +1271,8 @@
       </section>
 
       <section class="home-section" id="education-experience">
-        <h2>Education Experience</h2>
+        <div class="section-deco section-deco--bl" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M4 42 Q24 8 44 42 Q24 28 4 42z" fill="#8cc89c" opacity="0.9"/><path d="M4 42 Q24 18 44 42" stroke="#6aa878" stroke-width="1" fill="none" opacity="0.6"/></svg></div>
+        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11 2L2 7v3h18V7l-9-5z" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M2 10v9h18v-9" stroke="currentColor" stroke-width="1.1" fill="none"/></svg>Education Experience</h2>
         <ul class="card-list">
           <li><strong>2024.08 - 2029.05</strong> (Expected), RPI<br>Ph.D in Computer &amp; System Engineering<br>Adviser: <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a></li>
           <li><strong>2023.03 - 2023.07</strong>, University of California, Irvine<br>Exchange Student</li>
@@ -387,15 +1280,17 @@
         </ul>
       </section>
 
-      <section class="home-section" id="industrial-experience">
-        <h2>Industrial Experience</h2>
+      <section class="home-section" id="intern-experience">
+        <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="12" stroke="#e8a0a8" stroke-width="2" fill="none"/><circle cx="28" cy="28" r="6" fill="#f0c0c8"/></svg></div>
+        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 22V8l8-4 8 4v14" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M4 12h16M9 12v10M13 12v10" stroke="currentColor" stroke-width="1" fill="none"/></svg>Intern Experience</h2>
         <ul class="card-list">
           <li><strong>2025.05 - 2025.08</strong>, <strong>IBM Research</strong><br>Research Extern<br>Research on <strong>Uncertainty Quantification and Reasoning for LLMs</strong><br>Mentor: <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a></li>
         </ul>
       </section>
 
       <section class="home-section" id="publications">
-        <h2>Publications</h2>
+        <div class="section-deco section-deco--bl" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 40 L8 12 L24 4 L40 12 L40 40 L8 40Z" stroke="#a890c8" stroke-width="1.5" fill="none"/><path d="M8 24 L40 24 M16 12 L16 40 M32 12 L32 40" stroke="#b8a0d8" stroke-width="1" fill="none"/></svg></div>
+        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 2h10v16H6z" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M6 6h10M6 10h8M6 14h6" stroke="currentColor" stroke-width="0.9" fill="none"/></svg>Publications</h2>
         <ul class="card-list">
           <li><strong>Wang Ma</strong>, Hanjing Wang, Yufei Zhang, Darsha Udayanga, Qiang Ji.<br><strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision.</strong><br><em>CVPR 2026.</em><br>PDF (coming soon)</li>
           <li><strong>Wang Ma</strong>, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham, Harsha Kokel, Qiang Ji.<br><strong>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles.</strong><br><em>AAAI 2026 AIR-FM Workshop.</em><br><a href="https://openreview.net/forum?id=jfq9DUrW90#discussion">PDF</a> (extended version submitted to ICML 2026)</li>
@@ -403,7 +1298,8 @@
       </section>
 
       <section class="home-section" id="more">
-        <h2>More</h2>
+        <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><path d="M28 4l4 12 12 2-8 8 2 12-10-6-10 6 2-12-8-8 12-2 4-12z" fill="#d4b868" opacity="0.9"/></svg></div>
+        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11 2l2 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1 2-6z" stroke="currentColor" stroke-width="1" fill="none" stroke-linejoin="round"/></svg>More</h2>
         <ul class="more-list">
           <li><strong>Baseball</strong> I’m a passionate fan of <strong>MLB</strong>, <strong>NPB</strong>, and Japan’s <strong>National High School Baseball Tournament (Koshien)</strong>. My favorite NPB team is <a href="https://www.fighters.co.jp/"><em>Hokkaido Nippon-Ham Fighters</em></a>, where <strong>Shohei Ohtani</strong> began his professional career in 2013. I’m also a big supporter of <strong>Ōmi High School</strong>, a rising baseball powerhouse from <strong>Shiga Prefecture</strong>. You can check out some highlights <a href="https://www.bilibili.com/video/BV1bF411a7B4/?spm_id_from=333.999.0.0&vd_source=39c9e2f0249c14d448a63ad2dec02137">here</a> — their blue uniforms shine brighter than the August sky.
             <ul>
@@ -414,6 +1310,12 @@
           <li>I’m from Baoji, Shaanxi Province, a region that served as the heart of ancient China for much of its history. I enjoy reading about its rich past, especially the <em>Pre-Qin</em> era and the vibrant <em>Warring States period</em>, known for the flourishing of the Hundred Schools of Thought.</li>
         </ul>
       </section>
+      <div class="grass-bottom" aria-hidden="true">
+        <svg viewBox="0 0 800 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 48 Q25 28 50 48 Q75 24 100 48 Q125 30 150 48 Q175 22 200 48 Q225 28 250 48 Q275 26 300 48 Q325 30 350 48 Q375 24 400 48 Q425 28 450 48 Q475 26 500 48 Q525 30 550 48 Q575 24 600 48 Q625 28 650 48 Q675 26 700 48 Q725 30 750 48 Q775 24 800 48 L800 56 L0 56 Z" fill="url(#contentGrass)"/>
+          <defs><linearGradient id="contentGrass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c0e8cc"/><stop offset="1" stop-color="#98d0a8"/></linearGradient></defs>
+        </svg>
+      </div>
     </article>
   </main>
 
@@ -464,6 +1366,34 @@
       document.addEventListener('keydown', function (e) {
         if (e.key !== 'Escape') return;
         closeModal(document.querySelector('.qr-modal.is-open'));
+      });
+
+      document.querySelectorAll('.animal-run').forEach(function (el) {
+        el.addEventListener('click', function () {
+          if (this.classList.contains('animal-run--scared')) return;
+          var rect = this.getBoundingClientRect();
+          var runRight = this.classList.contains('animal-run--top-left') || this.classList.contains('animal-run--bottom-left');
+          var runLeft = this.classList.contains('animal-run--top-right') || this.classList.contains('animal-run--bottom-right');
+          var runDown = this.classList.contains('animal-run--left-top') || this.classList.contains('animal-run--right-top');
+          var runUp = this.classList.contains('animal-run--left-bottom') || this.classList.contains('animal-run--right-bottom');
+          this.classList.add('animal-run--scared');
+          this.style.left = rect.left + 'px';
+          this.style.top = rect.top + 'px';
+          this.style.right = 'auto';
+          this.style.bottom = 'auto';
+          this.style.transform = 'translate(0, 0)';
+          this.style.transition = 'transform 1.2s linear';
+          var target = '';
+          if (runRight) target = 'translate(calc(100vw + 120px), 0)';
+          else if (runLeft) target = 'translate(calc(-100vw - 120px), 0)';
+          else if (runDown) target = 'translate(0, calc(100vh + 120px))';
+          else if (runUp) target = 'translate(0, calc(-100vh - 120px))';
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              el.style.transform = target;
+            });
+          });
+        });
       });
     })();
   </script>
