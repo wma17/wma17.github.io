@@ -37,13 +37,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "/wma17"
+  github           : "wma17"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : # e.g., "linkedin username"
+  linkedin         : "https://www.linkedin.com/in/wang-ma-367748327/"
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
   orcid            : # e.g., "https://orcid.org/xxxx"
   pinterest        :
@@ -55,7 +55,8 @@ author:
   vine             :
   weibo            :
   xing             :
-  youtube          : "/@wangma4424"
+  youtube          : "https://www.youtube.com/@wangma4424"
+  bilibili         : "https://space.bilibili.com/237775327/video"
   wikipedia        :
 
 

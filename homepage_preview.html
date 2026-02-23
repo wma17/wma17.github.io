@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wang Ma - Homepage Preview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --home-bg-top: #f6edff;
+      --home-bg-bottom: #ffeef7;
+      --home-card-bg: #ffffff;
+      --home-card-border: #dddaf8;
+      --home-title: #2f2651;
+      --home-text: #3b3a5f;
+      --home-accent: #3a74c4;
+      --home-shadow: 0 14px 36px rgba(70, 58, 128, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      color: var(--home-text);
+      background:
+        radial-gradient(circle at 84% 8%, rgba(101, 164, 220, 0.22) 0%, rgba(101, 164, 220, 0) 38%),
+        radial-gradient(circle at 12% 88%, rgba(120, 180, 167, 0.2) 0%, rgba(120, 180, 167, 0) 35%),
+        linear-gradient(165deg, var(--home-bg-top) 0%, var(--home-bg-bottom) 100%);
+      line-height: 1.72;
+      font-weight: 430;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body:before,
+    body:after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    body:before {
+      width: 780px;
+      height: 220px;
+      top: 78px;
+      right: -140px;
+      border-radius: 60% 40% 55% 45%;
+      transform: rotate(-7deg);
+      background: linear-gradient(90deg, rgba(192, 153, 242, 0.22), rgba(120, 184, 232, 0.18));
+    }
+
+    body:after {
+      width: 840px;
+      height: 240px;
+      bottom: 70px;
+      left: -240px;
+      border-radius: 44% 56% 62% 38%;
+      transform: rotate(8deg);
+      background: linear-gradient(90deg, rgba(122, 190, 194, 0.2), rgba(221, 159, 220, 0.18));
+    }
+
+    a {
+      color: var(--home-accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(58, 116, 196, 0.28);
+      transition: all 0.18s ease;
+    }
+
+    a:hover { color: #275aa0; border-bottom-color: rgba(39, 90, 160, 0.55); }
+
+    .masthead {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e3dbf5;
+    }
+
+    .masthead__inner {
+      width: min(1500px, 98vw);
+      margin: 0 auto;
+      padding: 0.55rem 0.3rem;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .nav-list a {
+      display: inline-block;
+      padding: 0.35rem 0.58rem;
+      border: none;
+      border-radius: 10px;
+      color: #4a426c;
+      font-weight: 560;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-list a:hover { background: #efe8ff; color: #2b5ea8; }
+
+    .layout {
+      width: min(1500px, 98vw);
+      margin: 1rem auto 2rem;
+      display: grid;
+      gap: 1.15rem;
+    }
+
+    .sidebar {
+      background: linear-gradient(170deg, rgba(255, 255, 255, 0.98), rgba(246, 242, 255, 0.96));
+      border: 1px solid #e2d8f6;
+      border-radius: 16px;
+      box-shadow: 0 14px 32px rgba(92, 73, 143, 0.12);
+      padding: 0.95rem;
+      align-self: start;
+    }
+
+    .avatar {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid #e2d7f3;
+      display: block;
+    }
+
+    .name { margin: 0.75rem 0 0.1rem; font-size: 1.2rem; color: var(--home-title); font-weight: 620; }
+    .bio { margin: 0; color: #5f5688; font-weight: 520; }
+    .meta { margin: 0.6rem 0 0.8rem; color: #6b648a; font-size: 0.95rem; }
+
+    .social { list-style: none; margin: 0; padding: 0; }
+    .social li { margin-bottom: 0.35rem; }
+    .social a,
+    .qr-trigger {
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: #4c4480;
+      font-weight: 500;
+      background: transparent;
+      padding: 0.16rem 0;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .social a:hover,
+    .qr-trigger:hover { color: #2c63b4; }
+
+    .content {
+      position: relative;
+      overflow: hidden;
+      background: var(--home-card-bg);
+      border: 1px solid var(--home-card-border);
+      border-radius: 18px;
+      box-shadow: var(--home-shadow);
+      padding: 1.35rem;
+    }
+
+    .content:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(84, 69, 139, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(84, 69, 139, 0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .content:after {
+      content: "";
+      position: absolute;
+      left: -12%;
+      right: -12%;
+      top: -24px;
+      height: 86px;
+      border-radius: 0 0 45% 55% / 0 0 100% 100%;
+      background: linear-gradient(90deg, rgba(204, 173, 246, 0.16), rgba(138, 194, 230, 0.16));
+      pointer-events: none;
+    }
+
+    .content > * { position: relative; z-index: 1; }
+
+    .content p,
+    .content li { font-weight: 430; }
+
+    .content strong,
+    .content b { font-weight: 600; color: #2f2c59; }
+
+    .home-hero {
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding: 1.3rem;
+      border-radius: 16px;
+      border: 1px solid #ddd5f4;
+      background:
+        radial-gradient(circle at 92% 8%, rgba(178, 141, 233, 0.16), transparent 42%),
+        linear-gradient(145deg, #fbf8ff 0%, #f0f8ff 56%, #fdf1f7 100%);
+    }
+
+    .home-hero:after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 16px;
+      width: 108px;
+      height: 108px;
+      border-radius: 22px;
+      border: 1px solid rgba(146, 118, 204, 0.28);
+      background: linear-gradient(140deg, rgba(174, 140, 232, 0.14), rgba(107, 182, 221, 0.1));
+      transform: rotate(10deg);
+      pointer-events: none;
+    }
+
+    .home-hero p:first-child {
+      color: var(--home-title);
+      font-size: 1.1rem;
+      font-weight: 570;
+      letter-spacing: 0.005em;
+      margin-top: 0;
+    }
+
+    .home-section { margin-top: 1.7rem; }
+
+    .home-section h2 {
+      margin: 0 0 1rem;
+      padding: 0.4rem 0 0.6rem;
+      color: var(--home-title);
+      font-size: 1.2rem;
+      font-weight: 620;
+      letter-spacing: 0.008em;
+      border-bottom: 2px solid #dfd7f4;
+    }
+
+    .card-list { list-style: none; margin: 0; padding: 0; }
+
+    .card-list > li {
+      margin: 0 0 0.9rem;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid #e7def8;
+      border-radius: 12px;
+      background: linear-gradient(160deg, #ffffff, #fcf8ff);
+    }
+
+    .news-list { margin: 0; padding-left: 1.1rem; }
+    .news-list li { margin-bottom: 0.55rem; }
+
+    .older-news {
+      margin-top: 0.3rem;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #ddd6f2;
+      border-radius: 12px;
+      background: linear-gradient(140deg, #fbf8ff, #f3f8ff);
+    }
+
+    .older-news summary { cursor: pointer; color: var(--home-accent); font-weight: 600; }
+    .older-news[open] summary { margin-bottom: 0.45rem; }
+
+    .more-list { margin: 0; padding-left: 1.1rem; }
+    .more-list ul { margin-top: 0.45rem; }
+
+    .qr-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      z-index: 2200;
+    }
+
+    .qr-modal.is-open { display: block; }
+    .qr-modal__backdrop { position: absolute; inset: 0; background: rgba(12, 23, 38, 0.55); }
+
+    .qr-modal__dialog {
+      position: relative;
+      width: min(420px, 92vw);
+      margin: 7vh auto;
+      border-radius: 14px;
+      background: #fff;
+      padding: 1rem;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.26);
+    }
+
+    .qr-modal__dialog img { width: 100%; border-radius: 10px; display: block; }
+
+    .qr-modal__close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 32px;
+      height: 32px;
+      border: 0;
+      border-radius: 50%;
+      background: #2e2c66;
+      color: #fff;
+      font-size: 20px;
+      line-height: 32px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 960px) {
+      .layout { grid-template-columns: 290px minmax(0, 1fr); gap: 1.35rem; }
+      .sidebar { position: sticky; top: 78px; }
+      .content { padding: 2rem; }
+    }
+
+    @media (max-width: 767px) {
+      .home-hero:after { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__inner">
+      <ul class="nav-list">
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#education-experience">Experience</a></li>
+        <li><a href="#industrial-experience">Industrial</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#more">More</a></li>
+        <li><a href="_pages/CV.pdf">CV</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <img class="avatar" src="images/me.jpg" alt="Wang Ma">
+      <h1 class="name">Wang Ma</h1>
+      <p class="bio">Ph.D student @ RPI</p>
+      <p class="meta">Identity: Ph.D Student<br>Email: maw6@rpi.edu<br>Location: Troy, NY</p>
+      <ul class="social">
+        <li><a href="mailto:maw6@rpi.edu"><i class="fa-solid fa-envelope"></i> Email</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=rD2pPFUAAAAJ"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/wang-ma-367748327/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://github.com/wma17"><i class="fa-brands fa-github"></i> Github</a></li>
+        <li><a href="https://twitter.com/WangMa70190365"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a></li>
+        <li><a href="https://space.bilibili.com/237775327/video"><i class="fa-solid fa-circle-play"></i> Bilibili</a></li>
+        <li><a href="https://www.youtube.com/@wangma4424"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+        <li><button type="button" class="qr-trigger" data-target="modal-wechat"><i class="fa-solid fa-comments"></i> WeChat</button></li>
+        <li><button type="button" class="qr-trigger" data-target="modal-qq"><i class="fa-solid fa-qrcode"></i> QQ</button></li>
+      </ul>
+    </aside>
+
+    <article class="content">
+      <span id="about-me"></span>
+      <section class="home-hero">
+        <p>Hello, I am Wang Ma (马旺), a second-year Ph.D student at Rensselaer Polytechnic Institute (<a href="https://www.rpi.edu/">RPI</a>) advised by <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>. Before coming to RPI, I obtained my B.S. from Southern University of Science and Technology (<a href="https://sustech.edu.cn/en/">SUSTech</a>), advised by <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>.</p>
+        <p>I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning and their applications to Computer Vision and Natural Language Processing. Recently, my focus is specifically Uncertainty Quantification and Uncertainty Disentanglement for single models and pre-trained models (such as pre-trained large vision or language models), and Knowledge-augmented Bayesian Deep Learning.</p>
+      </section>
+
+      <section class="home-section" id="news">
+        <h2>News</h2>
+        <ul class="news-list">
+          <li><strong>Feb 2026</strong>: My first-authored paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was accepted to CVPR 2026.</li>
+          <li><strong>Jan 2026</strong>: Two papers were submitted to ICML 2026, related to uncertianty decomposition and black-box uncertianty quantification.</li>
+          <li><strong>Nov 2025</strong>: Two papers were submitted to CVPR 2026, related to Knowledge-augmented Bayesian Deep Learning and causal explanation.</li>
+        </ul>
+        <details class="older-news">
+          <summary>Older News</summary>
+          <ul class="news-list">
+            <li><strong>Nov 2025</strong>: My first-authored paper, <a href="https://openreview.net/forum?id=jfq9DUrW90#discussion"><em>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</em></a>, was accepted to the <a href="https://llmrel.github.io/">AAAI 2026 AIR-FM Workshop</a>.</li>
+            <li><strong>Aug 2025</strong>: I completed my summer externship at IBM.</li>
+            <li><strong>Mar 2025</strong>: I joined IBM as a visiting student researcher working on uncertainty quantification and reasoning with LLMs under <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a>.</li>
+            <li><strong>Aug 2024</strong>: I started my PhD journey at RPI.</li>
+            <li><strong>Jul 2024</strong>: I organized a seminar titled "AI: Optimization, Theory & Responsibility" at SUSTech; details at the <a href="https://wma17.github.io/24summer/">seminar page</a>.</li>
+            <li><strong>Jul 2024</strong>: I started my journey as a visiting student in <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>'s group at SUSTech.</li>
+            <li><strong>Jun 2024</strong>: I graduated from SUSTech.</li>
+            <li><strong>Mar 2024</strong>: I accepted the offer from RPI and will begin my Ph.D. under <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>.</li>
+          </ul>
+        </details>
+      </section>
+
+      <section class="home-section" id="education-experience">
+        <h2>Education Experience</h2>
+        <ul class="card-list">
+          <li><strong>2024.08 - 2029.05</strong> (Expected), RPI<br>Ph.D in Computer &amp; System Engineering<br>Adviser: <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a></li>
+          <li><strong>2023.03 - 2023.07</strong>, University of California, Irvine<br>Exchange Student</li>
+          <li><strong>2020.08 - 2024.07</strong>, SUSTech<br>B.S. in Data Science and Big Data Technology<br>Thesis Adviser: <a href="https://wangcmath.github.io/">Prof. Chao Wang</a></li>
+        </ul>
+      </section>
+
+      <section class="home-section" id="industrial-experience">
+        <h2>Industrial Experience</h2>
+        <ul class="card-list">
+          <li><strong>2025.05 - 2025.08</strong>, <strong>IBM Research</strong><br>Research Extern<br>Research on <strong>Uncertainty Quantification and Reasoning for LLMs</strong><br>Mentor: <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a></li>
+        </ul>
+      </section>
+
+      <section class="home-section" id="publications">
+        <h2>Publications</h2>
+        <ul class="card-list">
+          <li><strong>Wang Ma</strong>, Hanjing Wang, Yufei Zhang, Darsha Udayanga, Qiang Ji.<br><strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision.</strong><br><em>CVPR 2026.</em><br>PDF (coming soon)</li>
+          <li><strong>Wang Ma</strong>, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham, Harsha Kokel, Qiang Ji.<br><strong>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles.</strong><br><em>AAAI 2026 AIR-FM Workshop.</em><br><a href="https://openreview.net/forum?id=jfq9DUrW90#discussion">PDF</a> (extended version submitted to ICML 2026)</li>
+        </ul>
+      </section>
+
+      <section class="home-section" id="more">
+        <h2>More</h2>
+        <ul class="more-list">
+          <li><strong>Baseball</strong> I’m a passionate fan of <strong>MLB</strong>, <strong>NPB</strong>, and Japan’s <strong>National High School Baseball Tournament (Koshien)</strong>. My favorite NPB team is <a href="https://www.fighters.co.jp/"><em>Hokkaido Nippon-Ham Fighters</em></a>, where <strong>Shohei Ohtani</strong> began his professional career in 2013. I’m also a big supporter of <strong>Ōmi High School</strong>, a rising baseball powerhouse from <strong>Shiga Prefecture</strong>. You can check out some highlights <a href="https://www.bilibili.com/video/BV1bF411a7B4/?spm_id_from=333.999.0.0&vd_source=39c9e2f0249c14d448a63ad2dec02137">here</a> — their blue uniforms shine brighter than the August sky.
+            <ul>
+              <li>I led a project analyzing <strong>MLB Statcast data</strong> in my undergraduate <em>Data Science Project</em> course: <a href="https://wma17.github.io/_pages/BaseballAnalysis_slides.pdf">Slides</a>, <a href="https://wma17.github.io/_pages/BaseballAnalysis_report.pdf">Report</a>.</li>
+            </ul>
+          </li>
+          <li>I am a <strong>speedcuber</strong> who has participated in over 30 official competitions, with <strong>Square-1</strong> being my best event. I am currently <strong>ranked No. 3 in mainland China</strong> (as of Nov 2025) and earned <strong>two bronze medals at the Chinese National Championships</strong> in 2017 and 2018. You can find recordings on my <a href="https://space.bilibili.com/237775327/video">Bilibili channel</a>, and official results on my <a href="https://www.worldcubeassociation.org/persons/2016MAWA01">WCA profile</a>. I devoted much of my high school and early university years to Rubik's Cube practice. In May 2021, I achieved my personal best in the Square-1 event and <a href="https://www.worldcubeassociation.org/results/rankings/sq1/single?region=China">reached No. 2 in mainland China</a>. Through years of pursuing something I truly love, I've learned perseverance — a quality I now bring into my research with the same passion and dedication.</li>
+          <li>I’m from Baoji, Shaanxi Province, a region that served as the heart of ancient China for much of its history. I enjoy reading about its rich past, especially the <em>Pre-Qin</em> era and the vibrant <em>Warring States period</em>, known for the flourishing of the Hundred Schools of Thought.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <div id="modal-qq" class="qr-modal" aria-hidden="true">
+    <div class="qr-modal__backdrop"></div>
+    <div class="qr-modal__dialog" role="dialog" aria-modal="true" aria-label="QQ QR">
+      <button type="button" class="qr-modal__close" data-close-modal>&times;</button>
+      <img src="images/contact/qq.jpg" alt="QQ QR code">
+    </div>
+  </div>
+
+  <div id="modal-wechat" class="qr-modal" aria-hidden="true">
+    <div class="qr-modal__backdrop"></div>
+    <div class="qr-modal__dialog" role="dialog" aria-modal="true" aria-label="WeChat QR">
+      <button type="button" class="qr-modal__close" data-close-modal>&times;</button>
+      <img src="images/contact/wechat.jpg" alt="WeChat QR code">
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function openModal(id) {
+        var modal = document.getElementById(id);
+        if (!modal) return;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeModal(modal) {
+        if (!modal) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      document.addEventListener('click', function (e) {
+        var trigger = e.target.closest('.qr-trigger');
+        if (trigger) {
+          openModal(trigger.getAttribute('data-target'));
+          return;
+        }
+
+        var closeBtn = e.target.closest('[data-close-modal], .qr-modal__backdrop');
+        if (closeBtn) {
+          closeModal(closeBtn.closest('.qr-modal'));
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        closeModal(document.querySelector('.qr-modal.is-open'));
+      });
+    })();
+  </script>
+</body>
+</html>
