@@ -1240,7 +1240,9 @@
 	      margin-top: 1.1rem;
 	    }
 
-	    .hero-tags span {
+	    .research-tag {
+	      position: relative;
+	      display: inline-flex;
 	      padding: 0.35rem 0.7rem;
 	      border-radius: 999px;
 	      border: 1px solid rgba(111, 87, 151, 0.22);
@@ -1248,6 +1250,33 @@
 	      color: var(--violet);
 	      font-size: 0.86rem;
 	      font-weight: 700;
+	    }
+
+	    .hero-tags[data-reveal-enabled="true"] .research-tag {
+	      cursor: help;
+	    }
+
+	    .tag-note {
+	      display: none;
+	      position: absolute;
+	      left: 0;
+	      top: calc(100% + 0.45rem);
+	      z-index: 20;
+	      width: min(260px, 72vw);
+	      padding: 0.65rem 0.75rem;
+	      border: 1px solid var(--line);
+	      border-radius: 8px;
+	      background: var(--paper);
+	      box-shadow: 0 12px 24px rgba(70, 45, 30, 0.12);
+	      color: var(--ink-muted);
+	      font-size: 0.82rem;
+	      font-weight: 520;
+	      line-height: 1.45;
+	    }
+
+	    .hero-tags[data-reveal-enabled="true"] .research-tag:hover .tag-note,
+	    .hero-tags[data-reveal-enabled="true"] .research-tag:focus-within .tag-note {
+	      display: block;
 	    }
 
 	    .home-section {
@@ -1311,7 +1340,9 @@
 	      margin: 0 0.5rem 0.35rem 0;
 	      padding: 0.1rem 0.45rem;
 	      border-radius: 999px;
+	      border: 1px solid rgba(201, 161, 90, 0.22);
 	      background: var(--wheat-soft);
+	      box-shadow: inset 0 0 0 1px rgba(255, 253, 248, 0.65);
 	      color: var(--brown);
 	      font-size: 0.78rem;
 	      font-weight: 800;
@@ -1895,11 +1926,11 @@
 	          <h1>Wang Ma <span>马旺</span></h1>
 	          <p class="hero-lead">I am a second-year Ph.D student at Rensselaer Polytechnic Institute (<a href="https://www.rpi.edu/">RPI</a>) advised by <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>. Before coming to RPI, I obtained my B.S. from Southern University of Science and Technology (<a href="https://sustech.edu.cn/en/">SUSTech</a>), advised by <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>.</p>
 	          <p>I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning and their applications to Computer Vision and Natural Language Processing. Recently, my focus is specifically Uncertainty Quantification and Uncertainty Disentanglement for single models and pre-trained models (such as pre-trained large vision or language models), and Knowledge-augmented Bayesian Deep Learning.</p>
-	          <div class="hero-tags" aria-label="Research themes">
-	            <span>uncertainty quantification</span>
-	            <span>Bayesian deep learning</span>
-	            <span>knowledge augmented bayesian deep learning</span>
-	          </div>
+		          <div class="hero-tags" aria-label="Research themes" data-reveal-enabled="false">
+		            <span class="research-tag">uncertainty quantification<span class="tag-note" aria-hidden="true"></span></span>
+		            <span class="research-tag">Bayesian deep learning<span class="tag-note" aria-hidden="true"></span></span>
+		            <span class="research-tag">knowledge augmented bayesian deep learning<span class="tag-note" aria-hidden="true"></span></span>
+		          </div>
 	        </div>
 		      </section>
 
