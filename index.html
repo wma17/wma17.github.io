@@ -986,6 +986,111 @@
 	      z-index: 0;
 	    }
 
+	    body.is-play-mode .sparkle {
+	      opacity: 0.58;
+	    }
+
+	    body.is-play-mode .animal-run {
+	      display: block !important;
+	      z-index: 0;
+	      opacity: 0.68;
+	      font-size: 21px;
+	      filter: drop-shadow(0 2px 3px rgba(110, 75, 51, 0.16));
+	    }
+
+	    body.is-play-mode .bg-pattern {
+	      opacity: 0.28;
+	    }
+
+	    .click-spark {
+	      position: fixed;
+	      left: 0;
+	      top: 0;
+	      z-index: 2300;
+	      width: var(--spark-size, 6px);
+	      height: var(--spark-size, 6px);
+	      border-radius: 999px;
+	      pointer-events: none;
+	      background: var(--spark-color, var(--wheat));
+	      box-shadow:
+	        0 0 0 1px rgba(255, 253, 248, 0.82),
+	        0 0 13px rgba(201, 161, 90, 0.24);
+	      transform: translate(-50%, -50%) scale(0.9);
+	      animation: click-spark-out 680ms ease-out forwards;
+	    }
+
+	    @keyframes click-spark-out {
+	      0% {
+	        opacity: 0.92;
+	        transform: translate(-50%, -50%) scale(0.9);
+	      }
+	      100% {
+	        opacity: 0;
+	        transform: translate(calc(-50% + var(--spark-x)), calc(-50% + var(--spark-y))) scale(0.15);
+	      }
+	    }
+
+	    .play-toggle {
+	      position: fixed;
+	      right: 1rem;
+	      bottom: 1rem;
+	      z-index: 2150;
+	      display: inline-flex;
+	      align-items: center;
+	      justify-content: center;
+	      width: 42px;
+	      height: 42px;
+	      border: 1px solid rgba(110, 75, 51, 0.22);
+	      border-radius: 999px;
+	      color: var(--brown);
+	      background: rgba(255, 253, 248, 0.86);
+	      box-shadow: 0 10px 24px rgba(70, 45, 30, 0.13);
+	      cursor: pointer;
+	      backdrop-filter: blur(8px);
+	      transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+	    }
+
+	    .play-toggle:hover,
+	    .play-toggle:focus-visible {
+	      color: var(--violet);
+	      transform: translateY(-2px);
+	      box-shadow: 0 14px 28px rgba(70, 45, 30, 0.16);
+	    }
+
+	    .play-toggle:focus-visible {
+	      outline: 3px solid rgba(111, 87, 151, 0.24);
+	      outline-offset: 3px;
+	    }
+
+	    .play-toggle[aria-pressed="true"] {
+	      color: var(--paper);
+	      border-color: rgba(111, 87, 151, 0.55);
+	      background: linear-gradient(135deg, var(--violet), var(--rose));
+	    }
+
+	    .play-toggle[aria-pressed="true"] i {
+	      animation: play-toggle-glow 1.6s ease-in-out infinite;
+	    }
+
+	    @keyframes play-toggle-glow {
+	      0%, 100% {
+	        transform: rotate(-8deg) scale(1);
+	      }
+	      50% {
+	        transform: rotate(8deg) scale(1.12);
+	      }
+	    }
+
+	    @media (prefers-reduced-motion: reduce) {
+	      .click-spark,
+	      .play-toggle[aria-pressed="true"] i {
+	        animation: none;
+	      }
+	      body.is-play-mode .animal-run {
+	        animation: none !important;
+	      }
+	    }
+
 	    a {
 	      color: var(--violet);
 	      border-bottom: 1px solid rgba(111, 87, 151, 0.28);
@@ -1680,6 +1785,12 @@
 	      .stamp-button {
 	        flex-basis: calc(50% - 0.35rem);
 	      }
+	      .play-toggle {
+	        right: 0.75rem;
+	        bottom: 0.75rem;
+	        width: 38px;
+	        height: 38px;
+	      }
 	      .social {
 	        grid-template-columns: repeat(5, minmax(0, 1fr));
 	      }
@@ -2210,6 +2321,10 @@
     </article>
   </main>
 
+  <button type="button" class="play-toggle" aria-label="Toggle playground mode" aria-pressed="false" title="Playground mode">
+    <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+  </button>
+
   <div id="modal-qq" class="qr-modal" aria-hidden="true">
     <div class="qr-modal__backdrop"></div>
     <div class="qr-modal__dialog" role="dialog" aria-modal="true" aria-label="QQ QR">
@@ -2289,6 +2404,68 @@
 
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') clearStampNote();
+      });
+
+      var playToggle = document.querySelector('.play-toggle');
+      var playModeKey = 'wang-home-play-mode';
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var sparkColors = ['#6f5797', '#a9cdb2', '#c9a15a', '#d88eaa'];
+
+      function setPlayMode(isOn) {
+        document.body.classList.toggle('is-play-mode', isOn);
+        if (playToggle) {
+          playToggle.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+        }
+      }
+
+      if (playToggle) {
+        try {
+          setPlayMode(window.localStorage.getItem(playModeKey) === 'true');
+        } catch (error) {
+          setPlayMode(false);
+        }
+
+        playToggle.addEventListener('click', function () {
+          var isOn = playToggle.getAttribute('aria-pressed') !== 'true';
+          setPlayMode(isOn);
+          try {
+            window.localStorage.setItem(playModeKey, isOn ? 'true' : 'false');
+          } catch (error) {
+            // Local storage can be unavailable in some privacy modes.
+          }
+        });
+      }
+
+      function shouldSkipSparks(target) {
+        return !!target.closest('a, button, summary, details, input, textarea, select, label, .qr-modal, .stamp-case');
+      }
+
+      function createClickSpark(x, y, index, total, isPlayMode) {
+        var spark = document.createElement('span');
+        var angle = (Math.PI * 2 * index / total) + (Math.random() * 0.45);
+        var distance = (isPlayMode ? 24 : 15) + Math.random() * (isPlayMode ? 20 : 14);
+        var color = sparkColors[(index + Math.floor(Math.random() * sparkColors.length)) % sparkColors.length];
+        spark.className = 'click-spark';
+        spark.setAttribute('aria-hidden', 'true');
+        spark.style.left = x + 'px';
+        spark.style.top = y + 'px';
+        spark.style.setProperty('--spark-x', Math.cos(angle) * distance + 'px');
+        spark.style.setProperty('--spark-y', Math.sin(angle) * distance + 'px');
+        spark.style.setProperty('--spark-color', color);
+        spark.style.setProperty('--spark-size', (isPlayMode ? 7 : 5) + Math.random() * 3 + 'px');
+        document.body.appendChild(spark);
+        spark.addEventListener('animationend', function () {
+          spark.remove();
+        }, { once: true });
+      }
+
+      document.addEventListener('click', function (e) {
+        if (reduceMotion || shouldSkipSparks(e.target)) return;
+        var isPlayMode = document.body.classList.contains('is-play-mode');
+        var count = isPlayMode ? 7 : 4;
+        for (var i = 0; i < count; i += 1) {
+          createClickSpark(e.clientX, e.clientY, i, count, isPlayMode);
+        }
       });
 
       document.querySelectorAll('.animal-run').forEach(function (el) {
