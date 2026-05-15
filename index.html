@@ -1365,6 +1365,153 @@
 	      margin-bottom: 0.7rem;
 	    }
 
+	    .stamp-case {
+	      margin-top: 0.85rem;
+	      padding: 0.8rem;
+	      border: 1px solid rgba(110, 75, 51, 0.16);
+	      border-radius: 8px;
+	      background:
+	        linear-gradient(135deg, rgba(246, 237, 216, 0.5), rgba(248, 231, 238, 0.35)),
+	        rgba(255, 253, 248, 0.7);
+	      box-shadow: inset 0 0 0 1px rgba(255, 253, 248, 0.7);
+	    }
+
+	    .stamp-strip {
+	      display: flex;
+	      flex-wrap: wrap;
+	      gap: 0.62rem;
+	      align-items: stretch;
+	    }
+
+	    .stamp-button {
+	      --stamp: var(--violet);
+	      --stamp-bg: rgba(233, 224, 244, 0.62);
+	      position: relative;
+	      flex: 1 1 144px;
+	      min-height: 68px;
+	      padding: 0.58rem 0.68rem;
+	      border: 2px solid var(--stamp);
+	      border-radius: 7px;
+	      color: var(--stamp);
+	      background:
+	        linear-gradient(145deg, rgba(255, 253, 248, 0.92), var(--stamp-bg));
+	      box-shadow: 2px 3px 0 rgba(70, 45, 30, 0.1);
+	      cursor: pointer;
+	      font: inherit;
+	      text-align: left;
+	      transform: rotate(var(--tilt, -1deg));
+	      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+	    }
+
+	    .stamp-button::after {
+	      content: "";
+	      position: absolute;
+	      inset: 5px;
+	      border: 1px dashed currentColor;
+	      border-radius: 4px;
+	      opacity: 0.42;
+	      pointer-events: none;
+	    }
+
+	    .stamp-button:hover,
+	    .stamp-button:focus-visible,
+	    .stamp-button[aria-expanded="true"] {
+	      transform: translateY(-2px) rotate(0deg);
+	      box-shadow: 3px 5px 0 rgba(70, 45, 30, 0.13);
+	      background:
+	        linear-gradient(145deg, rgba(255, 253, 248, 0.98), var(--stamp-bg));
+	    }
+
+	    .stamp-button:focus-visible {
+	      outline: 3px solid rgba(111, 87, 151, 0.2);
+	      outline-offset: 3px;
+	    }
+
+	    .stamp-button__eyebrow,
+	    .stamp-button__text {
+	      position: relative;
+	      z-index: 1;
+	      display: block;
+	    }
+
+	    .stamp-button__eyebrow {
+	      margin-bottom: 0.12rem;
+	      font-size: 0.66rem;
+	      font-weight: 850;
+	      text-transform: uppercase;
+	      color: var(--brown);
+	      opacity: 0.86;
+	    }
+
+	    .stamp-button__text {
+	      font-size: 0.96rem;
+	      font-weight: 850;
+	      line-height: 1.22;
+	    }
+
+	    .stamp-button--wheat {
+	      --stamp: var(--wheat);
+	      --stamp-bg: rgba(246, 237, 216, 0.82);
+	      --tilt: 1.1deg;
+	    }
+
+	    .stamp-button--sage {
+	      --stamp: #79aa84;
+	      --stamp-bg: rgba(237, 246, 238, 0.9);
+	      --tilt: -0.6deg;
+	    }
+
+	    .stamp-button--rose {
+	      --stamp: var(--rose);
+	      --stamp-bg: rgba(248, 231, 238, 0.86);
+	      --tilt: 0.7deg;
+	    }
+
+	    .stamp-button--brown {
+	      --stamp: var(--brown);
+	      --stamp-bg: rgba(251, 242, 223, 0.9);
+	      --tilt: -1.2deg;
+	    }
+
+	    .stamp-note {
+	      margin: 0.72rem 0 0;
+	      padding: 0.72rem 0.85rem;
+	      border-left: 4px solid var(--violet);
+	      border-radius: 8px;
+	      background: rgba(255, 253, 248, 0.9);
+	      color: var(--ink-muted);
+	      box-shadow: 2px 3px 0 rgba(216, 142, 170, 0.1);
+	      animation: stamp-note-in 0.18s ease-out both;
+	    }
+
+	    .stamp-note[hidden] {
+	      display: none;
+	    }
+
+	    .stamp-note__title {
+	      display: block;
+	      margin-bottom: 0.15rem;
+	      color: var(--ink);
+	      font-weight: 850;
+	    }
+
+	    .stamp-note__copy {
+	      display: block;
+	      font-size: 0.92rem;
+	      line-height: 1.55;
+	    }
+
+	    @keyframes stamp-note-in {
+	      from {
+	        opacity: 0;
+	        transform: translateY(-4px);
+	      }
+	      to {
+	        opacity: 1;
+	        transform: translateY(0);
+	      }
+	    }
+
 	    .card-list {
 	      list-style: none;
 	      margin: 0;
@@ -1529,6 +1676,9 @@
 	      }
 	      #news > .news-list {
 	        grid-template-columns: 1fr;
+	      }
+	      .stamp-button {
+	        flex-basis: calc(50% - 0.35rem);
 	      }
 	      .social {
 	        grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1943,6 +2093,34 @@
           <li><strong>Apr 2026</strong> My CVPR 2026 paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was selected as a Highlight.</li>
           <li><strong>Feb 2026</strong> My first-authored paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was accepted to CVPR 2026.</li>
         </ul>
+        <div class="stamp-case" aria-label="Clickable field stamps">
+          <div class="stamp-strip">
+            <button type="button" class="stamp-button" aria-expanded="false" aria-controls="stamp-note" data-stamp-title="CVPR Highlight" data-stamp-copy="The knowledge-augmented Bayesian deep learning paper earned the CVPR 2026 Highlight mark.">
+              <span class="stamp-button__eyebrow">paper</span>
+              <span class="stamp-button__text">CVPR Highlight</span>
+            </button>
+            <button type="button" class="stamp-button stamp-button--wheat" aria-expanded="false" aria-controls="stamp-note" data-stamp-title="ICML Golden Reviewer" data-stamp-copy="A small review-desk stamp from ICML 2026.">
+              <span class="stamp-button__eyebrow">review</span>
+              <span class="stamp-button__text">ICML Golden Reviewer</span>
+            </button>
+            <button type="button" class="stamp-button stamp-button--sage" aria-expanded="false" aria-controls="stamp-note" data-stamp-title="Redmond Summer" data-stamp-copy="Applied Science Intern at Microsoft, May to August 2026.">
+              <span class="stamp-button__eyebrow">intern</span>
+              <span class="stamp-button__text">Microsoft Redmond</span>
+            </button>
+            <button type="button" class="stamp-button stamp-button--rose" aria-expanded="false" aria-controls="stamp-note" data-stamp-title="IBM Research Visit" data-stamp-copy="Visiting student researcher in 2025, working on uncertainty quantification and reasoning with LLMs.">
+              <span class="stamp-button__eyebrow">research</span>
+              <span class="stamp-button__text">IBM Research</span>
+            </button>
+            <button type="button" class="stamp-button stamp-button--brown" aria-expanded="false" aria-controls="stamp-note" data-stamp-title="AIR-FM Workshop" data-stamp-copy="LLM uncertainty work accepted to the AAAI 2026 AIR-FM Workshop.">
+              <span class="stamp-button__eyebrow">workshop</span>
+              <span class="stamp-button__text">AAAI AIR-FM</span>
+            </button>
+          </div>
+          <p class="stamp-note" id="stamp-note" aria-live="polite" hidden>
+            <strong class="stamp-note__title"></strong>
+            <span class="stamp-note__copy"></span>
+          </p>
+        </div>
         <details class="older-news">
           <summary>Older News</summary>
           <ul class="news-list">
@@ -2079,6 +2257,38 @@
       document.addEventListener('keydown', function (e) {
         if (e.key !== 'Escape') return;
         closeModal(document.querySelector('.qr-modal.is-open'));
+      });
+
+      var stampButtons = Array.prototype.slice.call(document.querySelectorAll('.stamp-button'));
+      var stampNote = document.getElementById('stamp-note');
+      var stampTitle = stampNote ? stampNote.querySelector('.stamp-note__title') : null;
+      var stampCopy = stampNote ? stampNote.querySelector('.stamp-note__copy') : null;
+
+      function clearStampNote() {
+        stampButtons.forEach(function (button) {
+          button.setAttribute('aria-expanded', 'false');
+        });
+        if (stampNote) {
+          stampNote.hidden = true;
+        }
+      }
+
+      stampButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var wasOpen = button.getAttribute('aria-expanded') === 'true';
+          clearStampNote();
+          if (wasOpen || !stampNote || !stampTitle || !stampCopy) return;
+
+          button.setAttribute('aria-expanded', 'true');
+          stampTitle.textContent = button.getAttribute('data-stamp-title') || button.textContent.trim();
+          stampCopy.textContent = button.getAttribute('data-stamp-copy') || '';
+          stampNote.style.borderLeftColor = window.getComputedStyle(button).color;
+          stampNote.hidden = false;
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') clearStampNote();
       });
 
       document.querySelectorAll('.animal-run').forEach(function (el) {
