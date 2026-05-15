@@ -902,11 +902,654 @@
       .content { padding: 2.25rem; }
     }
 
-    @media (max-width: 767px) {
-      .home-hero::after { display: none; }
-      .home-hero { padding: 1.25rem; }
-    }
-  </style>
+	    @media (max-width: 767px) {
+	      .home-hero::after { display: none; }
+	      .home-hero { padding: 1.25rem; }
+	    }
+
+	    /* Field-notebook redesign */
+	    :root {
+	      --violet: #6f5797;
+	      --violet-soft: #e9e0f4;
+	      --sage: #a9cdb2;
+	      --sage-soft: #edf6ee;
+	      --wheat: #c9a15a;
+	      --wheat-soft: #f6edd8;
+	      --brown: #6e4b33;
+	      --rose: #d88eaa;
+	      --rose-soft: #f8e7ee;
+	      --paper: #fffdf8;
+	      --paper-warm: #fbf2df;
+	      --line: rgba(110, 75, 51, 0.18);
+	      --ink: #2c2335;
+	      --ink-muted: #5d5365;
+	      --accent: var(--violet);
+	      --accent-hover: #4f3c72;
+	      --card-bg: rgba(255, 253, 248, 0.94);
+	      --card-border: rgba(110, 75, 51, 0.18);
+	      --shadow-soft: 0 24px 60px rgba(70, 45, 30, 0.12);
+	      --shadow-card: 0 14px 34px rgba(70, 45, 30, 0.1);
+	      --radius-lg: 18px;
+	      --radius-md: 8px;
+	      --radius-sm: 8px;
+	    }
+
+	    * { letter-spacing: 0 !important; }
+
+	    body {
+	      color: var(--ink-muted);
+	      background:
+	        linear-gradient(90deg, rgba(201, 161, 90, 0.08) 0 1px, transparent 1px 100%),
+	        linear-gradient(180deg, rgba(111, 87, 151, 0.07), rgba(169, 205, 178, 0.1) 42%, rgba(248, 231, 238, 0.55) 100%),
+	        repeating-linear-gradient(0deg, rgba(110, 75, 51, 0.045) 0 1px, transparent 1px 34px),
+	        var(--paper);
+	      background-size: 42px 42px, auto, auto, auto;
+	      line-height: 1.72;
+	    }
+
+	    body::before,
+	    body::after,
+	    .speed-lines,
+	    .bubble,
+	    .chibi-icon,
+	    .deco,
+	    .anime-chars,
+	    .animal-run,
+	    .content .corner-deco,
+	    .content .grass-bottom,
+	    .sidebar .corner-deco,
+	    .sidebar .sidebar-grass,
+	    .sidebar .sidebar-flowers,
+	    .hero-deco,
+	    .home-section .section-deco {
+	      display: none !important;
+	    }
+
+	    .bg-pattern {
+	      opacity: 0.18;
+	      background-image:
+	        linear-gradient(90deg, rgba(111, 87, 151, 0.18) 1px, transparent 1px),
+	        linear-gradient(180deg, rgba(201, 161, 90, 0.16) 1px, transparent 1px);
+	      background-size: 84px 84px;
+	    }
+
+	    .sakura-petal {
+	      width: 12px;
+	      height: 12px;
+	      opacity: 0.22;
+	      z-index: 0;
+	      animation-duration: 24s;
+	    }
+
+	    .sparkle {
+	      opacity: 0.3;
+	      z-index: 0;
+	    }
+
+	    a {
+	      color: var(--violet);
+	      border-bottom: 1px solid rgba(111, 87, 151, 0.28);
+	      text-decoration: none;
+	    }
+
+	    a:hover {
+	      color: var(--accent-hover);
+	      border-bottom-color: rgba(79, 60, 114, 0.55);
+	    }
+
+	    .masthead {
+	      background: rgba(255, 253, 248, 0.86);
+	      border-bottom: 1px solid var(--line);
+	      box-shadow: 0 8px 24px rgba(70, 45, 30, 0.06);
+	    }
+
+	    .masthead__inner {
+	      width: min(1180px, 92vw);
+	      padding: 0.8rem 0;
+	    }
+
+	    .masthead-logo img {
+	      width: 34px;
+	      height: 34px;
+	      border-radius: 8px;
+	      border: 1px solid var(--line);
+	    }
+
+	    .nav-list {
+	      gap: 0.35rem;
+	    }
+
+	    .nav-list a {
+	      color: var(--brown);
+	      border: 1px solid transparent;
+	      border-radius: 999px;
+	      padding: 0.38rem 0.72rem;
+	      font-size: 0.9rem;
+	      font-weight: 650;
+	      background: transparent;
+	    }
+
+	    .nav-list a:hover {
+	      color: var(--violet);
+	      border-color: rgba(111, 87, 151, 0.24);
+	      background: rgba(233, 224, 244, 0.6);
+	    }
+
+	    .layout {
+	      width: min(1180px, 92vw);
+	      margin: 1.8rem auto 4.5rem;
+	      gap: 2rem;
+	    }
+
+	    .sidebar {
+	      border: 1px solid var(--line);
+	      border-radius: 18px;
+	      background:
+	        linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(246, 237, 216, 0.72)),
+	        var(--paper);
+	      box-shadow: var(--shadow-card);
+	      padding: 1rem;
+	      overflow: hidden;
+	    }
+
+	    .sidebar::before {
+	      display: none;
+	    }
+
+	    .avatar-wrap {
+	      border: 1px solid rgba(110, 75, 51, 0.24);
+	      border-radius: 14px;
+	      box-shadow: none;
+	      aspect-ratio: 1 / 1.08;
+	      background: var(--wheat-soft);
+	    }
+
+	    .avatar-wrap::before {
+	      display: none;
+	    }
+
+	    .avatar {
+	      height: 100%;
+	      object-fit: cover;
+	    }
+
+	    .name {
+	      margin-top: 1.05rem;
+	      font-size: 1.75rem;
+	      color: var(--ink);
+	    }
+
+	    .bio {
+	      color: var(--violet);
+	      font-weight: 700;
+	    }
+
+	    .meta {
+	      margin: 0.75rem 0 1rem;
+	      padding: 0.8rem;
+	      border: 1px solid rgba(169, 205, 178, 0.5);
+	      border-radius: 8px;
+	      background: var(--sage-soft);
+	      color: var(--brown);
+	      font-size: 0.88rem;
+	    }
+
+	    .social {
+	      display: grid;
+	      grid-template-columns: repeat(2, minmax(0, 1fr));
+	      gap: 0.45rem;
+	    }
+
+	    .social li {
+	      margin: 0;
+	    }
+
+	    .social a,
+	    .qr-trigger {
+	      width: 100%;
+	      min-height: 2.35rem;
+	      justify-content: center;
+	      gap: 0.45rem;
+	      padding: 0.45rem 0.5rem;
+	      border: 1px solid rgba(110, 75, 51, 0.16);
+	      border-radius: 999px;
+	      background: rgba(255, 255, 255, 0.72);
+	      color: var(--ink-muted);
+	      font-size: 0.86rem;
+	      font-weight: 650;
+	    }
+
+	    .social a:hover,
+	    .qr-trigger:hover {
+	      color: var(--violet);
+	      border-color: rgba(111, 87, 151, 0.28);
+	      background: var(--violet-soft);
+	    }
+
+	    .content.manga-outline {
+	      padding: 0;
+	      border: 0 !important;
+	      border-radius: 0;
+	      background: transparent;
+	      box-shadow: none !important;
+	      backdrop-filter: none;
+	      overflow: visible;
+	    }
+
+	    .content::before,
+	    .content::after {
+	      display: none;
+	    }
+
+	    .home-hero.manga-outline {
+	      margin: 0 0 2.5rem;
+	      padding: 2rem;
+	      border: 1px solid var(--line) !important;
+	      border-radius: 18px;
+	      background:
+	        linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(246, 237, 216, 0.72) 58%, rgba(248, 231, 238, 0.72)),
+	        var(--paper);
+	      box-shadow: var(--shadow-soft) !important;
+	      display: grid;
+	      grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+	      gap: 1.5rem;
+	      overflow: hidden;
+	    }
+
+	    .home-hero::before {
+	      content: "";
+	      position: absolute;
+	      inset: 0;
+	      pointer-events: none;
+	      background:
+	        linear-gradient(90deg, rgba(201, 161, 90, 0.12) 0 1px, transparent 1px 100%),
+	        linear-gradient(180deg, rgba(111, 87, 151, 0.05), transparent);
+	      background-size: 28px 28px, auto;
+	    }
+
+	    .home-hero::after {
+	      display: none;
+	    }
+
+	    .hero-copy,
+	    .hero-board {
+	      position: relative;
+	      z-index: 1;
+	    }
+
+	    .eyebrow {
+	      display: inline-flex;
+	      margin: 0 0 0.65rem;
+	      padding: 0.25rem 0.6rem;
+	      border: 1px solid rgba(201, 161, 90, 0.36);
+	      border-radius: 999px;
+	      background: rgba(246, 237, 216, 0.78);
+	      color: var(--brown);
+	      font-size: 0.82rem;
+	      font-weight: 750;
+	      line-height: 1.4;
+	    }
+
+	    .home-hero h1 {
+	      margin: 0 0 0.9rem;
+	      font-family: var(--font-serif);
+	      font-size: 3.2rem;
+	      line-height: 1;
+	      color: var(--ink);
+	      font-weight: 700;
+	    }
+
+	    .home-hero h1 span {
+	      color: var(--violet);
+	      font-weight: 600;
+	    }
+
+	    .home-hero p,
+	    .home-hero p:first-child {
+	      margin: 0 0 0.85rem;
+	      color: var(--ink-muted);
+	      font-family: var(--font-sans);
+	      font-size: 1rem;
+	      font-weight: 450;
+	      line-height: 1.72;
+	    }
+
+	    .hero-lead {
+	      color: var(--ink) !important;
+	      font-weight: 520 !important;
+	    }
+
+	    .hero-tags {
+	      display: flex;
+	      flex-wrap: wrap;
+	      gap: 0.5rem;
+	      margin-top: 1.1rem;
+	    }
+
+	    .hero-tags span {
+	      padding: 0.35rem 0.7rem;
+	      border-radius: 999px;
+	      border: 1px solid rgba(111, 87, 151, 0.22);
+	      background: rgba(233, 224, 244, 0.68);
+	      color: var(--violet);
+	      font-size: 0.86rem;
+	      font-weight: 700;
+	    }
+
+	    .hero-board {
+	      display: grid;
+	      gap: 0.8rem;
+	      align-content: center;
+	    }
+
+	    .hero-card {
+	      border: 1px solid var(--line);
+	      border-radius: 8px;
+	      padding: 0.9rem;
+	      background: rgba(255, 253, 248, 0.88);
+	      box-shadow: 4px 4px 0 rgba(110, 75, 51, 0.08);
+	    }
+
+	    .hero-card span,
+	    .hero-card em {
+	      display: block;
+	    }
+
+	    .hero-card span {
+	      color: var(--brown);
+	      font-size: 0.75rem;
+	      font-weight: 800;
+	      text-transform: uppercase;
+	    }
+
+	    .hero-card strong {
+	      display: block;
+	      margin: 0.18rem 0;
+	      color: var(--ink);
+	      font-size: 1.05rem;
+	      font-weight: 800;
+	    }
+
+	    .hero-card em {
+	      color: var(--ink-muted);
+	      font-size: 0.86rem;
+	      font-style: normal;
+	      line-height: 1.45;
+	    }
+
+	    .hero-card--green {
+	      border-left: 5px solid var(--sage);
+	    }
+
+	    .hero-card--purple {
+	      border-left: 5px solid var(--violet);
+	    }
+
+	    .hero-card--wheat {
+	      border-left: 5px solid var(--wheat);
+	    }
+
+	    .home-section {
+	      margin-top: 2.4rem;
+	      padding: 0;
+	    }
+
+	    .home-section h2 {
+	      margin: 0 0 1rem;
+	      padding: 0 0 0.55rem;
+	      border-bottom: 1px solid var(--line);
+	      border-radius: 0;
+	      color: var(--ink);
+	      font-size: 1.55rem;
+	      font-weight: 700;
+	    }
+
+	    .home-section h2::before {
+	      width: 2.4rem;
+	      height: 0.28rem;
+	      border-radius: 999px;
+	      background: linear-gradient(90deg, var(--wheat), var(--sage), var(--rose));
+	      margin-right: 0.15rem;
+	    }
+
+	    .section-icon {
+	      width: 22px;
+	      height: 22px;
+	    }
+
+	    #news .section-icon { color: var(--wheat); }
+	    #education-experience .section-icon { color: var(--sage); }
+	    #intern-experience .section-icon { color: var(--rose); }
+	    #publications .section-icon { color: var(--violet); }
+	    #more .section-icon { color: var(--brown); }
+
+	    .news-list {
+	      list-style: none;
+	      margin: 0;
+	      padding: 0;
+	    }
+
+	    #news > .news-list {
+	      display: grid;
+	      grid-template-columns: repeat(2, minmax(0, 1fr));
+	      gap: 0.85rem;
+	    }
+
+	    .news-list li {
+	      margin: 0;
+	      padding: 0.9rem 1rem;
+	      border: 1px solid var(--line);
+	      border-radius: 8px;
+	      background: rgba(255, 253, 248, 0.88);
+	      box-shadow: 3px 3px 0 rgba(201, 161, 90, 0.11);
+	      line-height: 1.55;
+	    }
+
+	    .news-list li strong:first-child {
+	      display: inline-flex;
+	      margin: 0 0.5rem 0.35rem 0;
+	      padding: 0.1rem 0.45rem;
+	      border-radius: 999px;
+	      background: var(--wheat-soft);
+	      color: var(--brown);
+	      font-size: 0.78rem;
+	      font-weight: 800;
+	    }
+
+	    .older-news {
+	      margin-top: 0.85rem;
+	      padding: 0.75rem 0.85rem;
+	      border: 1px dashed rgba(110, 75, 51, 0.28);
+	      border-radius: 8px;
+	      background: rgba(246, 237, 216, 0.46);
+	    }
+
+	    .older-news summary {
+	      color: var(--brown);
+	      font-weight: 800;
+	    }
+
+	    .older-news[open] summary {
+	      margin-bottom: 0.7rem;
+	    }
+
+	    .card-list {
+	      list-style: none;
+	      margin: 0;
+	      padding: 0;
+	      display: grid;
+	      gap: 0.85rem;
+	    }
+
+	    .card-list > li {
+	      margin: 0;
+	      padding: 1rem 1rem 1rem 1.2rem;
+	      border: 1px solid var(--line);
+	      border-left: 5px solid var(--sage);
+	      border-radius: 8px;
+	      background: rgba(255, 253, 248, 0.9);
+	      box-shadow: 3px 3px 0 rgba(169, 205, 178, 0.13);
+	      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	    }
+
+	    #intern-experience .card-list > li {
+	      border-left-color: var(--rose);
+	      box-shadow: 3px 3px 0 rgba(216, 142, 170, 0.13);
+	    }
+
+	    .card-list > li::after {
+	      display: none;
+	    }
+
+	    .card-list > li:hover,
+	    #publications .pub-item:hover {
+	      transform: translateY(-2px);
+	      box-shadow: 0 14px 26px rgba(70, 45, 30, 0.09);
+	    }
+
+	    #publications .pub-list {
+	      display: grid;
+	      gap: 1rem;
+	    }
+
+	    #publications .pub-item {
+	      margin: 0;
+	      border: 1px solid var(--line);
+	      border-left: 5px solid var(--violet);
+	      border-radius: 8px;
+	      background: rgba(255, 253, 248, 0.92);
+	      box-shadow: 4px 4px 0 rgba(111, 87, 151, 0.08);
+	      overflow: hidden;
+	      transition: transform 0.2s ease, box-shadow 0.2s ease;
+	    }
+
+	    #publications .pub-summary {
+	      padding: 1.05rem 1.2rem 1rem;
+	    }
+
+	    #publications .pub-summary::after {
+	      right: 1rem;
+	      top: 1rem;
+	      color: var(--violet);
+	    }
+
+	    #publications .pub-title {
+	      font-size: 1.22rem;
+	      color: var(--ink);
+	      padding-right: 1.8rem;
+	    }
+
+	    #publications .pub-authors {
+	      color: var(--ink-muted);
+	      font-style: normal;
+	    }
+
+	    #publications .pub-authors .author-me {
+	      color: var(--violet);
+	      font-style: normal;
+	    }
+
+	    #publications .pub-venue {
+	      display: inline-flex;
+	      width: fit-content;
+	      padding: 0.18rem 0.55rem;
+	      border-radius: 999px;
+	      background: var(--violet-soft);
+	      color: var(--violet);
+	      font-size: 0.8rem;
+	      font-weight: 800;
+	    }
+
+	    #publications .pub-links {
+	      color: var(--brown);
+	    }
+
+	    #publications .pub-details {
+	      border-top: 1px solid rgba(110, 75, 51, 0.14);
+	      background: rgba(246, 237, 216, 0.28);
+	    }
+
+	    .more-list {
+	      list-style: none;
+	      margin: 0;
+	      padding: 0;
+	      display: grid;
+	      gap: 0.9rem;
+	    }
+
+	    .more-list > li {
+	      margin: 0;
+	      padding: 1rem 1.1rem;
+	      border: 1px solid var(--line);
+	      border-radius: 8px;
+	      background: rgba(255, 253, 248, 0.9);
+	      box-shadow: 3px 3px 0 rgba(201, 161, 90, 0.1);
+	    }
+
+	    .more-list > li:nth-child(2) {
+	      box-shadow: 3px 3px 0 rgba(216, 142, 170, 0.12);
+	    }
+
+	    .more-list > li:nth-child(3) {
+	      box-shadow: 3px 3px 0 rgba(169, 205, 178, 0.12);
+	    }
+
+	    .more-list ul {
+	      padding-left: 1.1rem;
+	    }
+
+	    .qr-modal__dialog {
+	      border-radius: 12px;
+	      background: var(--paper);
+	      border: 1px solid var(--line);
+	    }
+
+	    @media (min-width: 960px) {
+	      .layout {
+	        grid-template-columns: 280px minmax(0, 1fr);
+	        gap: 2rem;
+	      }
+	      .sidebar {
+	        position: sticky;
+	        top: 82px;
+	      }
+	    }
+
+	    @media (max-width: 959px) {
+	      .home-hero.manga-outline {
+	        grid-template-columns: 1fr;
+	      }
+	      .hero-board {
+	        grid-template-columns: repeat(3, minmax(0, 1fr));
+	      }
+	      .sidebar {
+	        position: static;
+	      }
+	    }
+
+	    @media (max-width: 767px) {
+	      .layout {
+	        width: min(100% - 1.2rem, 720px);
+	        margin-top: 1rem;
+	      }
+	      .masthead__inner {
+	        width: min(100% - 1.2rem, 720px);
+	      }
+	      .home-hero.manga-outline {
+	        padding: 1.2rem;
+	      }
+	      .home-hero h1 {
+	        font-size: 2.45rem;
+	      }
+	      .hero-board,
+	      #news > .news-list {
+	        grid-template-columns: 1fr;
+	      }
+	      .social {
+	        grid-template-columns: 1fr;
+	      }
+	    }
+	  </style>
 </head>
 <body>
   <div class="bg-pattern" aria-hidden="true"></div>
@@ -1207,24 +1850,18 @@
       <circle cx="38" cy="24" r="2" fill="#2d2640"/>
     </svg>
   </div>
-  <!-- Optional: add images/doraemon.png, images/chopper.png (or other anime chars) to show here -->
-  <div class="anime-chars" aria-hidden="true">
-    <img src="images/doraemon.png" alt="" class="anime-char" onerror="this.style.display='none'">
-    <img src="images/chopper.png" alt="" class="anime-char" onerror="this.style.display='none'">
-  </div>
-
-  <header class="masthead">
+	  <header class="masthead">
     <div class="masthead__inner">
       <div class="masthead-logo" aria-hidden="true">
         <img src="images/logo.jpeg" alt="">
       </div>
       <ul class="nav-list">
-        <li><a href="#about-me">About Me</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#education-experience">Experience</a></li>
-        <li><a href="#intern-experience">Intern</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#more">More</a></li>
+	        <li><a href="#about-me">About</a></li>
+	        <li><a href="#news">Dispatches</a></li>
+	        <li><a href="#education-experience">Journey</a></li>
+	        <li><a href="#intern-experience">Intern</a></li>
+	        <li><a href="#publications">Papers</a></li>
+	        <li><a href="#more">Playground</a></li>
         <li><a href="https://wma17.github.io/_pages/CV.pdf">CV</a></li>
       </ul>
     </div>
@@ -1260,8 +1897,8 @@
       </div>
       <div class="avatar-wrap"><img class="avatar" src="images/me.jpg" alt="Wang Ma"></div>
       <h1 class="name">Wang Ma</h1>
-      <p class="bio">Ph.D student @ RPI</p>
-      <p class="meta">Identity: Ph.D Student<br>Email: maw6@rpi.edu<br>Location: Troy, NY</p>
+	      <p class="bio">Ph.D student @ RPI</p>
+	      <p class="meta">Currently: Applied Science Intern @ Microsoft<br>Email: maw6@rpi.edu<br>Base: Redmond, WA / Troy, NY</p>
       <ul class="social">
         <li><a href="mailto:maw6@rpi.edu"><i class="fa-solid fa-envelope"></i> Email</a></li>
         <li><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=rD2pPFUAAAAJ"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a></li>
@@ -1294,45 +1931,41 @@
         <defs><linearGradient id="cornerGrad4" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#a890c8"/><stop offset="1" stop-color="#e0b8d0"/></linearGradient></defs>
       </svg>
       <span id="about-me"></span>
-      <section class="home-hero manga-outline">
-        <div class="hero-deco hero-deco--dots" aria-hidden="true">
-          <svg viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="8" cy="8" r="2.5" fill="#b8a0d8"/><circle cx="24" cy="12" r="2" fill="#c8b0e0"/><circle cx="40" cy="8" r="2.5" fill="#d8c0e8"/>
-            <circle cx="12" cy="24" r="1.5" fill="#e0b8d0"/><circle cx="32" cy="22" r="2" fill="#c8a8d8"/>
-          </svg>
-        </div>
-        <div class="hero-deco hero-deco--cross" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 4v16M4 12h16" stroke="#9b80c0" stroke-width="1" stroke-linecap="round"/>
-            <circle cx="12" cy="12" r="2" stroke="#b090c8" stroke-width="0.8" fill="none"/>
-          </svg>
-        </div>
-        <div class="hero-deco hero-deco--sakura" aria-hidden="true">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 2c0 0-2 6-2 8s1 5 2 5 2-2 2-5-2-8-2-8z" fill="#e8c4dc"/>
-            <path d="M18 34c0 0 2-6 2-8s-1-5-2-5-2 2-2 5 2 8 2 8z" fill="#e8c4dc"/>
-            <path d="M2 18c0 0 6-2 8-2s5 1 5 2-2 2-5 2-8 2-8z" fill="#e8c4dc"/>
-            <path d="M34 18c0 0-6-2-8-2s-5 1-5 2 2 2 5 2 8 2 8z" fill="#e8c4dc"/>
-            <path d="M8 8c0 0 3 3 4.5 5s0 3-1 3-2.5-1-5-4.5 1.5-3.5 1.5-3.5z" fill="#e8c4dc"/>
-            <path d="M28 28c0 0-3-3-4.5-5s0-3 1-3 2.5 1 5 4.5-1.5 3.5-1.5 3.5z" fill="#e8c4dc"/>
-            <path d="M28 8c0 0-3 3-5 4.5s-3 0-3-1 1-2.5 4.5-5 3.5-1.5 3.5-1.5z" fill="#e8c4dc"/>
-            <path d="M8 28c0 0 3-3 5-4.5s3 0 3 1-1 2.5-4.5 5S8 28 8 28z" fill="#e8c4dc"/>
-            <circle cx="18" cy="18" r="3" fill="#f5dce8"/>
-          </svg>
-        </div>
-        <div class="hero-deco hero-deco--grass" aria-hidden="true">
-          <svg viewBox="0 0 400 32" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0 32 Q20 18 40 32 Q60 14 80 32 Q100 20 120 32 Q140 16 160 32 Q180 18 200 32 Q220 14 240 32 Q260 20 280 32 Q300 16 320 32 Q340 18 360 32 Q380 14 400 32 L400 40 L0 40 Z" fill="url(#heroGrass)"/>
-            <defs><linearGradient id="heroGrass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b0dcbc"/><stop offset="1" stop-color="#88c898"/></linearGradient></defs>
-          </svg>
-        </div>
-        <p>Hello, I am Wang Ma (马旺), a second-year Ph.D student at Rensselaer Polytechnic Institute (<a href="https://www.rpi.edu/">RPI</a>) advised by <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>. Before coming to RPI, I obtained my B.S. from Southern University of Science and Technology (<a href="https://sustech.edu.cn/en/">SUSTech</a>), advised by <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>.</p>
-        <p>I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning and their applications to Computer Vision and Natural Language Processing. Recently, my focus is specifically Uncertainty Quantification and Uncertainty Disentanglement for single models and pre-trained models (such as pre-trained large vision or language models), and Knowledge-augmented Bayesian Deep Learning.</p>
-      </section>
+	      <section class="home-hero manga-outline">
+	        <div class="hero-copy">
+	          <p class="eyebrow">Field notes from research, Redmond, and a few ballparks</p>
+	          <h1>Wang Ma <span>马旺</span></h1>
+	          <p class="hero-lead">I am a second-year Ph.D student at Rensselaer Polytechnic Institute (<a href="https://www.rpi.edu/">RPI</a>) advised by <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>. Before coming to RPI, I obtained my B.S. from Southern University of Science and Technology (<a href="https://sustech.edu.cn/en/">SUSTech</a>), advised by <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>.</p>
+	          <p>I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning and their applications to Computer Vision and Natural Language Processing. Recently, my focus is specifically Uncertainty Quantification and Uncertainty Disentanglement for single models and pre-trained models (such as pre-trained large vision or language models), and Knowledge-augmented Bayesian Deep Learning.</p>
+	          <div class="hero-tags" aria-label="Research themes">
+	            <span>uncertainty quantification</span>
+	            <span>Bayesian deep learning</span>
+	            <span>knowledge-augmented vision</span>
+	            <span>LLM reliability</span>
+	          </div>
+	        </div>
+	        <div class="hero-board" aria-label="Current highlights">
+	          <div class="hero-card hero-card--green">
+	            <span>current stop</span>
+	            <strong>Redmond</strong>
+	            <em>Applied Science Intern @ Microsoft</em>
+	          </div>
+	          <div class="hero-card hero-card--purple">
+	            <span>paper trail</span>
+	            <strong>CVPR Highlight</strong>
+	            <em>Knowledge-augmented Bayesian vision</em>
+	          </div>
+	          <div class="hero-card hero-card--wheat">
+	            <span>review desk</span>
+	            <strong>ICML Golden Reviewer</strong>
+	            <em>May 2026</em>
+	          </div>
+	        </div>
+	      </section>
 
       <section class="home-section" id="news">
         <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><path d="M28 8c0 0-2 6-2 8s1 5 2 5 2-2 2-5-2-8-2-8z" fill="#e8c4dc"/><path d="M28 48c0 0 2-6 2-8s-1-5-2-5-2 2-2 5 2 8 2 8z" fill="#e8c4dc"/><path d="M8 28c0 0 6-2 8-2s5 1 5 2-2 2-5 2-8-2-8-2z" fill="#e8c4dc"/><path d="M48 28c0 0-6-2-8-2s-5 1-5 2 2 2 5 2 8-2 8-2z" fill="#e8c4dc"/><circle cx="28" cy="28" r="4" fill="#f5dce8"/></svg></div>
-        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M11 6v5l3 3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>News</h2>
+	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M11 6v5l3 3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>Dispatches</h2>
         <ul class="news-list">
           <li><strong>May 2026</strong>: I arrived in Redmond and officially started my Applied Science internship at Microsoft.</li>
           <li><strong>May 2026</strong>: I was selected as an ICML 2026 Golden Reviewer.</li>
@@ -1356,7 +1989,7 @@
 
       <section class="home-section" id="education-experience">
         <div class="section-deco section-deco--bl" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M4 42 Q24 8 44 42 Q24 28 4 42z" fill="#8cc89c" opacity="0.9"/><path d="M4 42 Q24 18 44 42" stroke="#6aa878" stroke-width="1" fill="none" opacity="0.6"/></svg></div>
-        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11 2L2 7v3h18V7l-9-5z" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M2 10v9h18v-9" stroke="currentColor" stroke-width="1.1" fill="none"/></svg>Education Experience</h2>
+	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11 2L2 7v3h18V7l-9-5z" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M2 10v9h18v-9" stroke="currentColor" stroke-width="1.1" fill="none"/></svg>Education Trail</h2>
         <ul class="card-list">
           <li><strong>2024.08 - 2029.05</strong> (Expected), Rensselaer Polytechnic Institute (RPI)<br>Ph.D in Computer &amp; System Engineering<br>Adviser: <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a></li>
           <li><strong>2023.03 - 2023.07</strong>, University of California, Irvine (UCI)<br> Academic Study Abroad Program (ASAP)</li>
@@ -1366,7 +1999,7 @@
 
       <section class="home-section" id="intern-experience">
         <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="12" stroke="#e8a0a8" stroke-width="2" fill="none"/><circle cx="28" cy="28" r="6" fill="#f0c0c8"/></svg></div>
-        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 22V8l8-4 8 4v14" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M4 12h16M9 12v10M13 12v10" stroke="currentColor" stroke-width="1" fill="none"/></svg>Intern Experience</h2>
+	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 22V8l8-4 8 4v14" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M4 12h16M9 12v10M13 12v10" stroke="currentColor" stroke-width="1" fill="none"/></svg>Intern Trail</h2>
         <ul class="card-list">
           <li><strong>2026.05 - 2026.08</strong>, <strong>Microsoft</strong>, Redmond, WA<br>Applied Science Intern</li>
           <li><strong>2025.05 - 2025.08</strong>, <strong>IBM Research</strong><br>Research Extern<br>Research on <strong>Uncertainty Quantification and Reasoning for LLMs</strong><br>Mentor: <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a></li>
@@ -1375,7 +2008,7 @@
 
       <section class="home-section" id="publications">
         <div class="section-deco section-deco--bl" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 40 L8 12 L24 4 L40 12 L40 40 L8 40Z" stroke="#a890c8" stroke-width="1.5" fill="none"/><path d="M8 24 L40 24 M16 12 L16 40 M32 12 L32 40" stroke="#b8a0d8" stroke-width="1" fill="none"/></svg></div>
-        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 2h10v16H6z" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M6 6h10M6 10h8M6 14h6" stroke="currentColor" stroke-width="0.9" fill="none"/></svg>Publications</h2>
+	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 2h10v16H6z" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M6 6h10M6 10h8M6 14h6" stroke="currentColor" stroke-width="0.9" fill="none"/></svg>Papers</h2>
         <ul class="pub-list">
           <li class="pub-item-wrap">
             <details class="pub-item">
@@ -1390,22 +2023,7 @@
               </div>
             </details>
           </li>
-          <!--
-          <li class="pub-item-wrap">
-            <details class="pub-item">
-              <summary class="pub-summary">
-                <span class="pub-title">Causal Saliency Map For Post-hoc Model Explanation.</span>
-                <span class="pub-authors">Hanjing Wang, <span class="author-me">Wang Ma</span>, Naiyu Yin, Qiang Ji.</span>
-                <span class="pub-venue">CVPR 2026 Findings.</span>
-                <span class="pub-links">PDF (coming soon)</span>
-              </summary>
-              <div class="pub-details">
-                <p class="pub-abstract">Deep learning models often lack interpretability, making it difficult to trust their decisions in critical applications. Saliency maps help explain predictions by highlighting influential input regions, but standard methods mainly capture correlations and local sensitivity, rather than answering the causal “what if we intervene on this region—will the prediction change?” question. To address this, we leverage causal inference to filter out non-causal yet correlated features, ensuring that only regions the model truly relies on are highlighted. Specifically, we propose causal saliency maps, which identify causally relevant features by detecting Causal Markov Blanket (CMB) features using mutual information. To improve efficiency and fairness, we introduce label-wise mutual information for class-specific maps and a window-wise mutual information estimator for fast computation. Our method can be used as a causal refinement on top of standard saliency. On Insertion & Deletion tests and domain generalization benchmarks, it provides more reliable and interpretable explanations.</p>
-              </div>
-            </details>
-          </li>
-          -->
-          <li class="pub-item-wrap">
+	          <li class="pub-item-wrap">
             <details class="pub-item">
               <summary class="pub-summary">
                 <span class="pub-title">Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles.</span>
@@ -1423,7 +2041,7 @@
 
       <section class="home-section" id="more">
         <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><path d="M28 4l4 12 12 2-8 8 2 12-10-6-10 6 2-12-8-8 12-2 4-12z" fill="#d4b868" opacity="0.9"/></svg></div>
-        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11 2l2 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1 2-6z" stroke="currentColor" stroke-width="1" fill="none" stroke-linejoin="round"/></svg>More</h2>
+	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11 2l2 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1 2-6z" stroke="currentColor" stroke-width="1" fill="none" stroke-linejoin="round"/></svg>Playground</h2>
         <ul class="more-list">
           <li><strong>Baseball</strong> I’m a passionate fan of <strong>MLB</strong>, <strong>NPB</strong>, and Japan’s <strong>National High School Baseball Tournament (Koshien)</strong>. My favorite NPB team is <a href="https://www.fighters.co.jp/"><em>Hokkaido Nippon-Ham Fighters</em></a>, where <strong>Shohei Ohtani</strong> began his professional career in 2013. I’m also a big supporter of <strong>Ōmi High School</strong>, a rising baseball powerhouse from <strong>Shiga Prefecture</strong>. You can check out some highlights <a href="https://www.bilibili.com/video/BV1bF411a7B4/?spm_id_from=333.999.0.0&vd_source=39c9e2f0249c14d448a63ad2dec02137">here</a> — their blue uniforms shine brighter than the August sky.
             <ul>
