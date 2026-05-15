@@ -1005,26 +1005,26 @@
 
 	    .masthead__inner {
 	      width: min(1180px, 92vw);
-	      padding: 0.8rem 0;
+	      padding: 0.38rem 0;
 	    }
 
 	    .masthead-logo img {
-	      width: 34px;
-	      height: 34px;
-	      border-radius: 8px;
+	      width: 28px;
+	      height: 28px;
+	      border-radius: 7px;
 	      border: 1px solid var(--line);
 	    }
 
 	    .nav-list {
-	      gap: 0.35rem;
+	      gap: 0.18rem;
 	    }
 
 	    .nav-list a {
 	      color: var(--brown);
 	      border: 1px solid transparent;
 	      border-radius: 999px;
-	      padding: 0.38rem 0.72rem;
-	      font-size: 0.9rem;
+	      padding: 0.24rem 0.56rem;
+	      font-size: 0.84rem;
 	      font-weight: 650;
 	      background: transparent;
 	    }
@@ -1036,9 +1036,9 @@
 	    }
 
 	    .layout {
-	      width: min(1180px, 92vw);
-	      margin: 1.8rem auto 4.5rem;
-	      gap: 2rem;
+	      width: min(1120px, 92vw);
+	      margin: 1.35rem auto 4.5rem;
+	      gap: 1.5rem;
 	    }
 
 	    .sidebar {
@@ -1048,7 +1048,7 @@
 	        linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(246, 237, 216, 0.72)),
 	        var(--paper);
 	      box-shadow: var(--shadow-card);
-	      padding: 1rem;
+	      padding: 0.8rem;
 	      overflow: hidden;
 	    }
 
@@ -1058,9 +1058,9 @@
 
 	    .avatar-wrap {
 	      border: 1px solid rgba(110, 75, 51, 0.24);
-	      border-radius: 14px;
+	      border-radius: 12px;
 	      box-shadow: none;
-	      aspect-ratio: 1 / 1.08;
+	      aspect-ratio: 1 / 0.92;
 	      background: var(--wheat-soft);
 	    }
 
@@ -1074,30 +1074,72 @@
 	    }
 
 	    .name {
-	      margin-top: 1.05rem;
-	      font-size: 1.75rem;
+	      margin: 0.8rem 0 0.1rem;
+	      font-size: 1.55rem;
 	      color: var(--ink);
 	    }
 
 	    .bio {
 	      color: var(--violet);
 	      font-weight: 700;
+	      font-size: 0.92rem;
 	    }
 
 	    .meta {
-	      margin: 0.75rem 0 1rem;
-	      padding: 0.8rem;
+	      margin: 0.65rem 0 0.65rem;
+	      padding: 0.72rem;
 	      border: 1px solid rgba(169, 205, 178, 0.5);
 	      border-radius: 8px;
 	      background: var(--sage-soft);
 	      color: var(--brown);
-	      font-size: 0.88rem;
+	      font-size: 0.84rem;
+	      line-height: 1.45;
+	    }
+
+	    .meta-kicker,
+	    .mini-trail span {
+	      display: block;
+	      margin-bottom: 0.18rem;
+	      color: var(--brown);
+	      font-size: 0.68rem;
+	      font-weight: 850;
+	      text-transform: uppercase;
+	    }
+
+	    .meta strong,
+	    .mini-trail strong {
+	      display: block;
+	      color: var(--ink);
+	      font-size: 0.92rem;
+	      line-height: 1.35;
+	    }
+
+	    .meta a {
+	      border: none;
+	      color: var(--violet);
+	      font-weight: 700;
+	    }
+
+	    .mini-trail {
+	      list-style: none;
+	      margin: 0 0 0.65rem;
+	      padding: 0;
+	      display: grid;
+	      grid-template-columns: repeat(3, minmax(0, 1fr));
+	      gap: 0.4rem;
+	    }
+
+	    .mini-trail li {
+	      padding: 0.5rem 0.45rem;
+	      border: 1px solid rgba(110, 75, 51, 0.14);
+	      border-radius: 8px;
+	      background: rgba(255, 253, 248, 0.76);
 	    }
 
 	    .social {
 	      display: grid;
-	      grid-template-columns: repeat(2, minmax(0, 1fr));
-	      gap: 0.45rem;
+	      grid-template-columns: repeat(5, minmax(0, 1fr));
+	      gap: 0.35rem;
 	    }
 
 	    .social li {
@@ -1107,16 +1149,22 @@
 	    .social a,
 	    .qr-trigger {
 	      width: 100%;
-	      min-height: 2.35rem;
+	      aspect-ratio: 1;
+	      min-height: 2.05rem;
 	      justify-content: center;
-	      gap: 0.45rem;
-	      padding: 0.45rem 0.5rem;
+	      gap: 0;
+	      padding: 0;
 	      border: 1px solid rgba(110, 75, 51, 0.16);
-	      border-radius: 999px;
+	      border-radius: 10px;
 	      background: rgba(255, 255, 255, 0.72);
 	      color: var(--ink-muted);
-	      font-size: 0.86rem;
+	      font-size: 0;
 	      font-weight: 650;
+	    }
+
+	    .social a i,
+	    .qr-trigger i {
+	      font-size: 0.95rem;
 	    }
 
 	    .social a:hover,
@@ -1150,9 +1198,7 @@
 	        linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(246, 237, 216, 0.72) 58%, rgba(248, 231, 238, 0.72)),
 	        var(--paper);
 	      box-shadow: var(--shadow-soft) !important;
-	      display: grid;
-	      grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
-	      gap: 1.5rem;
+	      display: block;
 	      overflow: hidden;
 	    }
 
@@ -1171,8 +1217,7 @@
 	      display: none;
 	    }
 
-	    .hero-copy,
-	    .hero-board {
+	    .hero-copy {
 	      position: relative;
 	      z-index: 1;
 	    }
@@ -1221,53 +1266,6 @@
 	      color: var(--violet);
 	      font-size: 0.86rem;
 	      font-weight: 700;
-	    }
-
-	    .hero-board {
-	      display: grid;
-	      gap: 0.8rem;
-	      align-content: end;
-	    }
-
-	    .hero-card {
-	      border: 1px solid var(--line);
-	      border-radius: 8px;
-	      padding: 1rem;
-	      background: rgba(255, 253, 248, 0.88);
-	      box-shadow: 4px 4px 0 rgba(110, 75, 51, 0.08);
-	      max-width: 320px;
-	      justify-self: end;
-	    }
-
-	    .hero-card span,
-	    .hero-card em {
-	      display: block;
-	    }
-
-	    .hero-card span {
-	      color: var(--brown);
-	      font-size: 0.75rem;
-	      font-weight: 800;
-	      text-transform: uppercase;
-	    }
-
-	    .hero-card strong {
-	      display: block;
-	      margin: 0.18rem 0;
-	      color: var(--ink);
-	      font-size: 1.05rem;
-	      font-weight: 800;
-	    }
-
-	    .hero-card em {
-	      color: var(--ink-muted);
-	      font-size: 0.86rem;
-	      font-style: normal;
-	      line-height: 1.45;
-	    }
-
-	    .hero-card--green {
-	      border-left: 5px solid var(--sage);
 	    }
 
 	    .home-section {
@@ -1487,26 +1485,16 @@
 
 	    @media (min-width: 960px) {
 	      .layout {
-	        grid-template-columns: 280px minmax(0, 1fr);
-	        gap: 2rem;
+	        grid-template-columns: 250px minmax(0, 1fr);
+	        gap: 1.5rem;
 	      }
 	      .sidebar {
 	        position: sticky;
-	        top: 82px;
+	        top: 62px;
 	      }
 	    }
 
 	    @media (max-width: 959px) {
-	      .home-hero.manga-outline {
-	        grid-template-columns: 1fr;
-	      }
-	      .hero-board {
-	        grid-template-columns: 1fr;
-	      }
-	      .hero-card {
-	        max-width: none;
-	        justify-self: stretch;
-	      }
 	      .sidebar {
 	        position: static;
 	      }
@@ -1526,12 +1514,11 @@
 	      .home-hero h1 {
 	        font-size: 2.45rem;
 	      }
-	      .hero-board,
 	      #news > .news-list {
 	        grid-template-columns: 1fr;
 	      }
 	      .social {
-	        grid-template-columns: 1fr;
+	        grid-template-columns: repeat(5, minmax(0, 1fr));
 	      }
 	    }
 	  </style>
@@ -1880,21 +1867,31 @@
           <circle cx="28" cy="14" r="2.5" fill="#e8a0b0"/>
         </svg>
       </div>
-      <div class="avatar-wrap"><img class="avatar" src="images/me.jpg" alt="Wang Ma"></div>
-      <h1 class="name">Wang Ma</h1>
+	      <div class="avatar-wrap"><img class="avatar" src="images/me.jpg" alt="Wang Ma"></div>
+	      <h1 class="name">Wang Ma</h1>
 	      <p class="bio">Ph.D student @ RPI</p>
-	      <p class="meta">Currently: Applied Science Intern @ Microsoft<br>Email: maw6@rpi.edu<br>Base: Redmond, WA / Troy, NY</p>
-      <ul class="social">
-        <li><a href="mailto:maw6@rpi.edu"><i class="fa-solid fa-envelope"></i> Email</a></li>
-        <li><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=rD2pPFUAAAAJ"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a></li>
-        <li><a href="https://www.linkedin.com/in/wang-ma-367748327/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
-        <li><a href="https://github.com/wma17"><i class="fa-brands fa-github"></i> Github</a></li>
-        <li><a href="https://twitter.com/WangMa70190365"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a></li>
-        <li><a href="https://space.bilibili.com/237775327/video"><i class="fa-solid fa-circle-play"></i> Bilibili</a></li>
-        <li><a href="https://www.youtube.com/@wangma4424"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
-        <li><button type="button" class="qr-trigger" data-target="modal-wechat"><i class="fa-solid fa-comments"></i> WeChat</button></li>
-        <li><button type="button" class="qr-trigger" data-target="modal-qq"><i class="fa-solid fa-qrcode"></i> QQ</button></li>
-      </ul>
+	      <div class="meta">
+	        <span class="meta-kicker">Currently</span>
+	        <strong>Applied Science Intern @ Microsoft</strong>
+	        <span>Redmond, WA / Troy, NY</span><br>
+	        <a href="mailto:maw6@rpi.edu">maw6@rpi.edu</a>
+	      </div>
+	      <ul class="mini-trail" aria-label="Education snapshot">
+	        <li><span>Ph.D</span><strong>RPI</strong></li>
+	        <li><span>B.S.</span><strong>SUSTech</strong></li>
+	        <li><span>ASAP</span><strong>UCI</strong></li>
+	      </ul>
+	      <ul class="social">
+	        <li><a href="mailto:maw6@rpi.edu" title="Email"><i class="fa-solid fa-envelope"></i> Email</a></li>
+	        <li><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=rD2pPFUAAAAJ" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a></li>
+	        <li><a href="https://www.linkedin.com/in/wang-ma-367748327/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+	        <li><a href="https://github.com/wma17" title="Github"><i class="fa-brands fa-github"></i> Github</a></li>
+	        <li><a href="https://twitter.com/WangMa70190365" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a></li>
+	        <li><a href="https://space.bilibili.com/237775327/video" title="Bilibili"><i class="fa-solid fa-circle-play"></i> Bilibili</a></li>
+	        <li><a href="https://www.youtube.com/@wangma4424" title="YouTube"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+	        <li><button type="button" class="qr-trigger" data-target="modal-wechat" title="WeChat" aria-label="WeChat"><i class="fa-solid fa-comments"></i> WeChat</button></li>
+	        <li><button type="button" class="qr-trigger" data-target="modal-qq" title="QQ" aria-label="QQ"><i class="fa-solid fa-qrcode"></i> QQ</button></li>
+	      </ul>
     </aside>
 
     <article class="content manga-outline">
@@ -1927,14 +1924,7 @@
 	            <span>knowledge augmented bayesian deep learning</span>
 	          </div>
 	        </div>
-	        <div class="hero-board" aria-label="Current highlights">
-	          <div class="hero-card hero-card--green">
-	            <span>current stop</span>
-	            <strong>Redmond</strong>
-	            <em>Applied Science Intern @ Microsoft</em>
-	          </div>
-	        </div>
-	      </section>
+		      </section>
 
       <section class="home-section" id="news">
         <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><path d="M28 8c0 0-2 6-2 8s1 5 2 5 2-2 2-5-2-8-2-8z" fill="#e8c4dc"/><path d="M28 48c0 0 2-6 2-8s-1-5-2-5-2 2-2 5 2 8 2 8z" fill="#e8c4dc"/><path d="M8 28c0 0 6-2 8-2s5 1 5 2-2 2-5 2-8-2-8-2z" fill="#e8c4dc"/><path d="M48 28c0 0-6-2-8-2s-5 1-5 2 2 2 5 2 8-2 8-2z" fill="#e8c4dc"/><circle cx="28" cy="28" r="4" fill="#f5dce8"/></svg></div>
