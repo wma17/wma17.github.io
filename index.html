@@ -2,2496 +2,747 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Wang Ma - Homepage</title>
+  <meta name="description" content="Wang Ma, Ph.D. student at RPI working on uncertainty quantification, Bayesian deep learning and reliable LLMs.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#eef6ff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10132a" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
+    /* =========================================================
+       Palette — sakura pink × clear-sky blue
+       pink  = emphasis / primary action     blue = links / time
+       ========================================================= */
     :root {
-      --lavender: #e8e0f5;
-      --lavender-soft: #f3eef9;
-      --blush: #fce8f0;
-      --blush-soft: #fdf2f7;
-      --grass: #a8d4b8;
-      --grass-soft: #c8e6d4;
-      --leaf: #7eb88a;
-      --leaf-soft: #b0ddb8;
-      --sky-soft: #e8f4ff;
-      --coral: #e8a0a8;
-      --mint: #80c8b0;
-      --gold: #d4b868;
-      --sky-blue: #70b0e0;
-      --ink: #2d2640;
-      --ink-muted: #5a5278;
-      --accent: #7b68a6;
-      --accent-hover: #5c4d82;
-      --home-bg-top: #f8f2ff;
-      --home-bg-bottom: #f5faf7;
-      --card-bg: rgba(255, 255, 255, 0.92);
-      --card-border: rgba(200, 180, 220, 0.4);
-      --shadow-soft: 0 20px 50px -12px rgba(90, 60, 120, 0.14);
-      --shadow-card: 0 8px 32px rgba(80, 55, 120, 0.08);
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --radius-sm: 10px;
-      --font-serif: "Cormorant Garamond", "Songti SC", "SimSun", serif;
-      --font-sans: "DM Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      --ink: #242a4a;
+      --ink-2: #5b6184;
+      --ink-3: #8a8fab;
+      --page-bg: linear-gradient(180deg, #edf6ff 0%, #f6f4ff 38%, #fff1f6 72%, #fff6f9 100%);
+      --card: #ffffff;
+      --card-edge: rgba(255, 170, 200, 0.28);
+      --card-shadow: 0 1px 2px rgba(60, 50, 110, 0.04), 0 10px 30px -12px rgba(255, 110, 160, 0.18);
+      --sep: rgba(60, 60, 110, 0.1);
+      --fill: rgba(120, 130, 190, 0.1);
+
+      --pink: #ff7eb3;
+      --pink-deep: #d6427d;
+      --pink-soft: #ffe6f0;
+      --sky: #6cb8ff;
+      --sky-deep: #1a72c7;
+      --sky-soft: #e4f2ff;
+      --lavender: #a996ff;
+      --mint: #5fcfb0;
+      --peach: #ffa77a;
+      --grad: linear-gradient(135deg, #ec5a9a 0%, #f06ea6 40%, #7f9ff0 100%);
+
+      /* hero sky */
+      --hero-bg: linear-gradient(165deg, #b9e0ff 0%, #d7ecff 34%, #ffe0ec 72%, #ffc9dd 100%);
+      --hero-ink: #1f2547;
+      --hero-ink-2: #4a5078;
+      --cloud: rgba(255, 255, 255, 0.9);
+
+      /* Liquid Glass (controls only) */
+      --lg-tint: rgba(255, 255, 255, 0.58);
+      --lg-rim-hi: rgba(255, 255, 255, 0.98);
+      --lg-rim-lo: rgba(255, 220, 235, 0.35);
+      --lg-shadow: 0 10px 30px -6px rgba(120, 90, 170, 0.22), 0 1px 3px rgba(60, 50, 110, 0.08);
+      --lg-inner: inset 0 1px 0.5px rgba(255,255,255,0.95), inset 0 -1px 1px rgba(255,255,255,0.4), inset 0 0 18px rgba(255,255,255,0.3);
+
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --round: "M PLUS Rounded 1c", "SF Pro Rounded", -apple-system, "PingFang SC", sans-serif;
+      --page: 1000px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #eef0ff;
+        --ink-2: #b3b7d6;
+        --ink-3: #8b8fb0;
+        --page-bg: linear-gradient(180deg, #0f1430 0%, #141434 45%, #1c1230 100%);
+        --card: #1a1d38;
+        --card-edge: rgba(255, 140, 190, 0.14);
+        --card-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.6);
+        --sep: rgba(255, 255, 255, 0.1);
+        --fill: rgba(160, 170, 255, 0.12);
+        --pink-deep: #ff8fbd;
+        --pink-soft: rgba(255, 126, 179, 0.16);
+        --sky-deep: #7cc2ff;
+        --sky-soft: rgba(108, 184, 255, 0.16);
+        --hero-bg: linear-gradient(165deg, #1f3a78 0%, #2c3470 38%, #55306e 75%, #7a3a6c 100%);
+        --hero-ink: #ffffff;
+        --hero-ink-2: rgba(255, 255, 255, 0.82);
+        --cloud: rgba(255, 255, 255, 0.16);
+        --lg-tint: rgba(40, 42, 78, 0.55);
+        --lg-rim-hi: rgba(255, 255, 255, 0.42);
+        --lg-rim-lo: rgba(255, 170, 210, 0.08);
+        --lg-shadow: 0 10px 30px -6px rgba(0, 0, 0, 0.55);
+        --lg-inner: inset 0 1px 0.5px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(255,255,255,0.08), inset 0 0 16px rgba(255,255,255,0.05);
+      }
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
-      margin: 0;
-      font-family: var(--font-sans);
-      color: var(--ink-muted);
-      background:
-        linear-gradient(180deg, transparent 0%, transparent 70%, rgba(200, 230, 210, 0.15) 88%, rgba(180, 220, 200, 0.25) 100%),
-        radial-gradient(ellipse 120% 80% at 90% 5%, rgba(220, 200, 255, 0.35) 0%, transparent 50%),
-        radial-gradient(ellipse 100% 70% at 5% 95%, rgba(255, 210, 235, 0.3) 0%, transparent 45%),
-        radial-gradient(ellipse 80% 50% at 50% 50%, rgba(245, 235, 255, 0.2) 0%, transparent 60%),
-        linear-gradient(168deg, var(--home-bg-top) 0%, #fef6fb 40%, #f8faf6 75%, var(--home-bg-bottom) 100%);
-      line-height: 1.75;
-      font-weight: 450;
-      position: relative;
-      overflow-x: hidden;
-      min-height: 100vh;
+      margin: 0; min-height: 100vh; color: var(--ink);
+      background: var(--page-bg) fixed;
+      font-family: var(--font); font-size: 17px; line-height: 1.6; letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     }
+    a { color: var(--sky-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+    strong { font-weight: 600; }
+    p { margin: 0; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    :focus-visible { outline: 3px solid rgba(255, 126, 179, 0.55); outline-offset: 2px; border-radius: 10px; }
 
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      z-index: -1;
-      pointer-events: none;
-      filter: blur(60px);
-      opacity: 0.6;
+    /* =========================================================
+       Liquid Glass — reserved for controls that float above content
+       ========================================================= */
+    .lg {
+      position: relative; isolation: isolate;
+      background: var(--lg-tint);
+      -webkit-backdrop-filter: blur(14px) saturate(190%) brightness(1.05);
+      backdrop-filter: blur(14px) saturate(190%) brightness(1.05);
+      box-shadow: var(--lg-inner), var(--lg-shadow);
+      --mx: 30%; --my: 0%;
     }
+    html.lg-refract .lg--refract {
+      -webkit-backdrop-filter: url(#lg-refraction) blur(6px) saturate(190%) brightness(1.05);
+      backdrop-filter: url(#lg-refraction) blur(6px) saturate(190%) brightness(1.05);
+    }
+    .lg::before {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none; z-index: 2;
+      background: linear-gradient(160deg, var(--lg-rim-hi), var(--lg-rim-lo) 35%, var(--lg-rim-lo) 65%, var(--lg-rim-hi));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+      mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    }
+    .lg::after {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1;
+      background: radial-gradient(160px 80px at var(--mx) var(--my), rgba(255,255,255,0.5), transparent 70%);
+      mix-blend-mode: soft-light;
+    }
+    .lg--clear { background: rgba(255, 255, 255, 0.3); }
+    @media (prefers-color-scheme: dark) { .lg--clear { background: rgba(255, 255, 255, 0.1); } }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .lg, .lg--clear { background: var(--card); } }
+    @media (prefers-reduced-transparency: reduce) { .lg, .lg--clear { background: var(--card); -webkit-backdrop-filter: none; backdrop-filter: none; } }
 
-    body::before {
-      width: 520px;
-      height: 520px;
-      top: -120px;
-      right: -100px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(200, 170, 240, 0.25) 0%, rgba(180, 220, 255, 0.12) 50%, transparent 70%);
+    /* ---------- Floating navigation ---------- */
+    .nav-wrap { position: sticky; top: 12px; z-index: 50; display: flex; justify-content: center; padding: 0 12px; margin-top: 12px; pointer-events: none; }
+    .nav { pointer-events: auto; display: flex; align-items: center; gap: 2px; padding: 5px; border-radius: 999px; max-width: 100%; }
+    .nav-logo { flex: none; width: 34px; height: 34px; border-radius: 50%; overflow: hidden; margin-right: 2px; display: block; box-shadow: 0 0 0 2px rgba(255,255,255,0.8); }
+    .nav-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .nav-links { position: relative; display: flex; list-style: none; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { position: relative; z-index: 1; display: block; padding: 7px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; color: var(--ink); white-space: nowrap; transition: color .25s ease; }
+    .nav-links a:hover { text-decoration: none; color: var(--pink-deep); }
+    .nav-links a.is-active { color: var(--pink-deep); }
+    .nav-lens {
+      position: absolute; z-index: 0; top: 0; left: 0; height: 100%; width: 0; border-radius: 999px; opacity: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,230,240,0.85));
+      box-shadow: inset 0 1px 0.5px #fff, 0 2px 8px rgba(255,110,160,0.22);
+      transition: transform .5s cubic-bezier(.3,1.4,.5,1), width .5s cubic-bezier(.3,1.4,.5,1), opacity .2s ease;
     }
+    @media (prefers-color-scheme: dark) { .nav-lens { background: rgba(255,126,179,0.2); box-shadow: inset 0 1px 0.5px rgba(255,255,255,0.3); } }
+    .nav-cta { flex: none; margin-left: 4px; padding: 7px 17px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #fff; background: var(--grad); box-shadow: 0 4px 12px -2px rgba(255,110,160,0.45); }
+    .nav-cta:hover { text-decoration: none; filter: brightness(1.05) saturate(1.1); }
 
-    body::after {
-      width: 480px;
-      height: 480px;
-      bottom: -100px;
-      left: -120px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 182, 218, 0.28) 0%, rgba(230, 200, 255, 0.12) 50%, transparent 70%);
-    }
+    /* =========================================================
+       Content layer
+       ========================================================= */
+    main { max-width: var(--page); margin: 0 auto; padding: 22px 22px 40px; }
+    section { margin-top: 68px; }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 0 6px 16px; }
+    .kicker { display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--pink-deep); margin-bottom: 4px; }
+    .kicker::before { content: "✦"; font-size: 11px; color: var(--sky); letter-spacing: 0; }
+    .section-head h2 { margin: 0; font-family: var(--round); font-size: 34px; line-height: 1.1; font-weight: 800; letter-spacing: -0.01em; }
+    .section-head .aside { color: var(--ink-3); font-size: 15px; padding-bottom: 4px; }
+    .card { background: var(--card); border-radius: 24px; box-shadow: var(--card-shadow), inset 0 0 0 1px var(--card-edge); }
 
-    /* Subtle dot pattern + pink tint + soft grass dots near bottom */
-    .bg-pattern {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      opacity: 0.5;
-      background-image:
-        radial-gradient(circle at 20% 92%, rgba(180, 220, 200, 0.2) 1px, transparent 1px),
-        radial-gradient(circle at 80% 88%, rgba(200, 230, 210, 0.18) 1px, transparent 1px),
-        radial-gradient(circle at center, rgba(220, 160, 200, 0.12) 1px, transparent 1px),
-        radial-gradient(circle at center, rgba(150, 120, 180, 0.14) 1px, transparent 1px);
-      background-size: 40px 40px, 36px 36px, 32px 32px, 28px 28px;
-    }
+    /* ---------- Hero: summer sky ---------- */
+    .hero { margin-top: 0; position: relative; overflow: hidden; border-radius: 32px; padding: 46px 46px 42px; color: var(--hero-ink); isolation: isolate; background: var(--hero-bg); box-shadow: 0 20px 50px -24px rgba(120, 110, 200, 0.45); }
+    .hero-sky { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+    .sun { position: absolute; right: -60px; top: -70px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,240,248,0.6) 35%, rgba(255,255,255,0) 70%); }
+    .cloud { position: absolute; background: var(--cloud); border-radius: 999px; filter: blur(2px); }
+    .cloud::before, .cloud::after { content: ""; position: absolute; background: inherit; border-radius: 50%; }
+    .cloud--1 { width: 170px; height: 46px; left: 52%; top: 26px; animation: float 18s ease-in-out infinite alternate; }
+    .cloud--1::before { width: 74px; height: 74px; left: 26px; top: -36px; } .cloud--1::after { width: 58px; height: 58px; left: 86px; top: -24px; }
+    .cloud--2 { width: 130px; height: 36px; right: 6%; bottom: 44px; opacity: .85; animation: float 22s ease-in-out infinite alternate-reverse; }
+    .cloud--2::before { width: 56px; height: 56px; left: 20px; top: -28px; } .cloud--2::after { width: 44px; height: 44px; left: 64px; top: -18px; }
+    .cloud--3 { width: 110px; height: 30px; left: -30px; bottom: 26px; opacity: .7; animation: float 26s ease-in-out infinite alternate; }
+    .cloud--3::before { width: 48px; height: 48px; left: 30px; top: -24px; } .cloud--3::after { width: 36px; height: 36px; left: 66px; top: -14px; }
+    @keyframes float { from { transform: translateX(0); } to { transform: translateX(28px); } }
+    .hero-petal { position: absolute; top: -20px; width: 14px; height: 14px; opacity: .85; animation: hero-fall 13s linear infinite; }
+    .hero-petal svg { width: 100%; height: 100%; display: block; }
+    .hero-petal:nth-child(5) { left: 30%; animation-delay: -2s; }
+    .hero-petal:nth-child(6) { left: 58%; animation-delay: -7s; animation-duration: 15s; width: 11px; height: 11px; }
+    .hero-petal:nth-child(7) { left: 78%; animation-delay: -4s; animation-duration: 11s; }
+    .hero-petal:nth-child(8) { left: 92%; animation-delay: -10s; animation-duration: 16s; width: 10px; height: 10px; }
+    @keyframes hero-fall { 0% { transform: translate(0,0) rotate(0); } 50% { transform: translate(-18px, 190px) rotate(160deg); } 100% { transform: translate(8px, 420px) rotate(330deg); } }
 
-    /* Falling sakura petals (anime style) – 30 petals, 4x size */
-    .sakura-petal {
-      position: fixed;
-      z-index: 1;
-      pointer-events: none;
-      width: 24px;
-      height: 24px;
-      opacity: 0.75;
-      animation: petal-fall 12s linear infinite;
-    }
-    .sakura-petal:nth-child(1) { left: 3%; animation-delay: 0s; animation-duration: 14s; }
-    .sakura-petal:nth-child(2) { left: 12%; animation-delay: 2s; animation-duration: 11s; }
-    .sakura-petal:nth-child(3) { left: 25%; animation-delay: 4s; animation-duration: 15s; }
-    .sakura-petal:nth-child(4) { left: 38%; animation-delay: 1s; animation-duration: 13s; }
-    .sakura-petal:nth-child(5) { left: 52%; animation-delay: 3s; animation-duration: 16s; }
-    .sakura-petal:nth-child(6) { left: 65%; animation-delay: 5s; animation-duration: 12s; }
-    .sakura-petal:nth-child(7) { left: 78%; animation-delay: 2.5s; animation-duration: 14s; }
-    .sakura-petal:nth-child(8) { left: 88%; animation-delay: 6s; animation-duration: 10s; }
-    .sakura-petal:nth-child(9) { left: 18%; animation-delay: 7s; animation-duration: 17s; }
-    .sakura-petal:nth-child(10) { left: 72%; animation-delay: 0.5s; animation-duration: 11s; }
-    .sakura-petal:nth-child(11) { left: 8%; animation-delay: 1.5s; animation-duration: 13s; }
-    .sakura-petal:nth-child(12) { left: 42%; animation-delay: 3.5s; animation-duration: 15s; }
-    .sakura-petal:nth-child(13) { left: 58%; animation-delay: 5.5s; animation-duration: 12s; }
-    .sakura-petal:nth-child(14) { left: 82%; animation-delay: 0.8s; animation-duration: 14s; }
-    .sakura-petal:nth-child(15) { left: 5%; animation-delay: 4.5s; animation-duration: 16s; }
-    .sakura-petal:nth-child(16) { left: 32%; animation-delay: 2.2s; animation-duration: 11s; }
-    .sakura-petal:nth-child(17) { left: 48%; animation-delay: 6.2s; animation-duration: 13s; }
-    .sakura-petal:nth-child(18) { left: 68%; animation-delay: 1.2s; animation-duration: 17s; }
-    .sakura-petal:nth-child(19) { left: 92%; animation-delay: 4s; animation-duration: 10s; }
-    .sakura-petal:nth-child(20) { left: 15%; animation-delay: 5.8s; animation-duration: 14s; }
-    .sakura-petal:nth-child(21) { left: 35%; animation-delay: 0.3s; animation-duration: 12s; }
-    .sakura-petal:nth-child(22) { left: 62%; animation-delay: 3.8s; animation-duration: 15s; }
-    .sakura-petal:nth-child(23) { left: 75%; animation-delay: 6.5s; animation-duration: 11s; }
-    .sakura-petal:nth-child(24) { left: 2%; animation-delay: 2.8s; animation-duration: 16s; }
-    .sakura-petal:nth-child(25) { left: 28%; animation-delay: 5.2s; animation-duration: 13s; }
-    .sakura-petal:nth-child(26) { left: 45%; animation-delay: 1.8s; animation-duration: 14s; }
-    .sakura-petal:nth-child(27) { left: 55%; animation-delay: 4.2s; animation-duration: 10s; }
-    .sakura-petal:nth-child(28) { left: 85%; animation-delay: 6.8s; animation-duration: 17s; }
-    .sakura-petal:nth-child(29) { left: 10%; animation-delay: 0.6s; animation-duration: 12s; }
-    .sakura-petal:nth-child(30) { left: 95%; animation-delay: 3.2s; animation-duration: 15s; }
+    .hero-inner { display: grid; grid-template-columns: 172px minmax(0,1fr); gap: 36px; align-items: center; }
+    .avatar-ring { width: 172px; height: 172px; border-radius: 50%; padding: 5px; background: conic-gradient(from 200deg, #ff9fc6, #8cc8ff, #c7b6ff, #ff9fc6); box-shadow: 0 16px 36px -12px rgba(120, 90, 180, 0.5); }
+    .avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; border: 4px solid rgba(255,255,255,0.9); }
+    .hero-eyebrow { font-size: 15px; font-weight: 600; color: var(--hero-ink-2); }
+    .hero h1 { margin: 4px 0 8px; font-family: var(--round); font-size: 58px; line-height: 1.05; font-weight: 800; letter-spacing: -0.015em; }
+    .hero h1 .zh { font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", var(--font); font-weight: 600; font-size: .7em; margin-left: 12px; color: var(--pink-deep); letter-spacing: .02em; }
+    @media (prefers-color-scheme: dark) { .hero h1 .zh { color: #ffb3d1; } .sun { opacity: .35; } }
+    .hero-sub { font-size: 20px; line-height: 1.42; font-weight: 500; color: var(--hero-ink-2); max-width: 38ch; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .glass-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; min-width: 40px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font: 600 14px/1 var(--font); color: var(--hero-ink); transition: transform .2s ease; }
+    .glass-btn.icon { padding: 0; width: 40px; font-size: 16px; }
+    .glass-btn:hover { text-decoration: none; transform: translateY(-2px); }
+    .glass-btn.primary { color: #fff; background: var(--grad); box-shadow: 0 6px 16px -4px rgba(255,110,160,0.55); }
+
+    /* ---------- Highlights (bento) ---------- */
+    .bento { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; margin-top: 16px; }
+    .bento a { display: flex; flex-direction: column; gap: 2px; padding: 18px 18px 16px; color: var(--ink); transition: transform .25s ease, box-shadow .25s ease; }
+    .bento a:hover { text-decoration: none; transform: translateY(-3px); box-shadow: 0 18px 36px -16px rgba(255,110,160,0.35), inset 0 0 0 1px var(--card-edge); }
+    .b-icon { width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; color: #fff; font-size: 15px; margin-bottom: 10px; background: var(--c); box-shadow: 0 6px 14px -6px var(--c); }
+    .b-label { font-size: 12.5px; font-weight: 600; color: var(--ink-3); }
+    .b-title { font-family: var(--round); font-size: 21px; font-weight: 800; line-height: 1.2; }
+    .b-sub { font-size: 13.5px; color: var(--ink-2); }
+
+    /* ---------- About ---------- */
+    .about { margin-top: 16px; padding: 30px 34px; }
+    .about p + p { margin-top: 14px; }
+    .about .muted { color: var(--ink-2); }
+    .callout { margin-top: 20px; display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border-radius: 18px; background: linear-gradient(135deg, var(--pink-soft), var(--sky-soft)); }
+    .callout i { color: var(--pink-deep); font-size: 18px; margin-top: 3px; }
+    .callout p { font-size: 16px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tag { font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: var(--fill); color: var(--ink-2); }
+    .tag::before { content: "#"; color: var(--pink); margin-right: 2px; }
+
+    /* ---------- Grouped lists ---------- */
+    .list { list-style: none; margin: 0; padding: 0; }
+    .row { position: relative; display: grid; grid-template-columns: auto minmax(0,1fr) auto; gap: 14px; align-items: start; padding: 16px 24px; }
+    .row + .row::before { content: ""; position: absolute; top: 0; right: 0; left: var(--inset, 24px); height: 1px; background: var(--sep); }
+    .row-icon { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; color: #fff; font-size: 15px; margin-top: 1px; background: var(--c); }
+    .row-title { font-size: 17px; font-weight: 700; line-height: 1.35; }
+    .row-sub { font-size: 15px; color: var(--ink-2); margin-top: 1px; }
+    .row-body { font-size: 15.5px; margin-top: 6px; }
+    .row-meta { font-size: 14px; font-weight: 600; color: var(--sky-deep); white-space: nowrap; font-variant-numeric: tabular-nums; padding-top: 3px; text-align: right; }
+    .row-meta small { display: block; font-size: 12.5px; font-weight: 500; color: var(--ink-3); }
+    .list--icons .row { --inset: 74px; }
+
+    .news .row { grid-template-columns: 92px minmax(0,1fr); gap: 16px; }
+    .news time { font-size: 14px; font-weight: 600; color: var(--sky-deep); font-variant-numeric: tabular-nums; padding-top: 2px; white-space: nowrap; }
+    .news .row p { font-size: 16px; }
+    .badge-new { display: inline-block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: #fff; background: var(--grad); padding: 2px 8px; border-radius: 999px; margin-right: 6px; vertical-align: 2px; }
+
+    details.more summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; color: var(--sky-deep); font-size: 16px; font-weight: 600; position: relative; }
+    details.more summary::-webkit-details-marker { display: none; }
+    details.more summary::before { content: ""; position: absolute; top: 0; left: 24px; right: 0; height: 1px; background: var(--sep); }
+    details.more summary i { color: var(--ink-3); font-size: 13px; transition: transform .25s ease; }
+    details.more[open] summary i { transform: rotate(90deg); }
+    details.more .row p { font-size: 15px; color: var(--ink-2); }
+    details.more .row time { color: var(--ink-3); }
+
+    /* ---------- Papers ---------- */
+    .papers { display: grid; gap: 16px; }
+    .paper { padding: 26px 30px; position: relative; overflow: hidden; }
+    .paper::before { content: ""; position: absolute; left: 0; top: 22px; bottom: 22px; width: 4px; border-radius: 0 4px 4px 0; background: var(--grad); }
+    .venue { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800; color: var(--pink-deep); letter-spacing: .01em; }
+    .venue .pill-hl { font-size: 12px; font-weight: 700; color: var(--sky-deep); background: var(--sky-soft); padding: 3px 10px; border-radius: 999px; }
+    .paper h3 { margin: 8px 0 6px; font-size: 21px; line-height: 1.3; font-weight: 700; letter-spacing: -0.015em; }
+    .authors { font-size: 15px; color: var(--ink-2); }
+    .authors .me { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .paper-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; font: 600 13.5px/1 var(--font); padding: 8px 13px; border-radius: 999px; border: 0; cursor: pointer; color: var(--sky-deep); background: var(--sky-soft); transition: transform .2s ease, filter .2s ease; }
+    .chip:hover { text-decoration: none; transform: translateY(-1px); filter: saturate(1.2); }
+    .chip i { font-size: 11px; }
+    .chip--soon { color: var(--pink-deep); background: var(--pink-soft); cursor: default; }
+    .chip--soon:hover { transform: none; }
+    .chip--ghost { background: transparent; box-shadow: inset 0 0 0 1px var(--sep); color: var(--ink-2); }
+    .toggle i { transition: transform .25s ease; }
+    .toggle[aria-expanded="true"] i { transform: rotate(90deg); }
+    .abstract { margin-top: 16px; padding: 16px 18px; border-radius: 16px; background: var(--fill); font-size: 15.5px; line-height: 1.65; color: var(--ink-2); }
+    .abstract strong, .abstract em { color: var(--ink); }
+
+    /* ---------- Playground tiles ---------- */
+    .tiles { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .tile { padding: 26px 28px; }
+    .tile.wide { grid-column: 1 / -1; }
+    .tile-icon { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; color: #fff; font-size: 19px; background: var(--c); margin-bottom: 14px; box-shadow: 0 8px 18px -8px var(--c); }
+    .tile h3 { margin: 0 0 8px; font-family: var(--round); font-size: 22px; font-weight: 800; }
+    .tile p { font-size: 15.5px; color: var(--ink-2); line-height: 1.65; }
+    .tile p + p { margin-top: 10px; }
+
+    footer { max-width: var(--page); margin: 0 auto; padding: 8px 28px 60px; font-size: 13.5px; color: var(--ink-3); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer .heart { color: var(--pink); }
+
+    /* ---------- Floating toggle ---------- */
+    .play-toggle { position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 50px; height: 50px; border-radius: 50%; border: 0; cursor: pointer; display: grid; place-items: center; font-size: 17px; color: var(--pink-deep); }
+    .play-toggle[aria-pressed="true"] { color: #fff; background: var(--grad); }
+
+    /* ---------- Playground mode ---------- */
+    .sakura-petal, .animal-run { display: none; }
+    body.is-play-mode .sakura-petal, body.is-play-mode .animal-run { display: block; }
+    .sakura-petal { position: fixed; top: -30px; z-index: 40; pointer-events: none; width: 16px; height: 16px; opacity: .75; animation: petal-fall 14s linear infinite; }
     .sakura-petal svg { width: 100%; height: 100%; display: block; }
-    @keyframes petal-fall {
-      0% { transform: translateY(-10%) rotate(0deg) translateX(0); }
-      25% { transform: translateY(25vh) rotate(90deg) translateX(15px); }
-      50% { transform: translateY(50vh) rotate(180deg) translateX(-10px); }
-      75% { transform: translateY(75vh) rotate(270deg) translateX(20px); }
-      100% { transform: translateY(110vh) rotate(360deg) translateX(0); }
-    }
+    .sakura-petal:nth-of-type(1) { left: 6%; } .sakura-petal:nth-of-type(2) { left: 22%; animation-delay: -4s; animation-duration: 17s; }
+    .sakura-petal:nth-of-type(3) { left: 41%; animation-delay: -9s; animation-duration: 12s; } .sakura-petal:nth-of-type(4) { left: 63%; animation-delay: -2s; animation-duration: 16s; }
+    .sakura-petal:nth-of-type(5) { left: 80%; animation-delay: -7s; } .sakura-petal:nth-of-type(6) { left: 93%; animation-delay: -11s; animation-duration: 18s; }
+    @keyframes petal-fall { 0% { transform: translateY(0) rotate(0); } 50% { transform: translateY(55vh) rotate(180deg) translateX(-14px); } 100% { transform: translateY(110vh) rotate(360deg) translateX(10px); } }
+    .animal-run { position: fixed; z-index: 40; cursor: pointer; font-size: 22px; line-height: 1; }
+    .animal-run--top-left { top: 90px; left: 0; animation: run-right 140s linear infinite; }
+    .animal-run--top-right { top: 120px; right: 0; animation: run-left 130s linear infinite; animation-delay: -20s; }
+    .animal-run--bottom-left { bottom: 90px; left: 0; animation: run-right 160s linear infinite; animation-delay: -40s; }
+    .animal-run--bottom-right { bottom: 120px; right: 0; animation: run-left 150s linear infinite; animation-delay: -60s; }
+    .animal-run--scared { animation: none !important; pointer-events: none !important; }
+    @keyframes run-right { from { transform: translateX(-50px); } to { transform: translateX(calc(100vw + 50px)); } }
+    @keyframes run-left { from { transform: translateX(50px); } to { transform: translateX(calc(-100vw - 50px)); } }
+    .click-spark { position: fixed; left: 0; top: 0; z-index: 100; pointer-events: none; width: var(--spark-size, 6px); height: var(--spark-size, 6px); border-radius: 50%; background: var(--spark-color, var(--pink)); transform: translate(-50%,-50%); animation: spark 680ms ease-out forwards; }
+    @keyframes spark { 0% { opacity: .95; } 100% { opacity: 0; transform: translate(calc(-50% + var(--spark-x)), calc(-50% + var(--spark-y))) scale(.15); } }
+
+    /* ---------- QR sheet ---------- */
+    .qr-modal { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; }
+    .qr-modal.is-open { display: flex; }
+    .qr-modal__backdrop { position: absolute; inset: 0; background: rgba(40, 30, 70, 0.3); }
+    .qr-modal__dialog { position: relative; padding: 16px; border-radius: 30px; }
+    .qr-modal__dialog img { display: block; width: min(300px, 76vw); border-radius: 18px; }
+    .qr-modal__close { position: absolute; top: -12px; right: -12px; width: 32px; height: 32px; border-radius: 50%; border: 0; cursor: pointer; font-size: 18px; background: var(--card); color: var(--ink); box-shadow: 0 4px 12px rgba(0,0,0,.2); }
+
     @media (prefers-reduced-motion: reduce) {
-      .sakura-petal { animation: none; opacity: 0.4; }
-    }
-
-    /* Floating geometric decorations */
-    .deco {
-      position: fixed;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .deco--circle-1 { top: 18%; right: 8%; width: 120px; height: 120px; opacity: 0.4; }
-    .deco--circle-2 { top: 55%; left: 4%; width: 75px; height: 75px; opacity: 0.35; }
-    .deco--circle-3 { bottom: 25%; right: 12%; width: 95px; height: 95px; opacity: 0.35; }
-    .deco--diamond { top: 12%; left: 15%; width: 38px; height: 38px; opacity: 0.5; }
-    .deco--triangle { bottom: 15%; left: 20%; width: 58px; height: 52px; opacity: 0.4; }
-    .deco--hex { top: 75%; right: 18%; width: 52px; height: 48px; opacity: 0.45; }
-    .deco--line-arc { top: 35%; left: 2%; width: 180px; height: 110px; opacity: 0.55; }
-    .deco--line-arc-2 { bottom: 40%; right: 5%; width: 150px; height: 100px; opacity: 0.5; }
-    .deco--peak { top: 22%; left: 10%; width: 66px; height: 54px; opacity: 0.45; }
-    .deco--chevron { bottom: 18%; left: 6%; width: 200px; height: 36px; opacity: 0.55; }
-    .deco--chevron-2 { top: 68%; right: 8%; width: 150px; height: 28px; opacity: 0.5; }
-    .deco--sakura-1 { top: 8%; right: 22%; width: 42px; height: 42px; opacity: 0.6; }
-    .deco--sakura-2 { bottom: 35%; left: 18%; width: 36px; height: 36px; opacity: 0.55; }
-    .deco--sakura-3 { top: 48%; right: 6%; width: 32px; height: 32px; opacity: 0.5; }
-    .deco--sakura-4 { bottom: 22%; right: 25%; width: 40px; height: 40px; opacity: 0.6; }
-    .deco--sakura-5 { top: 35%; left: 8%; width: 38px; height: 38px; opacity: 0.55; }
-    .deco--grass-1 { bottom: 0; left: 0; right: 0; height: 150px; opacity: 0.55; }
-    .deco--grass-2 { bottom: 0; left: 12%; width: 115px; height: 85px; opacity: 0.5; }
-    .deco--grass-3 { bottom: 0; right: 18%; width: 105px; height: 82px; opacity: 0.55; transform: scaleX(-1); }
-    .deco--leaf-1 { top: 60%; left: 5%; width: 48px; height: 30px; opacity: 0.5; animation: leaf-sway 4s ease-in-out infinite; }
-    .deco--leaf-2 { bottom: 30%; right: 12%; width: 42px; height: 24px; opacity: 0.45; transform: rotate(-20deg); animation: leaf-sway 5s ease-in-out infinite 0.5s; }
-    .deco--leaf-3 { top: 25%; right: 25%; width: 36px; height: 22px; opacity: 0.45; transform: rotate(15deg); animation: leaf-sway 4.5s ease-in-out infinite 1s; }
-    .deco--cloud { top: 10%; left: 28%; width: 130px; height: 58px; opacity: 0.4; }
-    .deco--tree { bottom: 0; left: 5%; width: 100px; height: 140px; opacity: 0.5; }
-    .deco--tree-2 { bottom: 0; right: 8%; width: 85px; height: 120px; opacity: 0.48; transform: scaleX(-1); }
-    .deco--butterfly { top: 20%; right: 18%; width: 44px; height: 36px; opacity: 0.65; animation: butterfly 6s ease-in-out infinite; }
-    .deco--butterfly-2 { bottom: 35%; left: 10%; width: 38px; height: 30px; opacity: 0.6; animation: butterfly 7s ease-in-out infinite 1s; }
-    .deco--lake { bottom: 0; left: 32%; width: 260px; height: 95px; opacity: 0.6; }
-    .deco--deer { bottom: 0; left: 42%; width: 70px; height: 90px; opacity: 0.5; }
-    @keyframes butterfly {
-      0%, 100% { transform: translateY(0) rotate(-5deg); }
-      50% { transform: translateY(-12px) rotate(5deg); }
-    }
-    @keyframes leaf-sway {
-      0%, 100% { transform: rotate(-3deg); }
-      50% { transform: rotate(3deg); }
-    }
-    @keyframes leaf-sway-2 {
-      0%, 100% { transform: rotate(-22deg); }
-      50% { transform: rotate(-18deg); }
-    }
-    @keyframes leaf-sway-3 {
-      0%, 100% { transform: rotate(12deg); }
-      50% { transform: rotate(18deg); }
-    }
-    .deco--leaf-1 { transform-origin: center bottom; }
-    .deco--leaf-2 { transform-origin: center center; animation: leaf-sway-2 5s ease-in-out infinite 0.5s; }
-    .deco--leaf-3 { transform-origin: center center; animation: leaf-sway-3 4.5s ease-in-out infinite 1s; }
-    .anime-chars { position: fixed; bottom: 140px; right: 24px; z-index: 2; display: flex; gap: 8px; align-items: flex-end; pointer-events: none; }
-    .anime-chars img { width: 56px; height: 56px; object-fit: contain; object-position: bottom; }
-
-    /* Sparkles / 星星闪光 */
-    .sparkle {
-      position: fixed;
-      z-index: 2;
-      pointer-events: none;
-      width: 16px;
-      height: 16px;
-      opacity: 0.9;
-      animation: twinkle 2s ease-in-out infinite;
-    }
-    .sparkle:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
-    .sparkle:nth-child(2) { top: 25%; right: 15%; animation-delay: 0.4s; }
-    .sparkle:nth-child(3) { top: 8%; left: 50%; animation-delay: 0.8s; }
-    .sparkle:nth-child(4) { top: 40%; left: 5%; animation-delay: 0.2s; }
-    .sparkle:nth-child(5) { bottom: 30%; right: 8%; animation-delay: 0.6s; }
-    .sparkle:nth-child(6) { bottom: 20%; left: 25%; animation-delay: 0.3s; }
-    .sparkle:nth-child(7) { top: 60%; right: 25%; animation-delay: 0.5s; }
-    .sparkle:nth-child(8) { bottom: 45%; left: 12%; animation-delay: 0.7s; }
-    .sparkle:nth-child(9) { top: 12%; right: 35%; animation-delay: 0.1s; }
-    .sparkle:nth-child(10) { bottom: 15%; right: 40%; animation-delay: 0.9s; }
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.4; transform: scale(0.9); }
-      50% { opacity: 1; transform: scale(1.15); }
-    }
-
-    /* Speed lines / 速度线 */
-    .speed-lines {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.2;
-      overflow: hidden;
-    }
-    .speed-lines svg { width: 100%; height: 100%; display: block; }
-
-    /* Speech bubble / 对话框 */
-    .bubble {
-      position: fixed;
-      z-index: 3;
-      pointer-events: none;
-      background: rgba(255,255,255,0.95);
-      border: 2.5px solid var(--ink);
-      border-radius: 20px;
-      padding: 0.4rem 0.75rem;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--ink);
-      box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
-    }
-    .bubble::after {
-      content: "";
-      position: absolute;
-      width: 0; height: 0;
-      border: 10px solid transparent;
-      border-top-color: var(--ink);
-      border-bottom: none;
-      left: 20px;
-      bottom: -10px;
-    }
-    .bubble--1 { top: 120px; left: 18%; }
-    .bubble--2 { bottom: 200px; right: 12%; }
-    .bubble--2::after { left: auto; right: 20px; border-top-color: var(--ink); }
-
-    /* Chibi icon / Q版小图标 */
-    .chibi-icon {
-      position: fixed;
-      z-index: 2;
-      pointer-events: none;
-      width: 40px;
-      height: 40px;
-      opacity: 0.85;
-    }
-    .chibi-icon--1 { top: 140px; right: 22%; }
-    .chibi-icon--2 { bottom: 180px; left: 15%; }
-
-    /* Manga-style thick outline / 漫画式粗描边 */
-    .manga-outline {
-      border: 2.5px solid var(--ink) !important;
-      box-shadow: 4px 4px 0 rgba(45, 38, 64, 0.2) !important;
-    }
-
-    /* Animal emoji runners – 很慢，在文字下层，点击后飞快跑走 */
-    .animal-run {
-      position: fixed;
-      z-index: 0;
-      pointer-events: auto;
-      cursor: pointer;
-      font-size: 28px;
-      line-height: 1;
-      animation-timing-function: linear;
-      opacity: 0.82;
-    }
-    .animal-run--top-left { top: 60px; left: 0; animation: run-right 140s infinite; }
-    .animal-run--top-right { top: 95px; right: 0; animation: run-left 130s infinite; animation-delay: -20s; }
-    .animal-run--bottom-left { bottom: 80px; left: 0; animation: run-right 160s infinite; animation-delay: -40s; }
-    .animal-run--bottom-right { bottom: 115px; right: 0; animation: run-left 150s infinite; animation-delay: -60s; }
-    .animal-run--left-top { left: 12px; top: 25%; animation: run-down 120s infinite; }
-    .animal-run--left-bottom { left: 12px; bottom: 30%; animation: run-up 135s infinite; animation-delay: -30s; }
-    .animal-run--right-top { right: 12px; top: 30%; animation: run-down 145s infinite; animation-delay: -50s; }
-    .animal-run--right-bottom { right: 12px; bottom: 25%; animation: run-up 125s infinite; animation-delay: -70s; }
-    .animal-run--scared {
-      animation: none !important;
-      pointer-events: none !important;
-      opacity: 1 !important;
-    }
-    /* 无限循环：从一侧出去从另一侧进来 */
-    @keyframes run-right {
-      0% { transform: translateX(-50px); }
-      100% { transform: translateX(calc(100vw + 50px)); }
-    }
-    @keyframes run-left {
-      0% { transform: translateX(50px); }
-      100% { transform: translateX(calc(-100vw - 50px)); }
-    }
-    @keyframes run-up {
-      0% { transform: translateY(50px); }
-      100% { transform: translateY(calc(-100vh - 50px)); }
-    }
-    @keyframes run-down {
-      0% { transform: translateY(-50px); }
-      100% { transform: translateY(calc(100vh + 50px)); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .animal-run { animation: none; opacity: 0.6; }
-      .animal-run--scared { animation: none; }
-      .sparkle { animation: none; opacity: 0.6; }
-    }
-    @media (max-width: 768px) {
-      .bubble--1, .bubble--2 { display: none; }
-      .animal-run { font-size: 22px; }
-    }
-
-    @media (max-width: 900px) {
-      .deco--circle-1, .deco--circle-3, .deco--line-arc-2, .deco--chevron-2, .deco--sakura-1, .deco--cloud, .deco--tree-2, .deco--butterfly, .deco--lake, .deco--deer { display: none; }
-      .anime-chars { right: 12px; bottom: 120px; }
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(123, 104, 166, 0.35);
-      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    a:hover { color: var(--accent-hover); border-bottom-color: rgba(92, 77, 130, 0.6); }
-
-    .masthead {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 252, 255, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(220, 200, 235, 0.5);
-    }
-
-    .masthead__inner {
-      width: min(1400px, 94vw);
-      margin: 0 auto;
-      padding: 0.7rem 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .masthead-logo {
-      display: flex;
-      align-items: center;
-      margin-right: 0.5rem;
-    }
-    .masthead-logo img { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-    }
-
-    .nav-list a {
-      display: inline-block;
-      padding: 0.45rem 0.75rem;
-      border: none;
-      border-radius: var(--radius-sm);
-      color: var(--ink-muted);
-      font-weight: 560;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-list a:hover {
-      background: var(--lavender-soft);
-      color: var(--accent-hover);
-    }
-
-    .layout {
-      position: relative;
-      z-index: 10;
-      width: min(1400px, 94vw);
-      margin: 1.5rem auto 3rem;
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .sidebar {
-      position: relative;
-      background: linear-gradient(175deg, #fff8fc 0%, #f0f8ff 40%, #f8fff0 100%);
-      border: 2px solid transparent;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-card), 0 0 0 1px rgba(200, 180, 220, 0.4);
-      padding: 1.25rem;
-      align-self: start;
-      backdrop-filter: blur(8px);
-      overflow: hidden;
-      background-clip: padding-box;
-    }
-    .sidebar::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      border-radius: inherit;
-      padding: 2px;
-      background: linear-gradient(135deg, var(--lavender), var(--blush), var(--mint), var(--coral));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .sidebar .corner-deco {
-      position: absolute;
-      width: 56px;
-      height: 56px;
-      top: 0;
-      right: 0;
-      opacity: 0.55;
-    }
-    .sidebar .corner-deco--bl { bottom: 0; top: auto; right: auto; left: 0; transform: rotate(-90deg); }
-    .sidebar .sidebar-grass { position: absolute; bottom: 0; left: 0; right: 0; height: 50px; opacity: 0.55; z-index: 0; }
-    .sidebar .sidebar-grass svg { width: 100%; height: 100%; display: block; }
-    .sidebar .sidebar-flowers { position: absolute; bottom: 12px; right: 12px; width: 42px; height: 42px; opacity: 0.7; z-index: 0; }
-    .sidebar .sidebar-flowers svg { width: 100%; height: 100%; display: block; }
-    .sidebar .avatar-wrap,
-    .sidebar .name,
-    .sidebar .bio,
-    .sidebar .meta,
-    .sidebar .social { position: relative; z-index: 1; }
-
-    .avatar-wrap {
-      position: relative;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: 0 12px 28px rgba(90, 60, 120, 0.12);
-    }
-
-    .avatar-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      border-radius: inherit;
-      padding: 2px;
-      background: linear-gradient(135deg, var(--lavender), var(--blush));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    .avatar {
-      width: 100%;
-      border-radius: inherit;
-      display: block;
-      vertical-align: middle;
-    }
-
-    .name {
-      margin: 1rem 0 0.2rem;
-      font-family: var(--font-serif);
-      font-size: 1.55rem;
-      font-weight: 600;
-      color: var(--ink);
-      letter-spacing: 0.02em;
-    }
-
-    .bio {
-      margin: 0;
-      font-size: 0.95rem;
-      color: var(--accent);
-      font-weight: 560;
-      letter-spacing: 0.01em;
-    }
-
-    .meta {
-      margin: 0.65rem 0 1rem;
-      color: var(--ink-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .social { list-style: none; margin: 0; padding: 0; }
-    .social li { margin-bottom: 0.4rem; }
-    .social a,
-    .qr-trigger {
-      border: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--ink-muted);
-      font-weight: 500;
-      font-size: 0.92rem;
-      background: transparent;
-      padding: 0.2rem 0;
-      font: inherit;
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
-
-    .social a:hover,
-    .qr-trigger:hover { color: var(--accent-hover); }
-
-    .content.manga-outline {
-      position: relative;
-      overflow: hidden;
-      background: var(--card-bg);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft), 4px 4px 0 rgba(45, 38, 64, 0.12);
-      padding: 1.6rem;
-      backdrop-filter: blur(6px);
-    }
-    .content .corner-deco {
-      position: absolute;
-      width: 72px;
-      height: 72px;
-      top: 0;
-      left: 0;
-      opacity: 0.45;
-    }
-    .content .corner-deco--tr { left: auto; right: 0; transform: scaleX(-1); }
-    .content .corner-deco--br { top: auto; left: auto; right: 0; bottom: 0; transform: scale(-1); }
-    .content .corner-deco--bl { left: 0; top: auto; right: auto; bottom: 0; transform: scaleY(-1); }
-    .content .grass-bottom {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 48px;
-      opacity: 0.35;
-      pointer-events: none;
-    }
-    .content .grass-bottom svg { width: 100%; height: 100%; display: block; }
-    .content .grass-bottom { z-index: 0; }
-
-    .content::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(120, 90, 160, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(120, 90, 160, 0.025) 1px, transparent 1px);
-      background-size: 28px 28px;
-      pointer-events: none;
-    }
-
-    .content::after {
-      content: "";
-      position: absolute;
-      left: -15%;
-      right: -15%;
-      top: -40px;
-      height: 120px;
-      border-radius: 0 0 50% 50% / 0 0 100% 100%;
-      background: linear-gradient(105deg, rgba(220, 200, 255, 0.2), rgba(255, 200, 228, 0.22));
-      pointer-events: none;
-    }
-
-    .content > * { position: relative; z-index: 1; }
-
-    .content p,
-    .content li { font-weight: 450; }
-
-    .content strong,
-    .content b { font-weight: 620; color: var(--ink); }
-
-    .home-hero.manga-outline {
-      position: relative;
-      margin-bottom: 2rem;
-      padding: 1.75rem 1.5rem;
-      border-radius: var(--radius-md);
-      border: 2.5px solid var(--ink);
-      box-shadow: 4px 4px 0 rgba(45, 38, 64, 0.15), 0 4px 24px rgba(90, 60, 120, 0.06);
-      background:
-        radial-gradient(circle at 95% 10%, rgba(210, 180, 245, 0.12) 0%, transparent 45%),
-        linear-gradient(150deg, rgba(255, 252, 255, 0.95) 0%, rgba(252, 245, 255, 0.9) 50%, rgba(255, 248, 252, 0.95) 100%);
-    }
-
-    .home-hero::after {
-      content: "";
-      position: absolute;
-      right: 24px;
-      top: 20px;
-      width: 100px;
-      height: 100px;
-      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-      border: 1px solid rgba(180, 150, 220, 0.25);
-      background: linear-gradient(145deg, rgba(200, 170, 240, 0.1), rgba(255, 200, 230, 0.08));
-      pointer-events: none;
-      animation: blob 8s ease-in-out infinite;
-    }
-    .home-hero .hero-deco {
-      position: absolute;
-      pointer-events: none;
-      opacity: 0.5;
-    }
-    .hero-deco--dots { left: 16px; bottom: 16px; }
-    .hero-deco--dots svg { width: 48px; height: 32px; }
-    .hero-deco--cross { right: 140px; top: 24px; }
-    .hero-deco--cross svg { width: 24px; height: 24px; }
-    .hero-deco--sakura { right: 24px; bottom: 20px; }
-    .hero-deco--sakura svg { width: 36px; height: 36px; }
-    .hero-deco--grass { left: 0; right: 0; bottom: 0; height: 32px; opacity: 0.6; }
-    .hero-deco--grass svg { width: 100%; height: 100%; display: block; }
-    @media (max-width: 767px) { .hero-deco--cross { display: none; } .hero-deco--sakura { right: 16px; bottom: 12px; } }
-
-    @keyframes blob {
-      0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(0deg) scale(1); }
-      50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; transform: rotate(5deg) scale(1.05); }
-    }
-
-    .home-hero p:first-child {
-      font-family: var(--font-serif);
-      color: var(--ink);
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      margin-top: 0;
-      line-height: 1.7;
-    }
-
-    .home-section { margin-top: 2rem; position: relative; padding: 1rem 0; }
-    .home-section .section-deco {
-      position: absolute;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.5;
-    }
-    .home-section .section-deco--tr { top: 0; right: 0; width: 56px; height: 56px; }
-    .home-section .section-deco--bl { bottom: 0; left: 0; width: 48px; height: 48px; }
-    #news .section-deco--tr { opacity: 0.6; }
-    #education-experience .section-deco--bl { opacity: 0.55; }
-    #intern-experience .section-deco--tr { opacity: 0.55; }
-    #publications .section-deco--bl { opacity: 0.6; }
-    #more .section-deco--tr { opacity: 0.55; }
-    .home-section h2,
-    .home-section > ul,
-    .home-section > details { position: relative; z-index: 1; }
-
-    .home-section h2 {
-      margin: 0 0 1.1rem;
-      padding: 0 0 0.65rem;
-      font-family: var(--font-serif);
-      color: var(--ink);
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      border-bottom: 3px solid var(--ink);
-      border-radius: 0 0 2px 2px;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .home-section h2::before {
-      content: "";
-      width: 4px;
-      height: 1.2em;
-      background: linear-gradient(180deg, var(--accent), var(--blush));
-      border-radius: 2px;
-    }
-    .section-icon {
-      width: 26px;
-      height: 26px;
-      flex-shrink: 0;
-      opacity: 1;
-    }
-    #news .section-icon { color: var(--sky-blue); }
-    #education-experience .section-icon { color: var(--mint); }
-    #intern-experience .section-icon { color: var(--coral); }
-    #publications .section-icon { color: var(--accent); }
-    #more .section-icon { color: var(--gold); }
-
-    .card-list { list-style: none; margin: 0; padding: 0; }
-
-    .card-list > li {
-      margin: 0 0 1rem;
-      padding: 1rem 1.15rem 1rem 1.35rem;
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-md);
-      background: linear-gradient(165deg, #ffffff, rgba(252, 248, 255, 0.6));
-      border-left: 4px solid var(--lavender);
-      box-shadow: 2px 2px 0 rgba(45, 38, 64, 0.1);
-      transition: box-shadow 0.25s ease, border-left-color 0.25s ease;
-    }
-
-    .card-list > li:hover {
-      box-shadow: 0 6px 24px rgba(90, 60, 120, 0.08);
-      border-left-color: var(--accent);
-    }
-    .card-list > li {
-      position: relative;
-    }
-    .card-list > li::after {
-      content: "";
-      position: absolute;
-      right: 12px;
-      top: 12px;
-      width: 6px;
-      height: 6px;
-      border: 1px solid var(--lavender);
-      border-radius: 1px;
-      transform: rotate(45deg);
-      opacity: 0.7;
-    }
-    .card-list > li:hover::after { border-color: var(--accent); }
-
-    /* Publications: clear layout + expandable abstract */
-    #publications .pub-list { list-style: none; margin: 0; padding: 0; }
-    #publications .pub-item {
-      margin: 0 0 1.25rem;
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-md);
-      background: linear-gradient(165deg, #ffffff, rgba(252, 248, 255, 0.6));
-      border-left: 4px solid var(--accent);
-      box-shadow: 2px 2px 0 rgba(45, 38, 64, 0.1);
-      overflow: hidden;
-      transition: box-shadow 0.25s ease, border-left-color 0.25s ease;
-    }
-    #publications .pub-item:hover { box-shadow: 0 6px 24px rgba(90, 60, 120, 0.08); border-left-color: var(--accent-hover); }
-    #publications .pub-item[open] { border-left-color: var(--accent); }
-    #publications .pub-item-wrap { list-style: none; margin: 0; }
-    #publications .pub-summary {
-      padding: 1.1rem 1.25rem 1rem;
-      cursor: pointer;
-      display: block;
-      list-style: none;
-      position: relative;
-    }
-    #publications .pub-summary::-webkit-details-marker { display: none; }
-    #publications .pub-summary::marker { content: none; }
-    #publications .pub-summary::after {
-      content: "+";
-      position: absolute;
-      right: 1rem;
-      top: 1.1rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--accent);
-      transition: transform 0.2s ease;
-    }
-    #publications .pub-item[open] .pub-summary::after { content: "−"; }
-    #publications .pub-summary .pub-title,
-    #publications .pub-summary .pub-authors,
-    #publications .pub-summary .pub-venue,
-    #publications .pub-summary .pub-links { display: block; }
-    #publications .pub-title {
-      font-family: var(--font-serif);
-      font-size: 1.22rem;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.4;
-      margin: 0 0 0.4rem;
-      padding-right: 1.5rem;
-    }
-    #publications .pub-authors {
-      font-size: 0.95rem;
-      color: var(--ink-muted);
-      font-style: italic;
-      margin: 0 0 0.35rem;
-      opacity: 0.92;
-    }
-    #publications .pub-authors .author-me {
-      font-weight: 700;
-      color: var(--ink);
-      font-style: italic;
-    }
-    #publications .pub-venue {
-      font-size: 0.9rem;
-      color: var(--accent);
-      font-weight: 560;
-      margin: 0 0 0.35rem;
-    }
-    #publications .pub-links {
-      font-size: 0.9rem;
-      margin: 0;
-    }
-    #publications .pub-links a { border: none; }
-    #publications .pub-details {
-      padding: 0 1.25rem 1.1rem;
-      border-top: 1px solid rgba(200, 180, 220, 0.4);
-    }
-    #publications .pub-abstract {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      color: var(--ink-muted);
-      margin: 0.75rem 0 0;
-    }
-    #publications .pub-abstract strong { color: var(--ink); }
-
-    .news-list { margin: 0; padding-left: 1.25rem; }
-    .news-list li { margin-bottom: 0.6rem; position: relative; }
-    .news-list li::marker { color: var(--accent); }
-
-    .older-news {
-      margin-top: 0.5rem;
-      padding: 0.75rem 1rem;
-      border: 1px solid rgba(210, 195, 235, 0.5);
-      border-radius: var(--radius-md);
-      background: linear-gradient(160deg, var(--lavender-soft), var(--blush-soft));
-    }
-
-    .older-news summary {
-      cursor: pointer;
-      color: var(--accent);
-      font-weight: 620;
-      letter-spacing: 0.01em;
-    }
-    .older-news[open] summary { margin-bottom: 0.5rem; }
-
-    .more-list { margin: 0; padding-left: 1.25rem; }
-    .more-list ul { margin-top: 0.5rem; }
-    .more-list > li { margin-bottom: 1rem; }
-
-    .qr-modal {
-      position: fixed;
-      inset: 0;
-      display: none;
-      z-index: 2200;
-    }
-
-    .qr-modal.is-open { display: block; }
-    .qr-modal__backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(45, 38, 64, 0.5);
-      backdrop-filter: blur(6px);
-    }
-
-    .qr-modal__dialog {
-      position: relative;
-      width: min(400px, 90vw);
-      margin: 10vh auto;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(175deg, #fff, var(--lavender-soft));
-      padding: 1.25rem;
-      box-shadow: 0 24px 56px rgba(45, 38, 64, 0.25);
-      border: 1px solid var(--card-border);
-    }
-
-    .qr-modal__dialog img { width: 100%; border-radius: var(--radius-sm); display: block; }
-
-    .qr-modal__close {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      width: 34px;
-      height: 34px;
-      border: 0;
-      border-radius: 50%;
-      background: var(--ink);
-      color: #fff;
-      font-size: 1.25rem;
-      line-height: 34px;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-    .qr-modal__close:hover { background: var(--accent-hover); transform: scale(1.05); }
-
-    @media (min-width: 960px) {
-      .layout { grid-template-columns: 300px minmax(0, 1fr); gap: 1.75rem; }
-      .sidebar { position: sticky; top: 82px; }
-      .content { padding: 2.25rem; }
-    }
-
-	    @media (max-width: 767px) {
-	      .home-hero::after { display: none; }
-	      .home-hero { padding: 1.25rem; }
-	    }
-
-	    /* Field-notebook redesign */
-	    :root {
-	      --violet: #6f5797;
-	      --violet-soft: #e9e0f4;
-	      --sage: #a9cdb2;
-	      --sage-soft: #edf6ee;
-	      --wheat: #c9a15a;
-	      --wheat-soft: #f6edd8;
-	      --brown: #6e4b33;
-	      --rose: #d88eaa;
-	      --rose-soft: #f8e7ee;
-	      --paper: #fffdf8;
-	      --paper-warm: #fbf2df;
-	      --line: rgba(110, 75, 51, 0.18);
-	      --ink: #2c2335;
-	      --ink-muted: #5d5365;
-	      --accent: var(--violet);
-	      --accent-hover: #4f3c72;
-	      --card-bg: rgba(255, 253, 248, 0.94);
-	      --card-border: rgba(110, 75, 51, 0.18);
-	      --shadow-soft: 0 24px 60px rgba(70, 45, 30, 0.12);
-	      --shadow-card: 0 14px 34px rgba(70, 45, 30, 0.1);
-	      --radius-lg: 18px;
-	      --radius-md: 8px;
-	      --radius-sm: 8px;
-	    }
-
-	    * { letter-spacing: 0 !important; }
-
-	    body {
-	      color: var(--ink-muted);
-	      background:
-	        linear-gradient(90deg, rgba(201, 161, 90, 0.08) 0 1px, transparent 1px 100%),
-	        linear-gradient(180deg, rgba(111, 87, 151, 0.07), rgba(169, 205, 178, 0.1) 42%, rgba(248, 231, 238, 0.55) 100%),
-	        repeating-linear-gradient(0deg, rgba(110, 75, 51, 0.045) 0 1px, transparent 1px 34px),
-	        var(--paper);
-	      background-size: 42px 42px, auto, auto, auto;
-	      line-height: 1.72;
-	    }
-
-	    body::before,
-	    body::after,
-	    .speed-lines,
-	    .bubble,
-	    .chibi-icon,
-	    .deco,
-	    .anime-chars,
-	    .animal-run,
-	    .content .corner-deco,
-	    .content .grass-bottom,
-	    .sidebar .corner-deco,
-	    .sidebar .sidebar-grass,
-	    .sidebar .sidebar-flowers,
-	    .hero-deco,
-	    .home-section .section-deco {
-	      display: none !important;
-	    }
-
-	    .bg-pattern {
-	      opacity: 0.18;
-	      background-image:
-	        linear-gradient(90deg, rgba(111, 87, 151, 0.18) 1px, transparent 1px),
-	        linear-gradient(180deg, rgba(201, 161, 90, 0.16) 1px, transparent 1px);
-	      background-size: 84px 84px;
-	    }
-
-	    .sakura-petal {
-	      width: 12px;
-	      height: 12px;
-	      opacity: 0.22;
-	      z-index: 0;
-	      animation-duration: 24s;
-	    }
-
-	    .sparkle {
-	      opacity: 0.3;
-	      z-index: 0;
-	    }
-
-	    body.is-play-mode .sparkle {
-	      opacity: 0.58;
-	    }
-
-	    body.is-play-mode .animal-run {
-	      display: block !important;
-	      z-index: 0;
-	      opacity: 0.68;
-	      font-size: 21px;
-	      filter: drop-shadow(0 2px 3px rgba(110, 75, 51, 0.16));
-	    }
-
-	    body.is-play-mode .bg-pattern {
-	      opacity: 0.28;
-	    }
-
-	    .click-spark {
-	      position: fixed;
-	      left: 0;
-	      top: 0;
-	      z-index: 2300;
-	      width: var(--spark-size, 6px);
-	      height: var(--spark-size, 6px);
-	      border-radius: 999px;
-	      pointer-events: none;
-	      background: var(--spark-color, var(--wheat));
-	      box-shadow:
-	        0 0 0 1px rgba(255, 253, 248, 0.82),
-	        0 0 13px rgba(201, 161, 90, 0.24);
-	      transform: translate(-50%, -50%) scale(0.9);
-	      animation: click-spark-out 680ms ease-out forwards;
-	    }
-
-	    @keyframes click-spark-out {
-	      0% {
-	        opacity: 0.92;
-	        transform: translate(-50%, -50%) scale(0.9);
-	      }
-	      100% {
-	        opacity: 0;
-	        transform: translate(calc(-50% + var(--spark-x)), calc(-50% + var(--spark-y))) scale(0.15);
-	      }
-	    }
-
-	    .play-toggle {
-	      position: fixed;
-	      right: 1rem;
-	      bottom: 1rem;
-	      z-index: 2150;
-	      display: inline-flex;
-	      align-items: center;
-	      justify-content: center;
-	      width: 42px;
-	      height: 42px;
-	      border: 1px solid rgba(110, 75, 51, 0.22);
-	      border-radius: 999px;
-	      color: var(--brown);
-	      background: rgba(255, 253, 248, 0.86);
-	      box-shadow: 0 10px 24px rgba(70, 45, 30, 0.13);
-	      cursor: pointer;
-	      backdrop-filter: blur(8px);
-	      transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-	    }
-
-	    .play-toggle:hover,
-	    .play-toggle:focus-visible {
-	      color: var(--violet);
-	      transform: translateY(-2px);
-	      box-shadow: 0 14px 28px rgba(70, 45, 30, 0.16);
-	    }
-
-	    .play-toggle:focus-visible {
-	      outline: 3px solid rgba(111, 87, 151, 0.24);
-	      outline-offset: 3px;
-	    }
-
-	    .play-toggle[aria-pressed="true"] {
-	      color: var(--paper);
-	      border-color: rgba(111, 87, 151, 0.55);
-	      background: linear-gradient(135deg, var(--violet), var(--rose));
-	    }
-
-	    .play-toggle[aria-pressed="true"] i {
-	      animation: play-toggle-glow 1.6s ease-in-out infinite;
-	    }
-
-	    @keyframes play-toggle-glow {
-	      0%, 100% {
-	        transform: rotate(-8deg) scale(1);
-	      }
-	      50% {
-	        transform: rotate(8deg) scale(1.12);
-	      }
-	    }
-
-	    @media (prefers-reduced-motion: reduce) {
-	      .click-spark,
-	      .play-toggle[aria-pressed="true"] i {
-	        animation: none;
-	      }
-	      body.is-play-mode .animal-run {
-	        animation: none !important;
-	      }
-	    }
-
-	    a {
-	      color: var(--violet);
-	      border-bottom: 1px solid rgba(111, 87, 151, 0.28);
-	      text-decoration: none;
-	    }
-
-	    a:hover {
-	      color: var(--accent-hover);
-	      border-bottom-color: rgba(79, 60, 114, 0.55);
-	    }
-
-	    .masthead {
-	      background: rgba(255, 253, 248, 0.86);
-	      border-bottom: 1px solid var(--line);
-	      box-shadow: 0 8px 24px rgba(70, 45, 30, 0.06);
-	    }
-
-	    .masthead__inner {
-	      width: min(1180px, 92vw);
-	      padding: 0.38rem 0;
-	    }
-
-	    .masthead-logo img {
-	      width: 28px;
-	      height: 28px;
-	      border-radius: 7px;
-	      border: 1px solid var(--line);
-	    }
-
-	    .nav-list {
-	      gap: 0.18rem;
-	    }
-
-	    .nav-list a {
-	      color: var(--brown);
-	      border: 1px solid transparent;
-	      border-radius: 999px;
-	      padding: 0.24rem 0.56rem;
-	      font-size: 0.84rem;
-	      font-weight: 650;
-	      background: transparent;
-	    }
-
-	    .nav-list a:hover {
-	      color: var(--violet);
-	      border-color: rgba(111, 87, 151, 0.24);
-	      background: rgba(233, 224, 244, 0.6);
-	    }
-
-	    .layout {
-	      width: min(1120px, 92vw);
-	      margin: 1.35rem auto 4.5rem;
-	      gap: 1.5rem;
-	    }
-
-	    .sidebar {
-	      border: 1px solid var(--line);
-	      border-radius: 18px;
-	      background:
-	        linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(246, 237, 216, 0.72)),
-	        var(--paper);
-	      box-shadow: var(--shadow-card);
-	      padding: 0.8rem;
-	      overflow: hidden;
-	    }
-
-	    .sidebar::before {
-	      display: none;
-	    }
-
-	    .avatar-wrap {
-	      border: 1px solid rgba(110, 75, 51, 0.24);
-	      border-radius: 12px;
-	      box-shadow: none;
-	      aspect-ratio: 1 / 0.92;
-	      background: var(--wheat-soft);
-	    }
-
-	    .avatar-wrap::before {
-	      display: none;
-	    }
-
-	    .avatar {
-	      height: 100%;
-	      object-fit: cover;
-	    }
-
-	    .name {
-	      margin: 0.8rem 0 0.1rem;
-	      font-size: 1.55rem;
-	      color: var(--ink);
-	    }
-
-	    .bio {
-	      color: var(--violet);
-	      font-weight: 700;
-	      font-size: 0.92rem;
-	    }
-
-	    .meta {
-	      margin: 0.65rem 0 0.65rem;
-	      padding: 0.72rem;
-	      border: 1px solid rgba(169, 205, 178, 0.5);
-	      border-radius: 8px;
-	      background: var(--sage-soft);
-	      color: var(--brown);
-	      font-size: 0.84rem;
-	      line-height: 1.45;
-	    }
-
-	    .meta-kicker {
-	      display: block;
-	      margin-bottom: 0.18rem;
-	      color: var(--brown);
-	      font-size: 0.68rem;
-	      font-weight: 850;
-	      text-transform: uppercase;
-	    }
-
-	    .meta strong {
-	      display: block;
-	      color: var(--ink);
-	      font-size: 0.92rem;
-	      line-height: 1.35;
-	    }
-
-	    .meta a {
-	      border: none;
-	      color: var(--violet);
-	      font-weight: 700;
-	    }
-
-	    .social {
-	      display: grid;
-	      grid-template-columns: repeat(5, minmax(0, 1fr));
-	      gap: 0.35rem;
-	    }
-
-	    .social li {
-	      margin: 0;
-	    }
-
-	    .social a,
-	    .qr-trigger {
-	      width: 100%;
-	      aspect-ratio: 1;
-	      min-height: 2.05rem;
-	      justify-content: center;
-	      gap: 0;
-	      padding: 0;
-	      border: 1px solid rgba(110, 75, 51, 0.16);
-	      border-radius: 10px;
-	      background: rgba(255, 255, 255, 0.72);
-	      color: var(--ink-muted);
-	      font-size: 0;
-	      font-weight: 650;
-	    }
-
-	    .social a i,
-	    .qr-trigger i {
-	      font-size: 0.95rem;
-	    }
-
-	    .social a:hover,
-	    .qr-trigger:hover {
-	      color: var(--violet);
-	      border-color: rgba(111, 87, 151, 0.28);
-	      background: var(--violet-soft);
-	    }
-
-	    .content.manga-outline {
-	      padding: 0;
-	      border: 0 !important;
-	      border-radius: 0;
-	      background: transparent;
-	      box-shadow: none !important;
-	      backdrop-filter: none;
-	      overflow: visible;
-	    }
-
-	    .content::before,
-	    .content::after {
-	      display: none;
-	    }
-
-	    .home-hero.manga-outline {
-	      margin: 0 0 2.5rem;
-	      padding: 2rem;
-	      border: 1px solid var(--line) !important;
-	      border-radius: 18px;
-	      background:
-	        linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(246, 237, 216, 0.72) 58%, rgba(248, 231, 238, 0.72)),
-	        var(--paper);
-	      box-shadow: var(--shadow-soft) !important;
-	      display: block;
-	      overflow: hidden;
-	    }
-
-	    .home-hero::before {
-	      content: "";
-	      position: absolute;
-	      inset: 0;
-	      pointer-events: none;
-	      background:
-	        linear-gradient(90deg, rgba(201, 161, 90, 0.12) 0 1px, transparent 1px 100%),
-	        linear-gradient(180deg, rgba(111, 87, 151, 0.05), transparent);
-	      background-size: 28px 28px, auto;
-	    }
-
-	    .home-hero::after {
-	      display: none;
-	    }
-
-	    .hero-copy {
-	      position: relative;
-	      z-index: 1;
-	    }
-
-	    .home-hero h1 {
-	      margin: 0 0 1rem;
-	      font-family: var(--font-serif);
-	      font-size: 3.2rem;
-	      line-height: 1;
-	      color: var(--ink);
-	      font-weight: 700;
-	    }
-
-	    .home-hero h1 span {
-	      color: var(--violet);
-	      font-weight: 600;
-	    }
-
-	    .home-hero p,
-	    .home-hero p:first-child {
-	      margin: 0 0 0.85rem;
-	      color: var(--ink-muted);
-	      font-family: var(--font-sans);
-	      font-size: 1rem;
-	      font-weight: 450;
-	      line-height: 1.72;
-	    }
-
-	    .hero-lead {
-	      color: var(--ink) !important;
-	      font-weight: 520 !important;
-	    }
-
-	    .hero-tags {
-	      display: flex;
-	      flex-wrap: wrap;
-	      gap: 0.5rem;
-	      margin-top: 1.1rem;
-	    }
-
-	    .research-tag {
-	      position: relative;
-	      display: inline-flex;
-	      padding: 0.35rem 0.7rem;
-	      border-radius: 999px;
-	      border: 1px solid rgba(111, 87, 151, 0.22);
-	      background: rgba(233, 224, 244, 0.68);
-	      color: var(--violet);
-	      font-size: 0.86rem;
-	      font-weight: 700;
-	    }
-
-	    .hero-tags[data-reveal-enabled="true"] .research-tag {
-	      cursor: help;
-	    }
-
-	    .tag-note {
-	      display: none;
-	      position: absolute;
-	      left: 0;
-	      top: calc(100% + 0.45rem);
-	      z-index: 20;
-	      width: min(260px, 72vw);
-	      padding: 0.65rem 0.75rem;
-	      border: 1px solid var(--line);
-	      border-radius: 8px;
-	      background: var(--paper);
-	      box-shadow: 0 12px 24px rgba(70, 45, 30, 0.12);
-	      color: var(--ink-muted);
-	      font-size: 0.82rem;
-	      font-weight: 520;
-	      line-height: 1.45;
-	    }
-
-	    .hero-tags[data-reveal-enabled="true"] .research-tag:hover .tag-note,
-	    .hero-tags[data-reveal-enabled="true"] .research-tag:focus-within .tag-note {
-	      display: block;
-	    }
-
-	    .home-section {
-	      margin-top: 2.4rem;
-	      padding: 0;
-	    }
-
-	    .home-section h2 {
-	      margin: 0 0 1rem;
-	      padding: 0 0 0.55rem;
-	      border-bottom: 1px solid var(--line);
-	      border-radius: 0;
-	      color: var(--ink);
-	      font-size: 1.55rem;
-	      font-weight: 700;
-	    }
-
-	    .home-section h2::before {
-	      width: 2.4rem;
-	      height: 0.28rem;
-	      border-radius: 999px;
-	      background: linear-gradient(90deg, var(--wheat), var(--sage), var(--rose));
-	      margin-right: 0.15rem;
-	    }
-
-	    .section-icon {
-	      width: 22px;
-	      height: 22px;
-	    }
-
-	    #news .section-icon { color: var(--wheat); }
-	    #education-experience .section-icon { color: var(--sage); }
-	    #intern-experience .section-icon { color: var(--rose); }
-	    #publications .section-icon { color: var(--violet); }
-	    #more .section-icon { color: var(--brown); }
-
-	    .news-list {
-	      list-style: none;
-	      margin: 0;
-	      padding: 0;
-	    }
-
-	    #news > .news-list {
-	      display: grid;
-	      grid-template-columns: repeat(2, minmax(0, 1fr));
-	      gap: 0.85rem;
-	    }
-
-	    .news-list li {
-	      margin: 0;
-	      padding: 0.9rem 1rem;
-	      border: 1px solid var(--line);
-	      border-radius: 8px;
-	      background: rgba(255, 253, 248, 0.88);
-	      box-shadow: 3px 3px 0 rgba(201, 161, 90, 0.11);
-	      line-height: 1.55;
-	    }
-
-	    .news-list li strong:first-child {
-	      display: inline-flex;
-	      margin: 0 0.5rem 0.35rem 0;
-	      padding: 0.1rem 0.45rem;
-	      border-radius: 999px;
-	      border: 1px solid rgba(201, 161, 90, 0.22);
-	      background: var(--wheat-soft);
-	      box-shadow: inset 0 0 0 1px rgba(255, 253, 248, 0.65);
-	      color: var(--brown);
-	      font-size: 0.78rem;
-	      font-weight: 800;
-	    }
-
-	    .older-news {
-	      margin-top: 0.85rem;
-	      padding: 0.75rem 0.85rem;
-	      border: 1px dashed rgba(110, 75, 51, 0.28);
-	      border-radius: 8px;
-	      background: rgba(246, 237, 216, 0.46);
-	    }
-
-	    .older-news summary {
-	      color: var(--brown);
-	      font-weight: 800;
-	    }
-
-	    .older-news[open] summary {
-	      margin-bottom: 0.7rem;
-	    }
-
-	    .stamp-case {
-	      margin-top: 0.85rem;
-	      padding: 0.8rem;
-	      border: 1px solid rgba(110, 75, 51, 0.16);
-	      border-radius: 8px;
-	      background:
-	        linear-gradient(135deg, rgba(246, 237, 216, 0.5), rgba(248, 231, 238, 0.35)),
-	        rgba(255, 253, 248, 0.7);
-	      box-shadow: inset 0 0 0 1px rgba(255, 253, 248, 0.7);
-	    }
-
-	    .stamp-strip {
-	      display: flex;
-	      flex-wrap: wrap;
-	      gap: 0.62rem;
-	      align-items: stretch;
-	    }
-
-	    .stamp-button {
-	      --stamp: var(--violet);
-	      --stamp-bg: rgba(233, 224, 244, 0.62);
-	      position: relative;
-	      flex: 1 1 144px;
-	      min-height: 68px;
-	      padding: 0.58rem 0.68rem;
-	      border: 2px solid var(--stamp);
-	      border-radius: 7px;
-	      color: var(--stamp);
-	      background:
-	        linear-gradient(145deg, rgba(255, 253, 248, 0.92), var(--stamp-bg));
-	      box-shadow: 2px 3px 0 rgba(70, 45, 30, 0.1);
-	      cursor: pointer;
-	      font: inherit;
-	      text-align: left;
-	      transform: rotate(var(--tilt, -1deg));
-	      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-	    }
-
-	    .stamp-button::after {
-	      content: "";
-	      position: absolute;
-	      inset: 5px;
-	      border: 1px dashed currentColor;
-	      border-radius: 4px;
-	      opacity: 0.42;
-	      pointer-events: none;
-	    }
-
-	    .stamp-button:hover,
-	    .stamp-button:focus-visible,
-	    .stamp-button[aria-expanded="true"] {
-	      transform: translateY(-2px) rotate(0deg);
-	      box-shadow: 3px 5px 0 rgba(70, 45, 30, 0.13);
-	      background:
-	        linear-gradient(145deg, rgba(255, 253, 248, 0.98), var(--stamp-bg));
-	    }
-
-	    .stamp-button:focus-visible {
-	      outline: 3px solid rgba(111, 87, 151, 0.2);
-	      outline-offset: 3px;
-	    }
-
-	    .stamp-button__eyebrow,
-	    .stamp-button__text {
-	      position: relative;
-	      z-index: 1;
-	      display: block;
-	    }
-
-	    .stamp-button__eyebrow {
-	      margin-bottom: 0.12rem;
-	      font-size: 0.66rem;
-	      font-weight: 850;
-	      text-transform: uppercase;
-	      color: var(--brown);
-	      opacity: 0.86;
-	    }
-
-	    .stamp-button__text {
-	      font-size: 0.96rem;
-	      font-weight: 850;
-	      line-height: 1.22;
-	    }
-
-	    .stamp-button--wheat {
-	      --stamp: var(--wheat);
-	      --stamp-bg: rgba(246, 237, 216, 0.82);
-	      --tilt: 1.1deg;
-	    }
-
-	    .stamp-button--sage {
-	      --stamp: #79aa84;
-	      --stamp-bg: rgba(237, 246, 238, 0.9);
-	      --tilt: -0.6deg;
-	    }
-
-	    .stamp-button--rose {
-	      --stamp: var(--rose);
-	      --stamp-bg: rgba(248, 231, 238, 0.86);
-	      --tilt: 0.7deg;
-	    }
-
-	    .stamp-button--brown {
-	      --stamp: var(--brown);
-	      --stamp-bg: rgba(251, 242, 223, 0.9);
-	      --tilt: -1.2deg;
-	    }
-
-	    .stamp-note {
-	      margin: 0.72rem 0 0;
-	      padding: 0.72rem 0.85rem;
-	      border-left: 4px solid var(--violet);
-	      border-radius: 8px;
-	      background: rgba(255, 253, 248, 0.9);
-	      color: var(--ink-muted);
-	      box-shadow: 2px 3px 0 rgba(216, 142, 170, 0.1);
-	      animation: stamp-note-in 0.18s ease-out both;
-	    }
-
-	    .stamp-note[hidden] {
-	      display: none;
-	    }
-
-	    .stamp-note__title {
-	      display: block;
-	      margin-bottom: 0.15rem;
-	      color: var(--ink);
-	      font-weight: 850;
-	    }
-
-	    .stamp-note__copy {
-	      display: block;
-	      font-size: 0.92rem;
-	      line-height: 1.55;
-	    }
-
-	    @keyframes stamp-note-in {
-	      from {
-	        opacity: 0;
-	        transform: translateY(-4px);
-	      }
-	      to {
-	        opacity: 1;
-	        transform: translateY(0);
-	      }
-	    }
-
-	    .card-list {
-	      list-style: none;
-	      margin: 0;
-	      padding: 0;
-	      display: grid;
-	      gap: 0.85rem;
-	    }
-
-	    .card-list > li {
-	      margin: 0;
-	      padding: 1rem 1rem 1rem 1.2rem;
-	      border: 1px solid var(--line);
-	      border-left: 5px solid var(--sage);
-	      border-radius: 8px;
-	      background: rgba(255, 253, 248, 0.9);
-	      box-shadow: 3px 3px 0 rgba(169, 205, 178, 0.13);
-	      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-	    }
-
-	    #intern-experience .card-list > li {
-	      border-left-color: var(--rose);
-	      box-shadow: 3px 3px 0 rgba(216, 142, 170, 0.13);
-	    }
-
-	    .card-list > li::after {
-	      display: none;
-	    }
-
-	    .card-list > li:hover,
-	    #publications .pub-item:hover {
-	      transform: translateY(-2px);
-	      box-shadow: 0 14px 26px rgba(70, 45, 30, 0.09);
-	    }
-
-	    #publications .pub-list {
-	      display: grid;
-	      gap: 1rem;
-	    }
-
-	    #publications .pub-item {
-	      margin: 0;
-	      border: 1px solid var(--line);
-	      border-left: 5px solid var(--violet);
-	      border-radius: 8px;
-	      background: rgba(255, 253, 248, 0.92);
-	      box-shadow: 4px 4px 0 rgba(111, 87, 151, 0.08);
-	      overflow: hidden;
-	      transition: transform 0.2s ease, box-shadow 0.2s ease;
-	    }
-
-	    #publications .pub-summary {
-	      padding: 1.05rem 1.2rem 1rem;
-	    }
-
-	    #publications .pub-summary::after {
-	      right: 1rem;
-	      top: 1rem;
-	      color: var(--violet);
-	    }
-
-	    #publications .pub-title {
-	      font-size: 1.22rem;
-	      color: var(--ink);
-	      padding-right: 1.8rem;
-	    }
-
-	    #publications .pub-authors {
-	      color: var(--ink-muted);
-	      font-style: normal;
-	    }
-
-	    #publications .pub-authors .author-me {
-	      color: var(--violet);
-	      font-style: normal;
-	    }
-
-	    #publications .pub-venue {
-	      display: inline-flex;
-	      width: fit-content;
-	      padding: 0.18rem 0.55rem;
-	      border-radius: 999px;
-	      background: var(--violet-soft);
-	      color: var(--violet);
-	      font-size: 0.8rem;
-	      font-weight: 800;
-	    }
-
-	    #publications .pub-links {
-	      color: var(--brown);
-	    }
-
-	    #publications .pub-details {
-	      border-top: 1px solid rgba(110, 75, 51, 0.14);
-	      background: rgba(246, 237, 216, 0.28);
-	    }
-
-	    .more-list {
-	      list-style: none;
-	      margin: 0;
-	      padding: 0;
-	      display: grid;
-	      gap: 0.9rem;
-	    }
-
-	    .more-list > li {
-	      margin: 0;
-	      padding: 1rem 1.1rem;
-	      border: 1px solid var(--line);
-	      border-radius: 8px;
-	      background: rgba(255, 253, 248, 0.9);
-	      box-shadow: 3px 3px 0 rgba(201, 161, 90, 0.1);
-	    }
-
-	    .more-list > li:nth-child(2) {
-	      box-shadow: 3px 3px 0 rgba(216, 142, 170, 0.12);
-	    }
-
-	    .more-list > li:nth-child(3) {
-	      box-shadow: 3px 3px 0 rgba(169, 205, 178, 0.12);
-	    }
-
-	    .more-list ul {
-	      padding-left: 1.1rem;
-	    }
-
-	    .qr-modal__dialog {
-	      border-radius: 12px;
-	      background: var(--paper);
-	      border: 1px solid var(--line);
-	    }
-
-	    @media (min-width: 960px) {
-	      .layout {
-	        grid-template-columns: 250px minmax(0, 1fr);
-	        gap: 1.5rem;
-	      }
-	      .sidebar {
-	        position: sticky;
-	        top: 62px;
-	      }
-	    }
-
-	    @media (max-width: 959px) {
-	      .sidebar {
-	        position: static;
-	      }
-	    }
-
-	    @media (max-width: 767px) {
-	      .layout {
-	        width: min(100% - 1.2rem, 720px);
-	        margin-top: 1rem;
-	      }
-	      .masthead__inner {
-	        width: min(100% - 1.2rem, 720px);
-	      }
-	      .home-hero.manga-outline {
-	        padding: 1.2rem;
-	      }
-	      .home-hero h1 {
-	        font-size: 2.45rem;
-	      }
-	      #news > .news-list {
-	        grid-template-columns: 1fr;
-	      }
-	      .stamp-button {
-	        flex-basis: calc(50% - 0.35rem);
-	      }
-	      .play-toggle {
-	        right: 0.75rem;
-	        bottom: 0.75rem;
-	        width: 38px;
-	        height: 38px;
-	      }
-	      .social {
-	        grid-template-columns: repeat(5, minmax(0, 1fr));
-	      }
-	    }
-	  </style>
+      .cloud, .hero-petal, .sakura-petal, .animal-run, .click-spark { animation: none !important; }
+      .hero-petal { display: none; }
+      .nav-lens { transition: none; }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .bento { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 760px) {
+      body { font-size: 16px; }
+      main { padding: 16px 16px 32px; }
+      section { margin-top: 52px; }
+      .section-head { margin: 0 4px 12px; }
+      .section-head h2 { font-size: 29px; }
+      .section-head .aside { display: none; }
+      .hero { padding: 30px 22px 26px; border-radius: 28px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 16px; }
+      .avatar-ring { width: 112px; height: 112px; padding: 4px; }
+      .avatar { border-width: 3px; }
+      .hero h1 { font-size: 42px; }
+      .hero-sub { font-size: 17.5px; }
+      .bento { gap: 10px; }
+      .bento a { padding: 15px 14px 13px; }
+      .b-title { font-size: 18px; }
+      .about, .paper, .tile { padding: 22px 20px; }
+      .row { padding: 14px 18px; }
+      .row + .row::before { left: var(--inset, 18px); }
+      .list--icons .row { --inset: 68px; grid-template-columns: auto minmax(0,1fr); }
+      .row-meta { grid-column: 2; grid-row: 1; text-align: left; padding-top: 0; margin-bottom: -4px; }
+      .row-meta small { display: inline; margin-left: 4px; }
+      .list--icons .row-icon { grid-row: 1 / span 2; }
+      .news .row { grid-template-columns: 1fr; gap: 2px; }
+      details.more summary { padding: 14px 18px; }
+      details.more summary::before { left: 18px; }
+      .tiles { grid-template-columns: 1fr; }
+      .nav-links a { padding: 7px 10px; font-size: 13.5px; }
+      .nav-cta { padding: 7px 13px; }
+      footer { padding: 8px 20px 48px; }
+    }
+  </style>
 </head>
 <body>
-  <div class="bg-pattern" aria-hidden="true"></div>
-  <!-- Speed lines / 速度线 -->
-  <div class="speed-lines" aria-hidden="true">
-    <svg viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <path d="M0 100 L400 100 L0 105 L380 105 L0 110 L420 110" stroke="#2d2640" stroke-width="2" fill="none" opacity="0.12"/>
-      <path d="M1200 200 L800 200 L1200 206 L820 206 L1200 212 L790 212" stroke="#2d2640" stroke-width="2" fill="none" opacity="0.1"/>
-      <path d="M0 600 L350 600 L0 608 L370 608" stroke="#2d2640" stroke-width="1.8" fill="none" opacity="0.1"/>
-      <path d="M1200 500 L850 500 L1200 508 L830 508 L1200 516" stroke="#2d2640" stroke-width="1.8" fill="none" opacity="0.12"/>
-      <path d="M0 0 L0 800 M100 0 L100 800 M200 0 L200 800" stroke="#2d2640" stroke-width="1" fill="none" opacity="0.06" transform="skewX(-8)"/>
-      <path d="M1200 0 L1200 800 M1100 0 L1100 800 M1000 0 L1000 800" stroke="#2d2640" stroke-width="1" fill="none" opacity="0.06" transform="translate(1200,0) scale(-1,1) skewX(-8) translate(-1200,0)"/>
-    </svg>
-  </div>
-  <!-- Sparkles / 星星闪光 -->
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#d4b868"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#d4b868"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#d4b868"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#d4b868"/><circle cx="8" cy="8" r="1.5" fill="#f0e0a0"/></svg></div>
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#f0c878"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#f0c878"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#f0c878"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#f0c878"/><circle cx="8" cy="8" r="1.5" fill="#fff8d0"/></svg></div>
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#e8c4dc"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#e8c4dc"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#e8c4dc"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#e8c4dc"/><circle cx="8" cy="8" r="1.5" fill="#fff0f5"/></svg></div>
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#d4b868"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#d4b868"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#d4b868"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#d4b868"/><circle cx="8" cy="8" r="1.5" fill="#f0e0a0"/></svg></div>
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#f0c878"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#f0c878"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#f0c878"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#f0c878"/><circle cx="8" cy="8" r="1.5" fill="#fff8d0"/></svg></div>
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#e8c4dc"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#e8c4dc"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#e8c4dc"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#e8c4dc"/><circle cx="8" cy="8" r="1.5" fill="#fff0f5"/></svg></div>
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#d4b868"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#d4b868"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#d4b868"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#d4b868"/><circle cx="8" cy="8" r="1.5" fill="#f0e0a0"/></svg></div>
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#f0c878"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#f0c878"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#f0c878"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#f0c878"/><circle cx="8" cy="8" r="1.5" fill="#fff8d0"/></svg></div>
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#e8c4dc"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#e8c4dc"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#e8c4dc"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#e8c4dc"/><circle cx="8" cy="8" r="1.5" fill="#fff0f5"/></svg></div>
-  <div class="sparkle" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 0 L9 6 L8 8 L7 6 Z" fill="#d4b868"/><path d="M8 16 L7 10 L8 8 L9 10 Z" fill="#d4b868"/><path d="M0 8 L6 9 L8 8 L6 7 Z" fill="#d4b868"/><path d="M16 8 L10 7 L8 8 L10 9 Z" fill="#d4b868"/><circle cx="8" cy="8" r="1.5" fill="#f0e0a0"/></svg></div>
-  <!-- Speech bubbles / 对话框 -->
-  <div class="bubble bubble--1" aria-hidden="true">Hi! ✨</div>
-  <div class="bubble bubble--2" aria-hidden="true">♪</div>
-  <!-- Chibi icons / Q版小图标 -->
-  <div class="chibi-icon chibi-icon--1" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="22" r="14" fill="#ffe0e8" stroke="#2d2640" stroke-width="2"/><circle cx="14" cy="18" r="2" fill="#2d2640"/><circle cx="26" cy="18" r="2" fill="#2d2640"/><path d="M14 26 Q20 30 26 26" stroke="#2d2640" stroke-width="1.5" fill="none" stroke-linecap="round"/><ellipse cx="12" cy="24" rx="2.5" ry="1.5" fill="#e8a0a0"/><ellipse cx="28" cy="24" rx="2.5" ry="1.5" fill="#e8a0a0"/></svg></div>
-  <div class="chibi-icon chibi-icon--2" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="22" r="14" fill="#e8f0ff" stroke="#2d2640" stroke-width="2"/><circle cx="14" cy="18" r="2" fill="#2d2640"/><circle cx="26" cy="18" r="2" fill="#2d2640"/><path d="M16 27 Q20 24 24 27" stroke="#2d2640" stroke-width="1.2" fill="none" stroke-linecap="round"/><ellipse cx="12" cy="24" rx="2" ry="1.2" fill="#e8a0a0"/><ellipse cx="28" cy="24" rx="2" ry="1.2" fill="#e8a0a0"/></svg></div>
-  <!-- Animal emoji runners / 小动物 emoji 跑 -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="lg-refraction" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feImage id="lg-map" result="map" preserveAspectRatio="none" x="0" y="0" width="100%" height="100%"/>
+      <feDisplacementMap in="SourceGraphic" in2="map" scale="28" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <symbol id="petal" viewBox="0 0 24 24"><path d="M12 2c-2.6 2.2-4.4 5.2-4.4 8.4 0 3.2 2 5.6 4.4 7.2 2.4-1.6 4.4-4 4.4-7.2 0-1.4-.4-2.8-1-4L12 8.6l-1.2-2.4.1-.2L12 2z" fill="#ffb7d0"/><path d="M12 8.6v8" stroke="#ff8fb8" stroke-width=".8" stroke-linecap="round" opacity=".6"/></symbol>
+  </svg>
+
+  <div class="sakura-petal" aria-hidden="true"><svg><use href="#petal"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg><use href="#petal"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg><use href="#petal"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg><use href="#petal"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg><use href="#petal"/></svg></div>
+  <div class="sakura-petal" aria-hidden="true"><svg><use href="#petal"/></svg></div>
   <span class="animal-run animal-run--top-left" aria-hidden="true">🐰🐱🐶</span>
   <span class="animal-run animal-run--top-right" aria-hidden="true">🦋🐻🐣</span>
   <span class="animal-run animal-run--bottom-left" aria-hidden="true">🦊🐹🌸</span>
   <span class="animal-run animal-run--bottom-right" aria-hidden="true">🐼🦌✨</span>
-  <span class="animal-run animal-run--left-top" aria-hidden="true">🐸</span>
-  <span class="animal-run animal-run--left-bottom" aria-hidden="true">🐰</span>
-  <span class="animal-run animal-run--right-top" aria-hidden="true">🦋</span>
-  <span class="animal-run animal-run--right-bottom" aria-hidden="true">🐱</span>
-  <!-- Falling sakura petals (anime style) -->
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#f0d4e4"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#f0d4e4"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#f0d4e4"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#f0d4e4"/><circle cx="12" cy="12" r="2" fill="#f8dce8"/></svg></div>
-  <div class="sakura-petal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/><path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/><path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/><path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/><circle cx="12" cy="12" r="2" fill="#f0d0e0"/></svg></div>
-  <!-- Floating geometric decorations -->
-  <div class="deco deco--circle-1" aria-hidden="true">
-    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="40" cy="40" r="38" stroke="url(#g1)" stroke-width="1.5" fill="none"/>
-      <circle cx="40" cy="40" r="28" stroke="url(#g1)" stroke-width="1" opacity="0.6" fill="none"/>
-      <defs><linearGradient id="g1" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#b8a0d8"/><stop offset="1" stop-color="#e8c4dc"/>
-      </linearGradient></defs>
-    </svg>
-  </div>
-  <div class="deco deco--circle-2" aria-hidden="true">
-    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="25" cy="25" r="23" stroke="#c4a8e0" stroke-width="1.2" fill="none" stroke-dasharray="4 3"/>
-    </svg>
-  </div>
-  <div class="deco deco--circle-3" aria-hidden="true">
-    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="30" cy="30" r="28" stroke="#d4b8e8" stroke-width="1" fill="none"/>
-      <circle cx="30" cy="30" r="18" stroke="#e8c8e0" stroke-width="0.8" fill="none" opacity="0.8"/>
-    </svg>
-  </div>
-  <div class="deco deco--diamond" aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2L22 12 12 22 2 12 12 2z" stroke="#9b7fc2" stroke-width="1.2" fill="none"/>
-    </svg>
-  </div>
-  <div class="deco deco--triangle" aria-hidden="true">
-    <svg viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 2L38 33H2L20 2z" stroke="#b89cd0" stroke-width="1" fill="none" stroke-linejoin="round"/>
-    </svg>
-  </div>
-  <div class="deco deco--hex" aria-hidden="true">
-    <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18 0l18 9v14l-18 9-18-9V9L18 0z" stroke="#a88cc8" stroke-width="1" fill="none"/>
-    </svg>
-  </div>
-  <div class="deco deco--line-arc" aria-hidden="true">
-    <svg viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 70 Q60 10 110 70" stroke="#b8a0d8" stroke-width="1" fill="none" stroke-linecap="round"/>
-      <path d="M20 65 Q60 25 100 65" stroke="#d4c0e8" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.7"/>
-    </svg>
-  </div>
-  <div class="deco deco--line-arc-2" aria-hidden="true">
-    <svg viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M90 10 Q50 50 10 60" stroke="#c8b0e0" stroke-width="1" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <!-- ES CON Field style: dual angular peaks -->
-  <div class="deco deco--peak" aria-hidden="true">
-    <svg viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 32L22 4 36 32H8z" stroke="url(#peakGrad)" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
-      <path d="M12 32L22 12 32 32H12z" stroke="url(#peakGrad)" stroke-width="1" fill="none" stroke-linejoin="round" opacity="0.8"/>
-      <defs><linearGradient id="peakGrad" x1="0" y1="0" x2="44" y2="36"><stop stop-color="#a88cc8"/><stop offset="1" stop-color="#e8b8d0"/></linearGradient></defs>
-    </svg>
-  </div>
-  <!-- Fighters-style chevron band -->
-  <div class="deco deco--chevron" aria-hidden="true">
-    <svg viewBox="0 0 140 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 18 L7 6 L14 18 M17 18 L24 6 L31 18 M34 18 L41 6 L48 18 M51 18 L58 6 L65 18 M68 18 L75 6 L82 18 M85 18 L92 6 L99 18 M102 18 L109 6 L116 18 M119 18 L126 6 L133 18" stroke="#b8a0d8" stroke-width="1.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-      <path d="M3 16 L10 8 L17 16 M20 16 L27 8 L34 16 M37 16 L44 8 L51 16 M54 16 L61 8 L68 16 M71 16 L78 8 L85 16 M88 16 L95 8 L102 16 M105 16 L112 8 L119 16" stroke="#e0b8d0" stroke-width="0.9" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
-    </svg>
-  </div>
-  <div class="deco deco--chevron-2" aria-hidden="true">
-    <svg viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 14 L5 6 L10 14 M12 14 L17 6 L22 14 M24 14 L29 6 L34 14 M36 14 L41 6 L46 14 M48 14 L53 6 L58 14 M60 14 L65 6 L70 14 M72 14 L77 6 L82 14 M84 14 L89 6 L94 14" stroke="#e0b8d0" stroke-width="1" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <!-- Cherry blossom (sakura) -->
-  <div class="deco deco--sakura-1" aria-hidden="true">
-    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14 2c0 0-2 4-2 6s1 4 2 4 2-1.5 2-4-2-6-2-6z" fill="#e8c4dc"/>
-      <path d="M14 26c0 0 2-4 2-6s-1-4-2-4-2 1.5-2 4 2 6 2 6z" fill="#e8c4dc"/>
-      <path d="M2 14c0 0 4-2 6-2s4 1 4 2-1.5 2-4 2-6 2-6z" fill="#e8c4dc"/>
-      <path d="M26 14c0 0-4-2-6-2s-4 1-4 2 1.5 2 4 2 6 2 6z" fill="#e8c4dc"/>
-      <path d="M6 6c0 0 2.5 2.5 3.5 4s0 2.5-1 2.5-2-1-3.5-3.5 1-3 1-3z" fill="#e8c4dc"/>
-      <path d="M22 22c0 0-2.5-2.5-3.5-4s0-2.5 1-2.5 2 1 3.5 3.5-1 3-1 3z" fill="#e8c4dc"/>
-      <path d="M22 6c0 0-2.5 2.5-4 3.5s-2.5 0-2.5-1 1-2 3.5-3.5 3-1 3-1z" fill="#e8c4dc"/>
-      <path d="M6 22c0 0 2.5-2.5 4-3.5s2.5 0 2.5 1-1 2-3.5 3.5S6 22 6 22z" fill="#e8c4dc"/>
-      <circle cx="14" cy="14" r="2.5" fill="#f0d0e0"/>
-    </svg>
-  </div>
-  <div class="deco deco--sakura-2" aria-hidden="true">
-    <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M11 1c0 0-1.5 3-1.5 4.5s.8 3 1.5 3 1.5-.8 1.5-3S11 1 11 1z" fill="#f0d4e4"/>
-      <path d="M11 21c0 0 1.5-3 1.5-4.5S11.7 13.5 11 13.5s-1.5.8-1.5 3S11 21 11 21z" fill="#f0d4e4"/>
-      <path d="M1 11c0 0 3-1.5 4.5-1.5S13 11 13 11s-.8 1.5-3 1.5S1 11 1 11z" fill="#f0d4e4"/>
-      <path d="M21 11c0 0-3-1.5-4.5-1.5S9 11 9 11s.8 1.5 3 1.5S21 11 21 11z" fill="#f0d4e4"/>
-      <circle cx="11" cy="11" r="2" fill="#f8dce8"/>
-    </svg>
-  </div>
-  <div class="deco deco--sakura-3" aria-hidden="true">
-    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 0s-1 2.5-1 4 .5 2 1 2 1-.5 1-2-1-4-1-4z" fill="#e8c0d8"/>
-      <path d="M10 20s1-2.5 1-4-.5-2-1-2-1 .5-1 2 1 4 1 4z" fill="#e8c0d8"/>
-      <path d="M0 10s2.5-1 4-1 2 .5 2 1-.5 1-2 1-4 1-4z" fill="#e8c0d8"/>
-      <path d="M20 10s-2.5-1-4-1-2 .5-2 1 .5 1 2 1 4 1 4z" fill="#e8c0d8"/>
-      <circle cx="10" cy="10" r="1.8" fill="#f0d0e0"/>
-    </svg>
-  </div>
-  <div class="deco deco--sakura-4" aria-hidden="true">
-    <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M13 1c0 0-1.2 3.5-1.2 5.2s.4 3.5 1.2 3.5 1.2-1.2 1.2-3.5S13 1 13 1z" fill="#f0d4e4"/>
-      <path d="M13 25c0 0 1.2-3.5 1.2-5.2s-.4-3.5-1.2-3.5-1.2 1.2-1.2 3.5S13 25 13 25z" fill="#f0d4e4"/>
-      <path d="M1 13c0 0 3.5-1.2 5.2-1.2s3.5.4 3.5 1.2-1.2 1.2-3.5 1.2-5.2 1.2-5.2z" fill="#f0d4e4"/>
-      <path d="M25 13c0 0-3.5-1.2-5.2-1.2s-3.5.4-3.5 1.2 1.2 1.2 3.5 1.2 5.2 1.2 5.2z" fill="#f0d4e4"/>
-      <circle cx="13" cy="13" r="2.2" fill="#f8dce8"/>
-    </svg>
-  </div>
-  <div class="deco deco--sakura-5" aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2c0 0-1 4-1 6s.5 4 1 4 1-1.5 1-4-1-6-1-6z" fill="#e8c4dc"/>
-      <path d="M12 22c0 0 1-4 1-6s-.5-4-1-4-1 1.5-1 4 1 6 1 6z" fill="#e8c4dc"/>
-      <path d="M2 12c0 0 4-1 6-1s4 .5 4 1-1.5 1-4 1-6 1-6z" fill="#e8c4dc"/>
-      <path d="M22 12c0 0-4-1-6-1s-4 .5-4 1 1.5 1 4 1 6 1 6z" fill="#e8c4dc"/>
-      <circle cx="12" cy="12" r="2" fill="#f0d0e0"/>
-    </svg>
-  </div>
-  <!-- Grass & nature -->
-  <div class="deco deco--grass-1" aria-hidden="true">
-    <svg viewBox="0 0 1200 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 100 Q50 60 100 100 Q150 50 200 100 Q250 55 300 100 Q350 45 400 100 Q450 60 500 100 Q550 50 600 100 Q650 55 700 100 Q750 45 800 100 Q850 60 900 100 Q950 50 1000 100 Q1050 55 1100 100 Q1150 50 1200 100 L1200 110 L0 110 Z" fill="url(#grassGrad)"/>
-      <path d="M0 100 Q30 75 60 100 Q90 65 120 100 Q150 70 180 100 Q210 68 240 100 Q270 72 300 100 Q330 70 360 100 Q390 65 420 100 Q450 72 480 100 Q510 68 540 100 Q570 75 600 100 Q630 70 660 100 Q690 65 720 100 Q750 72 780 100 Q810 68 840 100 Q870 70 900 100 Q930 65 960 100 Q990 72 1020 100 Q1050 68 1080 100 Q1110 75 1140 100 L1200 100 L1200 110 L0 110 Z" fill="url(#grassGrad2)"/>
-      <defs><linearGradient id="grassGrad" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b8e0c8"/><stop offset="1" stop-color="#90c8a0"/></linearGradient>
-      <linearGradient id="grassGrad2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c8ecd4"/><stop offset="1" stop-color="#a8d8b8"/></linearGradient></defs>
-    </svg>
-  </div>
-  <div class="deco deco--grass-2" aria-hidden="true">
-    <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 60 Q15 30 20 60 Q25 25 30 60 Q35 35 40 60 Q45 28 50 60 Q55 32 60 60 Q65 26 70 60" stroke="#8cc89c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <path d="M15 60 Q18 38 22 60 Q28 32 35 60 Q42 30 48 60 Q52 35 58 60" stroke="#a0d4ac" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
-    </svg>
-  </div>
-  <div class="deco deco--grass-3" aria-hidden="true">
-    <svg viewBox="0 0 70 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 55 Q12 28 16 55 Q20 22 24 55 Q28 30 32 55 Q36 25 40 55 Q44 32 48 55 Q52 26 56 55 Q60 30 64 55" stroke="#8cc89c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <div class="deco deco--leaf-1" aria-hidden="true">
-    <svg viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 18 Q16 2 30 18 Q16 14 2 18z" fill="#7eb88a" opacity="0.9"/>
-      <path d="M2 18 Q16 10 30 18" stroke="#6aa878" stroke-width="0.6" fill="none" opacity="0.6"/>
-    </svg>
-  </div>
-  <div class="deco deco--leaf-2" aria-hidden="true">
-    <svg viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 14 Q14 0 26 14 Q14 10 2 14z" fill="#8cc89c" opacity="0.9"/>
-    </svg>
-  </div>
-  <div class="deco deco--leaf-3" aria-hidden="true">
-    <svg viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 12 Q12 0 23 12 Q12 8 1 12z" fill="#90cc9e" opacity="0.9"/>
-    </svg>
-  </div>
-  <div class="deco deco--cloud" aria-hidden="true">
-    <svg viewBox="0 0 90 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="35" cy="28" rx="28" ry="12" fill="rgba(255,255,255,0.85)"/>
-      <ellipse cx="55" cy="25" rx="22" ry="10" fill="rgba(255,255,255,0.9)"/>
-      <ellipse cx="45" cy="22" rx="20" ry="9" fill="rgba(255,255,255,0.95)"/>
-    </svg>
-  </div>
-  <div class="deco deco--tree" aria-hidden="true">
-    <svg viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 140 L50 75 M35 95 L65 95 L50 55 L35 95 M42 75 L58 75 L50 45 L42 75 M48 55 L52 55 L50 28 L48 55" stroke="#6a9a6a" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <path d="M50 120 Q20 100 50 75 Q80 100 50 120" fill="#88b878" opacity="0.9"/>
-      <path d="M50 95 Q25 78 50 55 Q75 78 50 95" fill="#98c888" opacity="0.9"/>
-      <path d="M50 68 Q28 55 50 32 Q72 55 50 68" fill="#a8d498" opacity="0.9"/>
-    </svg>
-  </div>
-  <div class="deco deco--tree-2" aria-hidden="true">
-    <svg viewBox="0 0 85 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M42 120 L42 65 M30 82 L54 82 L42 48 L30 82 M36 65 L48 65 L42 38 L36 65" stroke="#6a9a6a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <path d="M42 100 Q18 82 42 65 Q66 82 42 100" fill="#88b878" opacity="0.9"/>
-      <path d="M42 78 Q22 62 42 48 Q62 62 42 78" fill="#98c888" opacity="0.9"/>
-    </svg>
-  </div>
-  <div class="deco deco--butterfly" aria-hidden="true">
-    <svg viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="22" cy="18" rx="4" ry="14" fill="#f0c878"/>
-      <path d="M22 4 Q8 18 22 32 Q36 18 22 4" fill="#e8a0c0" opacity="0.9"/>
-      <path d="M22 4 Q36 18 22 32 Q8 18 22 4" fill="#c890e0" opacity="0.85"/>
-      <circle cx="22" cy="18" r="2" fill="#2d2640"/>
-    </svg>
-  </div>
-  <div class="deco deco--butterfly-2" aria-hidden="true">
-    <svg viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="19" cy="15" rx="3" ry="12" fill="#d8b868"/>
-      <path d="M19 3 Q7 14 19 26 Q31 14 19 3" fill="#e8b0d0" opacity="0.9"/>
-      <path d="M19 3 Q31 14 19 26 Q7 14 19 3" fill="#b0a0e0" opacity="0.85"/>
-    </svg>
-  </div>
-  <div class="deco deco--lake" aria-hidden="true">
-    <svg viewBox="0 0 260 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="lakeGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop stop-color="#88c8dc"/><stop offset="0.4" stop-color="#60b0c8"/><stop offset="1" stop-color="#4090a8"/>
-        </linearGradient>
-        <linearGradient id="lakeReflect" x1="0" y1="0" x2="0" y2="1">
-          <stop stop-color="rgba(200,230,240,0.5)" offset="0"/><stop stop-color="rgba(100,180,200,0.1)" offset="1"/>
-        </linearGradient>
-      </defs>
-      <ellipse cx="130" cy="58" rx="115" ry="38" fill="url(#lakeGrad)"/>
-      <ellipse cx="130" cy="52" rx="105" ry="32" fill="url(#lakeReflect)"/>
-      <!-- Ripples -->
-      <ellipse cx="130" cy="58" rx="95" ry="30" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" fill="none"/>
-      <ellipse cx="130" cy="58" rx="72" ry="24" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
-      <ellipse cx="130" cy="58" rx="48" ry="16" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none"/>
-      <!-- Lily pads -->
-      <ellipse cx="55" cy="72" rx="18" ry="8" fill="#408858" opacity="0.9"/>
-      <ellipse cx="55" cy="72" rx="14" ry="5" fill="#50a068" opacity="0.6"/>
-      <ellipse cx="200" cy="68" rx="16" ry="7" fill="#408858" opacity="0.85"/>
-      <ellipse cx="200" cy="68" rx="12" ry="4" fill="#50a068" opacity="0.5"/>
-      <!-- Reeds -->
-      <path d="M30 95 Q32 60 35 95" stroke="#507848" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M38 95 Q39 65 42 95" stroke="#587850" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <path d="M225 95 Q227 62 230 95" stroke="#507848" stroke-width="2" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <div class="deco deco--deer" aria-hidden="true">
-    <svg viewBox="0 0 70 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="35" cy="70" rx="22" ry="18" fill="#c4a878"/>
-      <path d="M35 52 L35 25 M35 25 L28 8 M35 25 L42 10" stroke="#a08050" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <path d="M20 65 Q35 55 50 65" stroke="#8a7048" stroke-width="1.5" fill="none"/>
-      <ellipse cx="35" cy="28" rx="10" ry="12" fill="#c4a878"/>
-      <circle cx="32" cy="24" r="2" fill="#2d2640"/>
-      <circle cx="38" cy="24" r="2" fill="#2d2640"/>
-    </svg>
-  </div>
-	  <header class="masthead">
-    <div class="masthead__inner">
-      <div class="masthead-logo" aria-hidden="true">
-        <img src="images/logo.jpeg" alt="">
-      </div>
-      <ul class="nav-list">
-	        <li><a href="#about-me">About</a></li>
-	        <li><a href="#news">Dispatches</a></li>
-	        <li><a href="#education-experience">Journey</a></li>
-	        <li><a href="#intern-experience">Intern</a></li>
-	        <li><a href="#publications">Papers</a></li>
-	        <li><a href="#more">Playground</a></li>
-        <li><a href="https://wma17.github.io/_pages/CV.pdf">CV</a></li>
+
+  <div class="nav-wrap">
+    <nav class="nav lg lg--refract" aria-label="Main">
+      <a class="nav-logo" href="#about-me" aria-label="Back to top"><img src="images/logo.jpeg" alt=""></a>
+      <ul class="nav-links">
+        <li><a href="#news">News</a></li>
+        <li><a href="#publications">Papers</a></li>
+        <li><a href="#intern-experience">Experience</a></li>
+        <li><a href="#education-experience">Education</a></li>
+        <li><a href="#more">Playground</a></li>
+        <li class="nav-lens" aria-hidden="true"></li>
       </ul>
-    </div>
-  </header>
+      <a class="nav-cta" href="https://wma17.github.io/_pages/CV.pdf">CV</a>
+    </nav>
+  </div>
 
-  <main class="layout">
-    <aside class="sidebar">
-      <svg class="corner-deco" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M56 0v20c0 20-20 36-56 56" stroke="url(#sideGrad)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-        <path d="M48 0v12c0 12-12 22-48 48" stroke="url(#sideGrad)" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.6"/>
-        <defs><linearGradient id="sideGrad" x1="0" y1="0" x2="56" y2="56"><stop stop-color="#b8a0d8"/><stop offset="1" stop-color="#e8c4dc"/></linearGradient></defs>
-      </svg>
-      <svg class="corner-deco corner-deco--bl" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M56 0v20c0 20-20 36-56 56" stroke="url(#sideGrad2)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-        <defs><linearGradient id="sideGrad2" x1="0" y1="0" x2="56" y2="56"><stop stop-color="#b8a0d8"/><stop offset="1" stop-color="#e8c4dc"/></linearGradient></defs>
-      </svg>
-      <div class="sidebar-grass" aria-hidden="true">
-        <svg viewBox="0 0 400 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0 50 Q40 25 80 50 Q120 20 160 50 Q200 28 240 50 Q280 22 320 50 Q360 26 400 50 L400 60 L0 60 Z" fill="url(#sideGrass)"/>
-          <defs><linearGradient id="sideGrass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b0dcbc"/><stop offset="1" stop-color="#88c898"/></linearGradient></defs>
-        </svg>
+  <main>
+    <section class="hero" id="about-me" aria-label="Introduction">
+      <div class="hero-sky" aria-hidden="true">
+        <span class="sun"></span>
+        <span class="cloud cloud--1"></span>
+        <span class="cloud cloud--2"></span>
+        <span class="cloud cloud--3"></span>
+        <span class="hero-petal"><svg><use href="#petal"/></svg></span>
+        <span class="hero-petal"><svg><use href="#petal"/></svg></span>
+        <span class="hero-petal"><svg><use href="#petal"/></svg></span>
+        <span class="hero-petal"><svg><use href="#petal"/></svg></span>
       </div>
-      <div class="sidebar-flowers" aria-hidden="true">
-        <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="21" cy="21" r="4" fill="#f0d4e4"/>
-          <path d="M21 8c0 0-2 4-2 6s1 4 2 4 2-1 2-4-2-6-2-6z" fill="#e8c4dc"/>
-          <path d="M21 34c0 0 2-4 2-6s-1-4-2-4-2 1-2 4 2 6 2 6z" fill="#e8c4dc"/>
-          <path d="M8 21c0 0 4-2 6-2s4 1 4 2-1 2-4 2-6-2-6-2z" fill="#e8c4dc"/>
-          <path d="M34 21c0 0-4-2-6-2s-4 1-4 2 1 2 4 2 6-2 6-2z" fill="#e8c4dc"/>
-          <circle cx="14" cy="14" r="2.5" fill="#d8b868"/>
-          <circle cx="28" cy="14" r="2.5" fill="#e8a0b0"/>
-        </svg>
-      </div>
-	      <div class="avatar-wrap"><img class="avatar" src="images/me.jpg" alt="Wang Ma"></div>
-	      <h1 class="name">Wang Ma</h1>
-	      <p class="bio">Ph.D. Student @ RPI</p>
-	      <div class="meta">
-	        <span class="meta-kicker">Currently</span>
-	        <strong>Third-year Ph.D. Student @ RPI</strong>
-	        <span>Troy, NY</span><br>
-	        <a href="mailto:maw6@rpi.edu">maw6@rpi.edu</a>
-	      </div>
-	      <ul class="social">
-	        <li><a href="mailto:maw6@rpi.edu" title="Email"><i class="fa-solid fa-envelope"></i> Email</a></li>
-	        <li><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=rD2pPFUAAAAJ" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a></li>
-	        <li><a href="https://www.linkedin.com/in/wang-ma-367748327/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
-	        <li><a href="https://github.com/wma17" title="Github"><i class="fa-brands fa-github"></i> Github</a></li>
-	        <li><a href="https://twitter.com/WangMa70190365" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a></li>
-	        <li><a href="https://space.bilibili.com/237775327/video" title="Bilibili"><i class="fa-brands fa-bilibili"></i> Bilibili</a></li>
-	        <li><a href="https://www.youtube.com/@wangma4424" title="YouTube"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
-	        <li><button type="button" class="qr-trigger" data-target="modal-wechat" title="WeChat" aria-label="WeChat"><i class="fa-solid fa-comments"></i> WeChat</button></li>
-	        <li><button type="button" class="qr-trigger" data-target="modal-qq" title="QQ" aria-label="QQ"><i class="fa-brands fa-qq"></i> QQ</button></li>
-	      </ul>
-    </aside>
-
-    <article class="content manga-outline">
-      <svg class="corner-deco" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M72 0L72 28C72 52 52 72 0 72" stroke="url(#cornerGrad)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-        <path d="M64 0L64 20C64 40 48 56 0 64" stroke="url(#cornerGrad)" stroke-width="0.9" fill="none" stroke-linejoin="round" opacity="0.6"/>
-        <defs><linearGradient id="cornerGrad" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#a890c8"/><stop offset="1" stop-color="#e0b8d0"/></linearGradient></defs>
-      </svg>
-      <svg class="corner-deco corner-deco--tr" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M72 0L72 28C72 52 52 72 0 72" stroke="url(#cornerGrad2)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-        <defs><linearGradient id="cornerGrad2" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#a890c8"/><stop offset="1" stop-color="#e0b8d0"/></linearGradient></defs>
-      </svg>
-      <svg class="corner-deco corner-deco--br" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M72 0L72 28C72 52 52 72 0 72" stroke="url(#cornerGrad3)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-        <defs><linearGradient id="cornerGrad3" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#a890c8"/><stop offset="1" stop-color="#e0b8d0"/></linearGradient></defs>
-      </svg>
-      <svg class="corner-deco corner-deco--bl" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M72 0L72 28C72 52 52 72 0 72" stroke="url(#cornerGrad4)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-        <defs><linearGradient id="cornerGrad4" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#a890c8"/><stop offset="1" stop-color="#e0b8d0"/></linearGradient></defs>
-      </svg>
-      <span id="about-me"></span>
-	      <section class="home-hero manga-outline">
-	        <div class="hero-copy">
-	          <h1>Wang Ma <span>马旺</span></h1>
-	          <p class="hero-lead">I am a third-year Ph.D. student at Rensselaer Polytechnic Institute (<a href="https://www.rpi.edu/">RPI</a>) advised by <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>. Before coming to RPI, I obtained my B.S. from Southern University of Science and Technology (<a href="https://sustech.edu.cn/en/">SUSTech</a>), advised by <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>.</p>
-	          <p>I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning and their applications to Computer Vision and Natural Language Processing. Recently, my focus is specifically Uncertainty Quantification and Uncertainty Disentanglement for single models and pre-trained models (such as pre-trained large vision or language models), and Knowledge-augmented Bayesian Deep Learning.</p>
-	          <p>I am looking for research / applied scientist internships for <strong>Summer 2027</strong>. Please feel free to reach out via <a href="mailto:maw6@rpi.edu">email</a> if you think there might be a fit!</p>
-		          <div class="hero-tags" aria-label="Research themes" data-reveal-enabled="false">
-		            <span class="research-tag">uncertainty quantification<span class="tag-note" aria-hidden="true"></span></span>
-		            <span class="research-tag">Bayesian deep learning<span class="tag-note" aria-hidden="true"></span></span>
-		            <span class="research-tag">knowledge augmented bayesian deep learning<span class="tag-note" aria-hidden="true"></span></span>
-		          </div>
-	        </div>
-		      </section>
-
-      <section class="home-section" id="news">
-        <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><path d="M28 8c0 0-2 6-2 8s1 5 2 5 2-2 2-5-2-8-2-8z" fill="#e8c4dc"/><path d="M28 48c0 0 2-6 2-8s-1-5-2-5-2 2-2 5 2 8 2 8z" fill="#e8c4dc"/><path d="M8 28c0 0 6-2 8-2s5 1 5 2-2 2-5 2-8-2-8-2z" fill="#e8c4dc"/><path d="M48 28c0 0-6-2-8-2s-5 1-5 2 2 2 5 2 8-2 8-2z" fill="#e8c4dc"/><circle cx="28" cy="28" r="4" fill="#f5dce8"/></svg></div>
-	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M11 6v5l3 3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>Dispatches</h2>
-        <ul class="news-list">
-          <li><strong>Sep 2026</strong> My first-authored paper from my IBM Research internship, <strong>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</strong>, was accepted to NeurIPS 2026! Many thanks to my collaborators at IBM Research. The full version will come soon.</li>
-          <li><strong>Sep 2026</strong> I completed my Applied Science internship at Microsoft and returned to RPI to continue my Ph.D. journey as a third-year student.</li>
-          <li><strong>May 2026</strong> I was selected as an ICML 2026 Golden Reviewer.</li>
-          <li><strong>Apr 2026</strong> My CVPR 2026 paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was selected as a Highlight.</li>
-        </ul>
-        <div class="stamp-case" aria-label="Clickable field stamps">
-          <div class="stamp-strip">
-            <button type="button" class="stamp-button stamp-button--brown" aria-expanded="false" aria-controls="stamp-note" data-stamp-title="NeurIPS 2026" data-stamp-copy="The ensemble-of-ensembles LLM uncertainty work from IBM Research, first shown at the AAAI 2026 AIR-FM Workshop, was accepted to NeurIPS 2026.">
-              <span class="stamp-button__eyebrow">paper</span>
-              <span class="stamp-button__text">NeurIPS 2026</span>
-            </button>
-            <button type="button" class="stamp-button stamp-button--sage" aria-expanded="false" aria-controls="stamp-note" data-stamp-title="Redmond Summer" data-stamp-copy="Applied Science Intern at Microsoft, May to August 2026.">
-              <span class="stamp-button__eyebrow">intern</span>
-              <span class="stamp-button__text">Microsoft Redmond</span>
-            </button>
-            <button type="button" class="stamp-button stamp-button--wheat" aria-expanded="false" aria-controls="stamp-note" data-stamp-title="ICML Golden Reviewer" data-stamp-copy="A small review-desk stamp from ICML 2026.">
-              <span class="stamp-button__eyebrow">review</span>
-              <span class="stamp-button__text">ICML Golden Reviewer</span>
-            </button>
-            <button type="button" class="stamp-button" aria-expanded="false" aria-controls="stamp-note" data-stamp-title="CVPR Highlight" data-stamp-copy="The knowledge-augmented Bayesian deep learning paper earned the CVPR 2026 Highlight mark.">
-              <span class="stamp-button__eyebrow">paper</span>
-              <span class="stamp-button__text">CVPR Highlight</span>
-            </button>
+      <div class="hero-inner">
+        <div class="avatar-ring"><img class="avatar" src="images/me.jpg" alt="Wang Ma"></div>
+        <div>
+          <p class="hero-eyebrow">Ph.D. Student · Rensselaer Polytechnic Institute</p>
+          <h1>Wang Ma<span class="zh">马旺</span></h1>
+          <p class="hero-sub">Uncertainty quantification, Bayesian deep learning, and reliable large language models.</p>
+          <div class="hero-actions">
+            <a class="glass-btn primary" href="mailto:maw6@rpi.edu"><i class="fa-solid fa-envelope" aria-hidden="true"></i>maw6@rpi.edu</a>
+            <a class="glass-btn icon lg lg--clear" href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=rD2pPFUAAAAJ" title="Google Scholar"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span class="sr-only">Google Scholar</span></a>
+            <a class="glass-btn icon lg lg--clear" href="https://www.linkedin.com/in/wang-ma-367748327/" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
+            <a class="glass-btn icon lg lg--clear" href="https://github.com/wma17" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
+            <a class="glass-btn icon lg lg--clear" href="https://twitter.com/WangMa70190365" title="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span class="sr-only">X (Twitter)</span></a>
+            <a class="glass-btn icon lg lg--clear" href="https://space.bilibili.com/237775327/video" title="Bilibili"><i class="fa-brands fa-bilibili" aria-hidden="true"></i><span class="sr-only">Bilibili</span></a>
+            <a class="glass-btn icon lg lg--clear" href="https://www.youtube.com/@wangma4424" title="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i><span class="sr-only">YouTube</span></a>
+            <button type="button" class="glass-btn icon lg lg--clear qr-trigger" data-target="modal-wechat" title="WeChat" aria-label="WeChat"><i class="fa-brands fa-weixin" aria-hidden="true"></i></button>
+            <button type="button" class="glass-btn icon lg lg--clear qr-trigger" data-target="modal-qq" title="QQ" aria-label="QQ"><i class="fa-brands fa-qq" aria-hidden="true"></i></button>
           </div>
-          <p class="stamp-note" id="stamp-note" aria-live="polite" hidden>
-            <strong class="stamp-note__title"></strong>
-            <span class="stamp-note__copy"></span>
-          </p>
         </div>
-        <details class="older-news">
-          <summary>Older News</summary>
-          <ul class="news-list">
-            <li><strong>May 2026</strong> I arrived in Redmond and officially started my Applied Science internship at Microsoft.</li>
-            <li><strong>Feb 2026</strong> My first-authored paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was accepted to CVPR 2026.</li>
-            <li><strong>Nov 2025</strong> My first-authored paper, <a href="https://openreview.net/forum?id=jfq9DUrW90#discussion"><em>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</em></a>, was accepted to the <a href="https://llmrel.github.io/">AAAI 2026 AIR-FM Workshop</a>.</li>
-            <li><strong>Aug 2025</strong> I completed my summer externship at IBM.</li>
-            <li><strong>Mar 2025</strong> I joined IBM as a visiting student researcher working on uncertainty quantification and reasoning with LLMs under <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a>.</li>
-            <li><strong>Aug 2024</strong> I started my PhD journey at RPI.</li>
-            <li><strong>Jul 2024</strong> I organized a seminar titled "AI: Optimization, Theory & Responsibility" at SUSTech; details at the <a href="https://wma17.github.io/24summer/">seminar page</a>.</li>
-            <li><strong>Jul 2024</strong> I started my journey as a visiting student in <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>'s group at SUSTech.</li>
-            <li><strong>Jun 2024</strong> I graduated from SUSTech.</li>
-            <li><strong>Mar 2024</strong> I accepted the offer from RPI and will begin my Ph.D. under <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>.</li>
+      </div>
+    </section>
+
+    <nav class="bento" aria-label="Highlights">
+      <a class="card" href="#publications">
+        <span class="b-icon" style="--c: var(--sky)"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+        <span class="b-label">Paper · 2026</span>
+        <span class="b-title">NeurIPS 2026</span>
+        <span class="b-sub">Black-box LLM uncertainty</span>
+      </a>
+      <a class="card" href="#publications">
+        <span class="b-icon" style="--c: var(--pink)"><i class="fa-solid fa-star" aria-hidden="true"></i></span>
+        <span class="b-label">Paper · 2026</span>
+        <span class="b-title">CVPR Highlight</span>
+        <span class="b-sub">Knowledge-augmented BDL</span>
+      </a>
+      <a class="card" href="#intern-experience">
+        <span class="b-icon" style="--c: var(--lavender)"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+        <span class="b-label">Internship · Summer 2026</span>
+        <span class="b-title">Microsoft</span>
+        <span class="b-sub">Applied Science Intern</span>
+      </a>
+      <a class="card" href="#news">
+        <span class="b-icon" style="--c: var(--peach)"><i class="fa-solid fa-medal" aria-hidden="true"></i></span>
+        <span class="b-label">Service · 2026</span>
+        <span class="b-title">ICML</span>
+        <span class="b-sub">Golden Reviewer</span>
+      </a>
+    </nav>
+
+    <div class="card about">
+      <p>I am a third-year Ph.D. student at Rensselaer Polytechnic Institute (<a href="https://www.rpi.edu/">RPI</a>) advised by <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>. Before coming to RPI, I obtained my B.S. from Southern University of Science and Technology (<a href="https://sustech.edu.cn/en/">SUSTech</a>), advised by <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>.</p>
+      <p class="muted">I have a broad interest in Uncertainty Quantification, Bayesian Deep Learning and their applications to Computer Vision and Natural Language Processing. Recently, my focus is specifically Uncertainty Quantification and Uncertainty Disentanglement for single models and pre-trained models (such as pre-trained large vision or language models), and Knowledge-augmented Bayesian Deep Learning.</p>
+      <div class="callout">
+        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+        <p>I am looking for research / applied scientist internships for <strong>Summer 2027</strong>. Please feel free to reach out via <a href="mailto:maw6@rpi.edu">email</a> if you think there might be a fit!</p>
+      </div>
+      <div class="tags" aria-label="Research themes">
+        <span class="tag">Uncertainty quantification</span>
+        <span class="tag">Bayesian deep learning</span>
+        <span class="tag">Knowledge-augmented BDL</span>
+        <span class="tag">LLM reliability</span>
+      </div>
+    </div>
+
+    <section id="news">
+      <div class="section-head"><div><div class="kicker">Latest</div><h2>News</h2></div></div>
+      <div class="card news">
+        <ul class="list">
+          <li class="row"><time>Sep 2026</time><p><span class="badge-new">New</span>My first-authored paper from my IBM Research internship, <strong>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</strong>, was accepted to NeurIPS 2026! Many thanks to my collaborators at IBM Research. The full version will come soon.</p></li>
+          <li class="row"><time>Sep 2026</time><p>I completed my Applied Science internship at Microsoft and returned to RPI to continue my Ph.D. journey as a third-year student.</p></li>
+          <li class="row"><time>May 2026</time><p>I was selected as an ICML 2026 Golden Reviewer.</p></li>
+          <li class="row"><time>Apr 2026</time><p>My CVPR 2026 paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was selected as a Highlight.</p></li>
+        </ul>
+        <details class="more">
+          <summary>Older news<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></summary>
+          <ul class="list">
+            <li class="row"><time>May 2026</time><p>I arrived in Redmond and officially started my Applied Science internship at Microsoft.</p></li>
+            <li class="row"><time>Feb 2026</time><p>My first-authored paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was accepted to CVPR 2026.</p></li>
+            <li class="row"><time>Nov 2025</time><p>My first-authored paper, <a href="https://openreview.net/forum?id=jfq9DUrW90#discussion"><em>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</em></a>, was accepted to the <a href="https://llmrel.github.io/">AAAI 2026 AIR-FM Workshop</a>.</p></li>
+            <li class="row"><time>Aug 2025</time><p>I completed my summer externship at IBM.</p></li>
+            <li class="row"><time>Mar 2025</time><p>I joined IBM as a visiting student researcher working on uncertainty quantification and reasoning with LLMs under <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a>.</p></li>
+            <li class="row"><time>Aug 2024</time><p>I started my PhD journey at RPI.</p></li>
+            <li class="row"><time>Jul 2024</time><p>I organized a seminar titled "AI: Optimization, Theory &amp; Responsibility" at SUSTech; details at the <a href="https://wma17.github.io/24summer/">seminar page</a>.</p></li>
+            <li class="row"><time>Jul 2024</time><p>I started my journey as a visiting student in <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>'s group at SUSTech.</p></li>
+            <li class="row"><time>Jun 2024</time><p>I graduated from SUSTech.</p></li>
+            <li class="row"><time>Mar 2024</time><p>I accepted the offer from RPI and will begin my Ph.D. under <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>.</p></li>
           </ul>
         </details>
-      </section>
-
-      <section class="home-section" id="education-experience">
-        <div class="section-deco section-deco--bl" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M4 42 Q24 8 44 42 Q24 28 4 42z" fill="#8cc89c" opacity="0.9"/><path d="M4 42 Q24 18 44 42" stroke="#6aa878" stroke-width="1" fill="none" opacity="0.6"/></svg></div>
-	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11 2L2 7v3h18V7l-9-5z" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M2 10v9h18v-9" stroke="currentColor" stroke-width="1.1" fill="none"/></svg>Education Trail</h2>
-        <ul class="card-list">
-          <li><strong>2024.08 - 2029.05</strong> (Expected), Rensselaer Polytechnic Institute (RPI)<br>Ph.D in Computer &amp; System Engineering<br>Adviser: <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a></li>
-          <li><strong>2023.03 - 2023.07</strong>, University of California, Irvine (UCI)<br> Academic Study Abroad Program (ASAP)</li>
-          <li><strong>2020.08 - 2024.07</strong>, Southern University of Science and Technology (SUSTech)<br>B.S. in Data Science and Big Data Technology<br>Thesis Adviser: <a href="https://wangcmath.github.io/">Prof. Chao Wang</a></li>
-        </ul>
-      </section>
-
-      <section class="home-section" id="intern-experience">
-        <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="12" stroke="#e8a0a8" stroke-width="2" fill="none"/><circle cx="28" cy="28" r="6" fill="#f0c0c8"/></svg></div>
-	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 22V8l8-4 8 4v14" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M4 12h16M9 12v10M13 12v10" stroke="currentColor" stroke-width="1" fill="none"/></svg>Intern Trail</h2>
-        <ul class="card-list">
-          <li><strong>2026.05 - 2026.08</strong>, <strong>Microsoft</strong>, Redmond, WA<br>Applied Science Intern<br>My primary focus was fixing table rendering issues to improve presentation quality and optimizing the PPT agent's build pass to reduce end-to-end latency.</li>
-          <li><strong>2025.05 - 2025.08</strong>, <strong>IBM Research</strong><br>Research Extern<br>Research on <strong>Uncertainty Quantification and Reasoning for LLMs</strong><br>Mentor: <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a></li>
-        </ul>
-      </section>
-
-      <section class="home-section" id="publications">
-        <div class="section-deco section-deco--bl" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 40 L8 12 L24 4 L40 12 L40 40 L8 40Z" stroke="#a890c8" stroke-width="1.5" fill="none"/><path d="M8 24 L40 24 M16 12 L16 40 M32 12 L32 40" stroke="#b8a0d8" stroke-width="1" fill="none"/></svg></div>
-	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 2h10v16H6z" stroke="currentColor" stroke-width="1.1" fill="none"/><path d="M6 6h10M6 10h8M6 14h6" stroke="currentColor" stroke-width="0.9" fill="none"/></svg>Papers</h2>
-        <ul class="pub-list">
-	          <li class="pub-item-wrap">
-            <details class="pub-item">
-              <summary class="pub-summary">
-                <span class="pub-title">Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles.</span>
-                <span class="pub-authors"><span class="author-me">Wang Ma</span>, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham, Harsha Kokel, Qiang Ji.</span>
-                <span class="pub-venue">NeurIPS 2026.</span>
-                <span class="pub-links">Full version coming soon · <a href="https://openreview.net/forum?id=jfq9DUrW90#discussion">Workshop Version (AAAI 2026 AIR-FM)</a></span>
-              </summary>
-              <div class="pub-details">
-                <p class="pub-abstract">Uncertainty quantification (UQ) is essential for building reliable and trustworthy systems with large language models (LLMs). However, conventional Bayesian or ensemble-based UQ methods are computationally intractable at the scale of modern LLMs and often require white-box access to model parameters or logits. This paper introduces a <strong>two-level ensemble framework</strong> for <em>black-box</em> uncertainty estimation that operates entirely at inference time and is theoretically grounded in the <em>law of total variance</em>, decomposing total predictive uncertainty into <em>aleatoric</em> and <em>epistemic</em> components. The inner ensemble captures stochasticity and ambiguity through repeated stochastic decoding, while the outer ensemble approximates parameter-driven uncertainty via semantically perturbed prompts that act as proxy samples from an implicit posterior over plausible inputs. By measuring variability in a continuous embedding space, our framework yields interpretable and scalable uncertainty estimates across diverse LLMs. We further provide finite-sample guarantees for our uncertainty estimators, and bound the gap with Bayesian estimators. Experiments on standard benchmarks show that our black-box estimator achieves AUROC comparable to or surpassing state-of-the-art white-box baselines, while providing a meaningful decomposition that distinguishes linguistic ambiguity from knowledge uncertainty.</p>
-              </div>
-            </details>
-          </li>
-          <li class="pub-item-wrap">
-            <details class="pub-item">
-              <summary class="pub-summary">
-                <span class="pub-title">Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision.</span>
-                <span class="pub-authors"><span class="author-me">Wang Ma</span>, Hanjing Wang, Yufei Zhang, Darsha Udayanga, Qiang Ji.</span>
-                <span class="pub-venue">CVPR 2026 Highlight.</span>
-                <span class="pub-links"><a href="https://openaccess.thecvf.com/content/CVPR2026/html/Ma_Towards_Knowledge-augmented_Bayesian_Deep_Learning_For_Computer_Vision_CVPR_2026_paper.html">Website</a> · <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Ma_Towards_Knowledge-augmented_Bayesian_Deep_Learning_For_Computer_Vision_CVPR_2026_paper.pdf">PDF</a> · <a href="https://openaccess.thecvf.com/content/CVPR2026/supplemental/Ma_Towards_Knowledge-augmented_Bayesian_CVPR_2026_supplemental.pdf">Supplementary Material</a></span>
-              </summary>
-              <div class="pub-details">
-                <p class="pub-abstract">Bayesian deep learning (BDL) integrates Bayesian inference with deep learning, improving predictive performance while enabling principled uncertainty quantification. However, existing BDLs often rely on non-informative random priors, limiting the benefits of Bayesian inference. In contrast, knowledge-augmented deep learning explicitly injects domain knowledge during training, yet lacks a probabilistic foundation. In this paper, we propose a knowledge-augmented BDL framework that integrates domain knowledge both as an informative prior and as an adaptive likelihood under a unified two-stage hybrid formulation. In the first stage, we learn a knowledge-informed prior p(θ|K) by pre-training a model to satisfy domain-specific constraints. In the second stage, we perform Bayesian inference on task data with an adaptive knowledge likelihood p(K|θ,D), which dynamically enforces these constraints during optimization. This unified framework enables knowledge to guide both initialization and training, significantly improving prediction accuracy, robustness, adaptation and uncertainty estimation. Experiments on various computer vision tasks, including semi-synthetic and real-knowledge scenarios, demonstrate that our two-stage framework consistently outperforms state-of-the-art Bayesian and knowledge-augmented baselines.</p>
-              </div>
-            </details>
-          </li>
-        </ul>
-      </section>
-
-      <section class="home-section" id="more">
-        <div class="section-deco section-deco--tr" aria-hidden="true"><svg viewBox="0 0 56 56" fill="none"><path d="M28 4l4 12 12 2-8 8 2 12-10-6-10 6 2-12-8-8 12-2 4-12z" fill="#d4b868" opacity="0.9"/></svg></div>
-	        <h2><svg class="section-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11 2l2 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1 2-6z" stroke="currentColor" stroke-width="1" fill="none" stroke-linejoin="round"/></svg>Playground</h2>
-        <ul class="more-list">
-          <li><strong>Baseball</strong> I’m a passionate fan of <strong>MLB</strong>, <strong>NPB</strong>, and Japan’s <strong>National High School Baseball Tournament (Koshien)</strong>. My favorite NPB team is <a href="https://www.fighters.co.jp/"><em>Hokkaido Nippon-Ham Fighters</em></a>, where <strong>Shohei Ohtani</strong> began his professional career in 2013. I’m also a big supporter of <strong>Ōmi High School</strong>, a rising baseball powerhouse from <strong>Shiga Prefecture</strong>. You can check out some highlights <a href="https://www.bilibili.com/video/BV1bF411a7B4/?spm_id_from=333.999.0.0&vd_source=39c9e2f0249c14d448a63ad2dec02137">here</a> — their blue uniforms shine brighter than the August sky.
-            <ul>
-              <li>I led a project analyzing <strong>MLB Statcast data</strong> in my undergraduate <em>Data Science Project</em> course: <a href="https://wma17.github.io/_pages/BaseballAnalysis_slides.pdf">Slides</a>, <a href="https://wma17.github.io/_pages/BaseballAnalysis_report.pdf">Report</a>.</li>
-            </ul>
-          </li>
-          <li>I am a <strong>speedcuber</strong> who has participated in over 30 official competitions, with <strong>Square-1</strong> being my best event. I am currently <strong>ranked No. 3 in mainland China</strong> (as of Nov 2025) and earned <strong>two bronze medals at the Chinese National Championships</strong> in 2017 and 2018. You can find recordings on my <a href="https://space.bilibili.com/237775327/video">Bilibili channel</a>, and official results on my <a href="https://www.worldcubeassociation.org/persons/2016MAWA01">WCA profile</a>. I devoted much of my high school and early university years to Rubik's Cube practice. In May 2021, I achieved my personal best in the Square-1 event and <a href="https://www.worldcubeassociation.org/results/rankings/sq1/single?region=China">reached No. 2 in mainland China</a>. Through years of pursuing something I truly love, I've learned perseverance — a quality I now bring into my research with the same passion and dedication.</li>
-          <li>I’m from Baoji, Shaanxi Province, a region that served as the heart of ancient China for much of its history. I enjoy reading about its rich past, especially the <em>Pre-Qin</em> era and the vibrant <em>Warring States period</em>, known for the flourishing of the Hundred Schools of Thought.</li>
-        </ul>
-      </section>
-      <div class="grass-bottom" aria-hidden="true">
-        <svg viewBox="0 0 800 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0 48 Q25 28 50 48 Q75 24 100 48 Q125 30 150 48 Q175 22 200 48 Q225 28 250 48 Q275 26 300 48 Q325 30 350 48 Q375 24 400 48 Q425 28 450 48 Q475 26 500 48 Q525 30 550 48 Q575 24 600 48 Q625 28 650 48 Q675 26 700 48 Q725 30 750 48 Q775 24 800 48 L800 56 L0 56 Z" fill="url(#contentGrass)"/>
-          <defs><linearGradient id="contentGrass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c0e8cc"/><stop offset="1" stop-color="#98d0a8"/></linearGradient></defs>
-        </svg>
       </div>
-    </article>
+    </section>
+
+    <section id="publications">
+      <div class="section-head"><div><div class="kicker">Research</div><h2>Papers</h2></div><a class="aside" href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=rD2pPFUAAAAJ">Google Scholar <i class="fa-solid fa-chevron-right" style="font-size:11px" aria-hidden="true"></i></a></div>
+      <div class="papers">
+        <article class="card paper">
+          <div class="venue">NeurIPS 2026</div>
+          <h3>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</h3>
+          <p class="authors"><span class="me">Wang Ma</span>, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham, Harsha Kokel, Qiang Ji</p>
+          <div class="paper-actions">
+            <span class="chip chip--soon"><i class="fa-regular fa-clock" aria-hidden="true"></i>Full version coming soon</span>
+            <a class="chip" href="https://openreview.net/forum?id=jfq9DUrW90#discussion"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Workshop version</a>
+            <button class="chip chip--ghost toggle" type="button" aria-expanded="false" aria-controls="abs-1">Abstract <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+          <p class="abstract" id="abs-1" hidden>Uncertainty quantification (UQ) is essential for building reliable and trustworthy systems with large language models (LLMs). However, conventional Bayesian or ensemble-based UQ methods are computationally intractable at the scale of modern LLMs and often require white-box access to model parameters or logits. This paper introduces a <strong>two-level ensemble framework</strong> for <em>black-box</em> uncertainty estimation that operates entirely at inference time and is theoretically grounded in the <em>law of total variance</em>, decomposing total predictive uncertainty into <em>aleatoric</em> and <em>epistemic</em> components. The inner ensemble captures stochasticity and ambiguity through repeated stochastic decoding, while the outer ensemble approximates parameter-driven uncertainty via semantically perturbed prompts that act as proxy samples from an implicit posterior over plausible inputs. By measuring variability in a continuous embedding space, our framework yields interpretable and scalable uncertainty estimates across diverse LLMs. We further provide finite-sample guarantees for our uncertainty estimators, and bound the gap with Bayesian estimators. Experiments on standard benchmarks show that our black-box estimator achieves AUROC comparable to or surpassing state-of-the-art white-box baselines, while providing a meaningful decomposition that distinguishes linguistic ambiguity from knowledge uncertainty.</p>
+        </article>
+        <article class="card paper">
+          <div class="venue">CVPR 2026 <span class="pill-hl">Highlight</span></div>
+          <h3>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</h3>
+          <p class="authors"><span class="me">Wang Ma</span>, Hanjing Wang, Yufei Zhang, Darsha Udayanga, Qiang Ji</p>
+          <div class="paper-actions">
+            <a class="chip" href="https://openaccess.thecvf.com/content/CVPR2026/papers/Ma_Towards_Knowledge-augmented_Bayesian_Deep_Learning_For_Computer_Vision_CVPR_2026_paper.pdf"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>PDF</a>
+            <a class="chip" href="https://openaccess.thecvf.com/content/CVPR2026/html/Ma_Towards_Knowledge-augmented_Bayesian_Deep_Learning_For_Computer_Vision_CVPR_2026_paper.html"><i class="fa-solid fa-globe" aria-hidden="true"></i>Website</a>
+            <a class="chip" href="https://openaccess.thecvf.com/content/CVPR2026/supplemental/Ma_Towards_Knowledge-augmented_Bayesian_CVPR_2026_supplemental.pdf"><i class="fa-regular fa-folder-open" aria-hidden="true"></i>Supplementary</a>
+            <button class="chip chip--ghost toggle" type="button" aria-expanded="false" aria-controls="abs-2">Abstract <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+          <p class="abstract" id="abs-2" hidden>Bayesian deep learning (BDL) integrates Bayesian inference with deep learning, improving predictive performance while enabling principled uncertainty quantification. However, existing BDLs often rely on non-informative random priors, limiting the benefits of Bayesian inference. In contrast, knowledge-augmented deep learning explicitly injects domain knowledge during training, yet lacks a probabilistic foundation. In this paper, we propose a knowledge-augmented BDL framework that integrates domain knowledge both as an informative prior and as an adaptive likelihood under a unified two-stage hybrid formulation. In the first stage, we learn a knowledge-informed prior p(θ|K) by pre-training a model to satisfy domain-specific constraints. In the second stage, we perform Bayesian inference on task data with an adaptive knowledge likelihood p(K|θ,D), which dynamically enforces these constraints during optimization. This unified framework enables knowledge to guide both initialization and training, significantly improving prediction accuracy, robustness, adaptation and uncertainty estimation. Experiments on various computer vision tasks, including semi-synthetic and real-knowledge scenarios, demonstrate that our two-stage framework consistently outperforms state-of-the-art Bayesian and knowledge-augmented baselines.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="intern-experience">
+      <div class="section-head"><div><div class="kicker">Industry</div><h2>Experience</h2></div></div>
+      <div class="card">
+        <ul class="list list--icons">
+          <li class="row">
+            <span class="row-icon" style="--c: var(--lavender)"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+            <div>
+              <div class="row-title">Microsoft</div>
+              <div class="row-sub">Applied Science Intern · Redmond, WA</div>
+              <p class="row-body">My primary focus was fixing table rendering issues to improve presentation quality and optimizing the PPT agent's build pass to reduce end-to-end latency.</p>
+            </div>
+            <div class="row-meta">May – Aug 2026</div>
+          </li>
+          <li class="row">
+            <span class="row-icon" style="--c: var(--sky)"><i class="fa-solid fa-flask" aria-hidden="true"></i></span>
+            <div>
+              <div class="row-title">IBM Research</div>
+              <div class="row-sub">Research Extern · Yorktown Heights, NY</div>
+              <p class="row-body">Research on uncertainty quantification and reasoning for LLMs. Mentor: <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a>.</p>
+            </div>
+            <div class="row-meta">May – Aug 2025</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education-experience">
+      <div class="section-head"><div><div class="kicker">Journey</div><h2>Education</h2></div></div>
+      <div class="card">
+        <ul class="list list--icons">
+          <li class="row">
+            <span class="row-icon" style="--c: var(--pink)"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+            <div>
+              <div class="row-title">Rensselaer Polytechnic Institute (RPI)</div>
+              <div class="row-sub">Ph.D. in Computer &amp; Systems Engineering · Advisor: <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a></div>
+            </div>
+            <div class="row-meta">2024 – 2029<small>expected</small></div>
+          </li>
+          <li class="row">
+            <span class="row-icon" style="--c: var(--mint)"><i class="fa-solid fa-plane" aria-hidden="true"></i></span>
+            <div>
+              <div class="row-title">University of California, Irvine (UCI)</div>
+              <div class="row-sub">Academic Study Abroad Program (ASAP)</div>
+            </div>
+            <div class="row-meta">Mar – Jul 2023</div>
+          </li>
+          <li class="row">
+            <span class="row-icon" style="--c: var(--peach)"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
+            <div>
+              <div class="row-title">Southern University of Science and Technology (SUSTech)</div>
+              <div class="row-sub">B.S. in Data Science and Big Data Technology · Thesis advisor: <a href="https://wangcmath.github.io/">Prof. Chao Wang</a></div>
+            </div>
+            <div class="row-meta">2020 – 2024</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="more">
+      <div class="section-head"><div><div class="kicker">Beyond research</div><h2>Playground</h2></div></div>
+      <div class="tiles">
+        <article class="card tile">
+          <span class="tile-icon" style="--c: var(--sky)"><i class="fa-solid fa-baseball-bat-ball" aria-hidden="true"></i></span>
+          <h3>Baseball</h3>
+          <p>I’m a passionate fan of MLB, NPB, and Japan’s National High School Baseball Tournament (Koshien). My favorite NPB team is <a href="https://www.fighters.co.jp/"><em>Hokkaido Nippon-Ham Fighters</em></a>, where Shohei Ohtani began his professional career in 2013. I’m also a big supporter of Ōmi High School, a rising baseball powerhouse from Shiga Prefecture. You can check out some highlights <a href="https://www.bilibili.com/video/BV1bF411a7B4/?spm_id_from=333.999.0.0&vd_source=39c9e2f0249c14d448a63ad2dec02137">here</a> — their blue uniforms shine brighter than the August sky.</p>
+          <p>I led a project analyzing MLB Statcast data in my undergraduate <em>Data Science Project</em> course: <a href="https://wma17.github.io/_pages/BaseballAnalysis_slides.pdf">Slides</a>, <a href="https://wma17.github.io/_pages/BaseballAnalysis_report.pdf">Report</a>.</p>
+        </article>
+        <article class="card tile">
+          <span class="tile-icon" style="--c: var(--pink)"><i class="fa-solid fa-cube" aria-hidden="true"></i></span>
+          <h3>Speedcubing</h3>
+          <p>I am a speedcuber who has participated in over 30 official competitions, with Square-1 being my best event. I am currently ranked No. 3 in mainland China (as of Nov 2025) and earned two bronze medals at the Chinese National Championships in 2017 and 2018. You can find recordings on my <a href="https://space.bilibili.com/237775327/video">Bilibili channel</a>, and official results on my <a href="https://www.worldcubeassociation.org/persons/2016MAWA01">WCA profile</a>.</p>
+          <p>I devoted much of my high school and early university years to Rubik's Cube practice. In May 2021, I achieved my personal best in the Square-1 event and <a href="https://www.worldcubeassociation.org/results/rankings/sq1/single?region=China">reached No. 2 in mainland China</a>. Through years of pursuing something I truly love, I've learned perseverance — a quality I now bring into my research with the same passion and dedication.</p>
+        </article>
+        <article class="card tile wide">
+          <span class="tile-icon" style="--c: var(--lavender)"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i></span>
+          <h3>Hometown</h3>
+          <p>I’m from Baoji, Shaanxi Province, a region that served as the heart of ancient China for much of its history. I enjoy reading about its rich past, especially the <em>Pre-Qin</em> era and the vibrant <em>Warring States period</em>, known for the flourishing of the Hundred Schools of Thought.</p>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <button type="button" class="play-toggle" aria-label="Toggle playground mode" aria-pressed="false" title="Playground mode">
-    <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
-  </button>
+  <footer><span>© 2026 Wang Ma <span class="heart">♥</span> Troy, NY</span><a href="https://wma17.github.io/_pages/CV.pdf">Download CV</a></footer>
+
+  <button type="button" class="play-toggle lg lg--refract" aria-label="Toggle playground mode" aria-pressed="false" title="Playground mode"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></button>
 
   <div id="modal-qq" class="qr-modal" aria-hidden="true">
     <div class="qr-modal__backdrop"></div>
-    <div class="qr-modal__dialog" role="dialog" aria-modal="true" aria-label="QQ QR">
-      <button type="button" class="qr-modal__close" data-close-modal>&times;</button>
+    <div class="qr-modal__dialog lg" role="dialog" aria-modal="true" aria-label="QQ QR">
+      <button type="button" class="qr-modal__close" data-close-modal aria-label="Close">&times;</button>
       <img src="images/contact/qq.jpg" alt="QQ QR code">
     </div>
   </div>
-
   <div id="modal-wechat" class="qr-modal" aria-hidden="true">
     <div class="qr-modal__backdrop"></div>
-    <div class="qr-modal__dialog" role="dialog" aria-modal="true" aria-label="WeChat QR">
-      <button type="button" class="qr-modal__close" data-close-modal>&times;</button>
+    <div class="qr-modal__dialog lg" role="dialog" aria-modal="true" aria-label="WeChat QR">
+      <button type="button" class="qr-modal__close" data-close-modal aria-label="Close">&times;</button>
       <img src="images/contact/wechat.jpg" alt="WeChat QR code">
     </div>
   </div>
 
   <script>
     (function () {
-      function openModal(id) {
-        var modal = document.getElementById(id);
-        if (!modal) return;
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden', 'false');
-      }
-
-      function closeModal(modal) {
-        if (!modal) return;
-        modal.classList.remove('is-open');
-        modal.setAttribute('aria-hidden', 'true');
-      }
-
-      document.addEventListener('click', function (e) {
-        var trigger = e.target.closest('.qr-trigger');
-        if (trigger) {
-          openModal(trigger.getAttribute('data-target'));
-          return;
-        }
-
-        var closeBtn = e.target.closest('[data-close-modal], .qr-modal__backdrop');
-        if (closeBtn) {
-          closeModal(closeBtn.closest('.qr-modal'));
-        }
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key !== 'Escape') return;
-        closeModal(document.querySelector('.qr-modal.is-open'));
-      });
-
-      var stampButtons = Array.prototype.slice.call(document.querySelectorAll('.stamp-button'));
-      var stampNote = document.getElementById('stamp-note');
-      var stampTitle = stampNote ? stampNote.querySelector('.stamp-note__title') : null;
-      var stampCopy = stampNote ? stampNote.querySelector('.stamp-note__copy') : null;
-
-      function clearStampNote() {
-        stampButtons.forEach(function (button) {
-          button.setAttribute('aria-expanded', 'false');
-        });
-        if (stampNote) {
-          stampNote.hidden = true;
-        }
-      }
-
-      stampButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-          var wasOpen = button.getAttribute('aria-expanded') === 'true';
-          clearStampNote();
-          if (wasOpen || !stampNote || !stampTitle || !stampCopy) return;
-
-          button.setAttribute('aria-expanded', 'true');
-          stampTitle.textContent = button.getAttribute('data-stamp-title') || button.textContent.trim();
-          stampCopy.textContent = button.getAttribute('data-stamp-copy') || '';
-          stampNote.style.borderLeftColor = window.getComputedStyle(button).color;
-          stampNote.hidden = false;
-        });
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') clearStampNote();
-      });
-
-      var playToggle = document.querySelector('.play-toggle');
-      var playModeKey = 'wang-home-play-mode';
       var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var sparkColors = ['#6f5797', '#a9cdb2', '#c9a15a', '#d88eaa'];
 
-      function setPlayMode(isOn) {
-        document.body.classList.toggle('is-play-mode', isOn);
-        if (playToggle) {
-          playToggle.setAttribute('aria-pressed', isOn ? 'true' : 'false');
-        }
-      }
-
-      if (playToggle) {
-        try {
-          setPlayMode(window.localStorage.getItem(playModeKey) === 'true');
-        } catch (error) {
-          setPlayMode(false);
-        }
-
-        playToggle.addEventListener('click', function () {
-          var isOn = playToggle.getAttribute('aria-pressed') !== 'true';
-          setPlayMode(isOn);
-          try {
-            window.localStorage.setItem(playModeKey, isOn ? 'true' : 'false');
-          } catch (error) {
-            // Local storage can be unavailable in some privacy modes.
+      /* ---------- Liquid Glass edge refraction (Chromium supports SVG filters in backdrop-filter) ---------- */
+      (function setupRefraction() {
+        var isChromium = !!window.chrome && /Chrome|Chromium|Edg/.test(navigator.userAgent) && !/Firefox/.test(navigator.userAgent);
+        var reduceTransparency = window.matchMedia && window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+        if (!isChromium || reduceTransparency) return;
+        var W = 256, H = 256, c = document.createElement('canvas');
+        c.width = W; c.height = H;
+        var ctx = c.getContext('2d'), img = ctx.createImageData(W, H), d = img.data, edge = 0.16;
+        for (var y = 0; y < H; y++) {
+          for (var x = 0; x < W; x++) {
+            var u = x / (W - 1), v = y / (H - 1), dx = 0, dy = 0;
+            if (u < edge) dx = 1 - u / edge; else if (1 - u < edge) dx = -(1 - (1 - u) / edge);
+            if (v < edge) dy = 1 - v / edge; else if (1 - v < edge) dy = -(1 - (1 - v) / edge);
+            dx = Math.sign(dx) * dx * dx; dy = Math.sign(dy) * dy * dy;
+            var i = (y * W + x) * 4;
+            d[i] = 128 + dx * 127; d[i + 1] = 128 + dy * 127; d[i + 2] = 128; d[i + 3] = 255;
           }
+        }
+        ctx.putImageData(img, 0, 0);
+        var map = document.getElementById('lg-map');
+        if (!map) return;
+        map.setAttribute('href', c.toDataURL());
+        document.documentElement.classList.add('lg-refract');
+      })();
+
+      /* ---------- Specular highlight follows the pointer ---------- */
+      if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
+        document.querySelectorAll('.lg').forEach(function (el) {
+          el.addEventListener('pointermove', function (e) {
+            var r = el.getBoundingClientRect();
+            el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+            el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+          });
         });
       }
 
-      function shouldSkipSparks(target) {
-        return !!target.closest('a, button, summary, details, input, textarea, select, label, .qr-modal, .stamp-case');
+      /* ---------- Nav lens glides to the active section ---------- */
+      var navList = document.querySelector('.nav-links');
+      var lens = document.querySelector('.nav-lens');
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+      var current = null;
+      function moveLens(a) {
+        links.forEach(function (l) { l.classList.toggle('is-active', l === a); });
+        if (!a) { lens.style.opacity = '0'; return; }
+        lens.style.opacity = '1';
+        lens.style.width = a.offsetWidth + 'px';
+        lens.style.transform = 'translateX(' + a.offsetLeft + 'px)';
       }
-
-      function createClickSpark(x, y, index, total, isPlayMode) {
-        var spark = document.createElement('span');
-        var angle = (Math.PI * 2 * index / total) + (Math.random() * 0.45);
-        var distance = (isPlayMode ? 24 : 15) + Math.random() * (isPlayMode ? 20 : 14);
-        var color = sparkColors[(index + Math.floor(Math.random() * sparkColors.length)) % sparkColors.length];
-        spark.className = 'click-spark';
-        spark.setAttribute('aria-hidden', 'true');
-        spark.style.left = x + 'px';
-        spark.style.top = y + 'px';
-        spark.style.setProperty('--spark-x', Math.cos(angle) * distance + 'px');
-        spark.style.setProperty('--spark-y', Math.sin(angle) * distance + 'px');
-        spark.style.setProperty('--spark-color', color);
-        spark.style.setProperty('--spark-size', (isPlayMode ? 7 : 5) + Math.random() * 3 + 'px');
-        document.body.appendChild(spark);
-        spark.addEventListener('animationend', function () {
-          spark.remove();
-        }, { once: true });
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            current = links.filter(function (l) { return l.getAttribute('href') === '#' + en.target.id; })[0] || null;
+            moveLens(current);
+            if (current && navList.scrollWidth > navList.clientWidth) {
+              navList.scrollTo({ left: current.offsetLeft - 40, behavior: reduceMotion ? 'auto' : 'smooth' });
+            }
+          });
+        }, { rootMargin: '-35% 0px -60% 0px' });
+        document.querySelectorAll('main section[id]').forEach(function (s) { io.observe(s); });
       }
+      window.addEventListener('resize', function () { moveLens(current); });
 
-      document.addEventListener('click', function (e) {
-        if (reduceMotion || shouldSkipSparks(e.target)) return;
-        var isPlayMode = document.body.classList.contains('is-play-mode');
-        var count = isPlayMode ? 7 : 4;
-        for (var i = 0; i < count; i += 1) {
-          createClickSpark(e.clientX, e.clientY, i, count, isPlayMode);
-        }
+      /* ---------- Abstract toggles ---------- */
+      document.querySelectorAll('.toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var open = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+          document.getElementById(btn.getAttribute('aria-controls')).hidden = open;
+        });
       });
 
+      /* ---------- QR modals ---------- */
+      function openModal(id) { var m = document.getElementById(id); if (!m) return; m.classList.add('is-open'); m.setAttribute('aria-hidden', 'false'); }
+      function closeModal(m) { if (!m) return; m.classList.remove('is-open'); m.setAttribute('aria-hidden', 'true'); }
+      document.addEventListener('click', function (e) {
+        var t = e.target.closest('.qr-trigger');
+        if (t) { openModal(t.getAttribute('data-target')); return; }
+        var c = e.target.closest('[data-close-modal], .qr-modal__backdrop');
+        if (c) closeModal(c.closest('.qr-modal'));
+      });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(document.querySelector('.qr-modal.is-open')); });
+
+      /* ---------- Playground mode ---------- */
+      var playToggle = document.querySelector('.play-toggle');
+      var key = 'wang-home-play-mode';
+      var sparkColors = ['#ff7eb3', '#6cb8ff', '#a996ff', '#ffa77a', '#5fcfb0'];
+      function setPlay(on) { document.body.classList.toggle('is-play-mode', on); playToggle.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+      try { setPlay(window.localStorage.getItem(key) === 'true'); } catch (err) { setPlay(false); }
+      playToggle.addEventListener('click', function () {
+        var on = playToggle.getAttribute('aria-pressed') !== 'true';
+        setPlay(on);
+        try { window.localStorage.setItem(key, on ? 'true' : 'false'); } catch (err) {}
+      });
+      document.addEventListener('click', function (e) {
+        if (reduceMotion || e.target.closest('a, button, summary, details, .qr-modal')) return;
+        var big = document.body.classList.contains('is-play-mode'), n = big ? 7 : 4;
+        for (var i = 0; i < n; i++) {
+          var s = document.createElement('span');
+          var ang = (Math.PI * 2 * i / n) + Math.random() * 0.45, dist = (big ? 24 : 15) + Math.random() * (big ? 20 : 12);
+          s.className = 'click-spark'; s.setAttribute('aria-hidden', 'true');
+          s.style.left = e.clientX + 'px'; s.style.top = e.clientY + 'px';
+          s.style.setProperty('--spark-x', Math.cos(ang) * dist + 'px');
+          s.style.setProperty('--spark-y', Math.sin(ang) * dist + 'px');
+          s.style.setProperty('--spark-color', sparkColors[i % sparkColors.length]);
+          s.style.setProperty('--spark-size', (big ? 6 : 5) + Math.random() * 3 + 'px');
+          document.body.appendChild(s);
+          s.addEventListener('animationend', function () { this.remove(); }, { once: true });
+        }
+      });
       document.querySelectorAll('.animal-run').forEach(function (el) {
         el.addEventListener('click', function () {
-          if (this.classList.contains('animal-run--scared')) return;
-          var rect = this.getBoundingClientRect();
-          var runRight = this.classList.contains('animal-run--top-left') || this.classList.contains('animal-run--bottom-left');
-          var runLeft = this.classList.contains('animal-run--top-right') || this.classList.contains('animal-run--bottom-right');
-          var runDown = this.classList.contains('animal-run--left-top') || this.classList.contains('animal-run--right-top');
-          var runUp = this.classList.contains('animal-run--left-bottom') || this.classList.contains('animal-run--right-bottom');
-          this.classList.add('animal-run--scared');
-          this.style.left = rect.left + 'px';
-          this.style.top = rect.top + 'px';
-          this.style.right = 'auto';
-          this.style.bottom = 'auto';
-          this.style.transform = 'translate(0, 0)';
-          this.style.transition = 'transform 1.2s linear';
-          var target = '';
-          if (runRight) target = 'translate(calc(100vw + 120px), 0)';
-          else if (runLeft) target = 'translate(calc(-100vw - 120px), 0)';
-          else if (runDown) target = 'translate(0, calc(100vh + 120px))';
-          else if (runUp) target = 'translate(0, calc(-100vh - 120px))';
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              el.style.transform = target;
-            });
-          });
+          if (el.classList.contains('animal-run--scared')) return;
+          var rect = el.getBoundingClientRect();
+          var toRight = el.classList.contains('animal-run--top-left') || el.classList.contains('animal-run--bottom-left');
+          el.classList.add('animal-run--scared');
+          el.style.left = rect.left + 'px'; el.style.top = rect.top + 'px'; el.style.right = 'auto'; el.style.bottom = 'auto';
+          el.style.transform = 'translate(0,0)'; el.style.transition = 'transform 1.2s linear';
+          requestAnimationFrame(function () { requestAnimationFrame(function () {
+            el.style.transform = toRight ? 'translate(calc(100vw + 120px),0)' : 'translate(calc(-100vw - 120px),0)';
+          }); });
         });
       });
     })();
