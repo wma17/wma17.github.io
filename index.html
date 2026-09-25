@@ -6,8 +6,15 @@
   <title>Wang Ma - Homepage</title>
   <meta name="description" content="Wang Ma, Ph.D. student at RPI working on uncertainty quantification, Bayesian deep learning and reliable LLMs.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#eef6ff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#10132a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#eef6ff">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('wang-home-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,32 +64,32 @@
       --round: "M PLUS Rounded 1c", "SF Pro Rounded", -apple-system, "PingFang SC", sans-serif;
       --page: 1000px;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --ink: #eef0ff;
-        --ink-2: #b3b7d6;
-        --ink-3: #8b8fb0;
-        --page-bg: linear-gradient(180deg, #0f1430 0%, #141434 45%, #1c1230 100%);
-        --card: #1a1d38;
-        --card-edge: rgba(255, 140, 190, 0.14);
-        --card-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.6);
-        --sep: rgba(255, 255, 255, 0.1);
-        --fill: rgba(160, 170, 255, 0.12);
-        --pink-deep: #ff8fbd;
-        --pink-soft: rgba(255, 126, 179, 0.16);
-        --sky-deep: #7cc2ff;
-        --sky-soft: rgba(108, 184, 255, 0.16);
-        --hero-bg: linear-gradient(165deg, #1f3a78 0%, #2c3470 38%, #55306e 75%, #7a3a6c 100%);
-        --hero-ink: #ffffff;
-        --hero-ink-2: rgba(255, 255, 255, 0.82);
-        --cloud: rgba(255, 255, 255, 0.16);
-        --lg-tint: rgba(40, 42, 78, 0.55);
-        --lg-rim-hi: rgba(255, 255, 255, 0.42);
-        --lg-rim-lo: rgba(255, 170, 210, 0.08);
-        --lg-shadow: 0 10px 30px -6px rgba(0, 0, 0, 0.55);
-        --lg-inner: inset 0 1px 0.5px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(255,255,255,0.08), inset 0 0 16px rgba(255,255,255,0.05);
-      }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --ink: #eef0ff;
+      --ink-2: #b3b7d6;
+      --ink-3: #8b8fb0;
+      --page-bg: linear-gradient(180deg, #0f1430 0%, #141434 45%, #1c1230 100%);
+      --card: #1a1d38;
+      --card-edge: rgba(255, 140, 190, 0.14);
+      --card-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.6);
+      --sep: rgba(255, 255, 255, 0.1);
+      --fill: rgba(160, 170, 255, 0.12);
+      --pink-deep: #ff8fbd;
+      --pink-soft: rgba(255, 126, 179, 0.16);
+      --sky-deep: #7cc2ff;
+      --sky-soft: rgba(108, 184, 255, 0.16);
+      --hero-bg: linear-gradient(165deg, #1f3a78 0%, #2c3470 38%, #55306e 75%, #7a3a6c 100%);
+      --hero-ink: #ffffff;
+      --hero-ink-2: rgba(255, 255, 255, 0.82);
+      --cloud: rgba(255, 255, 255, 0.16);
+      --lg-tint: rgba(40, 42, 78, 0.55);
+      --lg-rim-hi: rgba(255, 255, 255, 0.42);
+      --lg-rim-lo: rgba(255, 170, 210, 0.08);
+      --lg-shadow: 0 10px 30px -6px rgba(0, 0, 0, 0.55);
+      --lg-inner: inset 0 1px 0.5px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(255,255,255,0.08), inset 0 0 16px rgba(255,255,255,0.05);
     }
+    :root[data-theme="light"] { color-scheme: light; }
 
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 86px; -webkit-text-size-adjust: 100%; }
@@ -127,7 +134,7 @@
       mix-blend-mode: soft-light;
     }
     .lg--clear { background: rgba(255, 255, 255, 0.3); }
-    @media (prefers-color-scheme: dark) { .lg--clear { background: rgba(255, 255, 255, 0.1); } }
+    :root[data-theme="dark"] .lg--clear { background: rgba(255, 255, 255, 0.1); }
     @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .lg, .lg--clear { background: var(--card); } }
     @media (prefers-reduced-transparency: reduce) { .lg, .lg--clear { background: var(--card); -webkit-backdrop-filter: none; backdrop-filter: none; } }
 
@@ -147,7 +154,13 @@
       box-shadow: inset 0 1px 0.5px #fff, 0 2px 8px rgba(255,110,160,0.22);
       transition: transform .5s cubic-bezier(.3,1.4,.5,1), width .5s cubic-bezier(.3,1.4,.5,1), opacity .2s ease;
     }
-    @media (prefers-color-scheme: dark) { .nav-lens { background: rgba(255,126,179,0.2); box-shadow: inset 0 1px 0.5px rgba(255,255,255,0.3); } }
+    :root[data-theme="dark"] .nav-lens { background: rgba(255,126,179,0.2); box-shadow: inset 0 1px 0.5px rgba(255,255,255,0.3); }
+    .theme-toggle { flex: none; width: 34px; height: 34px; margin-left: 2px; border-radius: 50%; border: 0; cursor: pointer; display: grid; place-items: center; font-size: 15px; color: var(--ink); background: transparent; transition: background .2s ease, color .2s ease; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.6); color: var(--pink-deep); }
+    :root[data-theme="dark"] .theme-toggle:hover { background: rgba(255,255,255,0.1); }
+    .theme-toggle i { transition: transform .5s cubic-bezier(.3,1.4,.5,1); }
+    .theme-toggle:active i { transform: rotate(-30deg) scale(.85); }
+    ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
     .nav-cta { flex: none; margin-left: 4px; padding: 7px 17px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #fff; background: var(--grad); box-shadow: 0 4px 12px -2px rgba(255,110,160,0.45); }
     .nav-cta:hover { text-decoration: none; filter: brightness(1.05) saturate(1.1); }
 
@@ -190,7 +203,8 @@
     .hero-eyebrow { font-size: 15px; font-weight: 600; color: var(--hero-ink-2); }
     .hero h1 { margin: 4px 0 8px; font-family: var(--round); font-size: 58px; line-height: 1.05; font-weight: 800; letter-spacing: -0.015em; }
     .hero h1 .zh { font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", var(--font); font-weight: 600; font-size: .7em; margin-left: 12px; color: var(--pink-deep); letter-spacing: .02em; }
-    @media (prefers-color-scheme: dark) { .hero h1 .zh { color: #ffb3d1; } .sun { opacity: .35; } }
+    :root[data-theme="dark"] .hero h1 .zh { color: #ffb3d1; }
+    :root[data-theme="dark"] .sun { opacity: .35; }
     .hero-sub { font-size: 20px; line-height: 1.42; font-weight: 500; color: var(--hero-ink-2); max-width: 38ch; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
     .glass-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; min-width: 40px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font: 600 14px/1 var(--font); color: var(--hero-ink); transition: transform .2s ease; }
@@ -405,6 +419,7 @@
         <li><a href="#more">Playground</a></li>
         <li class="nav-lens" aria-hidden="true"></li>
       </ul>
+      <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Switch theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
       <a class="nav-cta" href="https://wma17.github.io/_pages/CV.pdf">CV</a>
     </nav>
   </div>
@@ -727,6 +742,40 @@
         if (c) closeModal(c.closest('.qr-modal'));
       });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(document.querySelector('.qr-modal.is-open')); });
+
+      /* ---------- Manual light / dark switch ---------- */
+      (function () {
+        var root = document.documentElement;
+        var btn = document.querySelector('.theme-toggle');
+        var meta = document.querySelector('meta[name="theme-color"]');
+        var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        function stored() { try { return localStorage.getItem('wang-home-theme'); } catch (e) { return null; } }
+        function paint(t) {
+          root.setAttribute('data-theme', t);
+          var dark = t === 'dark';
+          btn.innerHTML = '<i class="fa-solid ' + (dark ? 'fa-sun' : 'fa-moon') + '" aria-hidden="true"></i>';
+          btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+          if (meta) meta.setAttribute('content', dark ? '#10132a' : '#eef6ff');
+        }
+        paint(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+        btn.addEventListener('click', function (e) {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          try { localStorage.setItem('wang-home-theme', next); } catch (err) {}
+          if (!document.startViewTransition || reduceMotion) { paint(next); return; }
+          var r = btn.getBoundingClientRect();
+          var x = r.left + r.width / 2, y = r.top + r.height / 2;
+          var end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+          var vt = document.startViewTransition(function () { paint(next); });
+          vt.ready.then(function () {
+            root.animate({ clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + end + 'px at ' + x + 'px ' + y + 'px)'] },
+              { duration: 520, easing: 'cubic-bezier(.4,0,.2,1)', pseudoElement: '::view-transition-new(root)' });
+          });
+        });
+        if (mq && mq.addEventListener) mq.addEventListener('change', function (e) {
+          var t = stored();
+          if (t !== 'light' && t !== 'dark') paint(e.matches ? 'dark' : 'light');
+        });
+      })();
 
       /* ---------- Playground mode ---------- */
       var playToggle = document.querySelector('.play-toggle');
