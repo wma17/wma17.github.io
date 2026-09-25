@@ -259,6 +259,8 @@
     :root[data-theme="dark"] .b-icon--logo img { height: 28px; }
     .b-icon--logo { width: auto; height: 36px; padding: 0; background: none; box-shadow: none; border-radius: 0; justify-content: start; }
     .b-icon--logo img { height: 34px; width: auto; max-width: 110px; display: block; }
+    .b-icon--wide img { height: 40px; max-width: 150px; margin-top: -3px; }
+    :root[data-theme="dark"] .b-icon--wide img { height: 32px; }
 
     .news .row { grid-template-columns: 92px minmax(0,1fr); gap: 16px; }
     .news time { font-size: 14px; font-weight: 600; color: var(--sky-deep); font-variant-numeric: tabular-nums; padding-top: 2px; white-space: nowrap; }
@@ -467,7 +469,7 @@
 
     <nav class="bento" aria-label="Highlights">
       <a class="card" href="#publications">
-        <span class="b-icon b-icon--logo"><img src="images/logos/neurips.png" alt=""></span>
+        <span class="b-icon b-icon--logo b-icon--wide"><img src="images/logos/neurips-full.png" alt="NeurIPS"></span>
         <span class="b-label">Paper · 2026</span>
         <span class="b-title">NeurIPS 2026</span>
         <span class="b-sub">Black-box LLM uncertainty</span>
