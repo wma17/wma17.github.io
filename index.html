@@ -225,6 +225,12 @@
     .row-icon { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; color: #fff; font-size: 15px; margin-top: 1px; background: var(--c); }
     .row-title { font-size: 17px; font-weight: 700; line-height: 1.35; }
     .row-sub { font-size: 15px; color: var(--ink-2); margin-top: 1px; }
+    .row-link { color: var(--ink); }
+    .row-link i { font-size: 11px; color: var(--ink-3); margin-left: 3px; vertical-align: 2px; transition: color .2s ease, transform .2s ease; display: inline-block; }
+    .row-link:hover { color: var(--pink-deep); text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+    .row-link:hover i { color: var(--pink-deep); transform: translate(1px,-1px); }
+    .row-place { display: block; margin-top: 4px; font-size: 13px; font-weight: 500; color: var(--ink-3); white-space: nowrap; }
+    .row-place i { font-size: 11px; margin-right: 5px; color: var(--pink); }
     .row-body { font-size: 15.5px; margin-top: 6px; }
     .row-meta { font-size: 14px; font-weight: 600; color: var(--sky-deep); white-space: nowrap; font-variant-numeric: tabular-nums; padding-top: 3px; text-align: right; }
     .row-meta small { display: block; font-size: 12.5px; font-weight: 500; color: var(--ink-3); }
@@ -356,6 +362,7 @@
       .list--icons .row { --inset: 72px; grid-template-columns: auto minmax(0,1fr); }
       .row-meta { grid-column: 2; grid-row: 1; text-align: left; padding-top: 0; margin-bottom: -4px; }
       .row-meta small { display: inline; margin-left: 4px; }
+      .row-place { display: inline; margin: 0 0 0 10px; }
       .list--icons .row-icon, .list--icons .row-logo { grid-row: 1 / span 2; }
       .news .row { grid-template-columns: 1fr; gap: 2px; }
       details.more summary { padding: 14px 18px; }
@@ -540,20 +547,20 @@
           <li class="row">
             <span class="row-logo"><img src="images/logos/microsoft.svg" alt="Microsoft logo"></span>
             <div>
-              <div class="row-title">Microsoft</div>
-              <div class="row-sub">Applied Science Intern · Redmond, WA</div>
+              <div class="row-title"><a class="row-link" href="https://www.microsoft.com/">Microsoft <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+              <div class="row-sub">Applied Science Intern</div>
               <p class="row-body">My primary focus was fixing table rendering issues to improve presentation quality and optimizing the PPT agent's build pass to reduce end-to-end latency.</p>
             </div>
-            <div class="row-meta">May – Aug 2026</div>
+            <div class="row-meta">May – Aug 2026<span class="row-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Redmond, WA</span></div>
           </li>
           <li class="row">
             <span class="row-logo"><img src="images/logos/ibm.svg" alt="IBM logo"></span>
             <div>
-              <div class="row-title">IBM Research</div>
-              <div class="row-sub">Research Extern · Yorktown Heights, NY</div>
+              <div class="row-title"><a class="row-link" href="https://research.ibm.com/">IBM Research <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+              <div class="row-sub">Research Extern</div>
               <p class="row-body">Research on uncertainty quantification and reasoning for LLMs. Mentor: <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a>.</p>
             </div>
-            <div class="row-meta">May – Aug 2025</div>
+            <div class="row-meta">May – Aug 2025<span class="row-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Yorktown Heights, NY</span></div>
           </li>
         </ul>
       </div>
@@ -566,26 +573,26 @@
           <li class="row">
             <span class="row-logo row-logo--seal"><img src="images/logos/rpi.png" alt="RPI seal"></span>
             <div>
-              <div class="row-title">Rensselaer Polytechnic Institute (RPI)</div>
+              <div class="row-title"><a class="row-link" href="https://www.rpi.edu/">Rensselaer Polytechnic Institute (RPI) <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
               <div class="row-sub">Ph.D. in Computer &amp; Systems Engineering · Advisor: <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a></div>
             </div>
-            <div class="row-meta">2024 – 2029<small>expected</small></div>
+            <div class="row-meta">2024 – 2029<small>expected</small><span class="row-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Troy, NY</span></div>
           </li>
           <li class="row">
             <span class="row-logo row-logo--seal"><img src="images/logos/uci.svg" alt="UC Irvine seal"></span>
             <div>
-              <div class="row-title">University of California, Irvine (UCI)</div>
+              <div class="row-title"><a class="row-link" href="https://uci.edu/">University of California, Irvine (UCI) <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
               <div class="row-sub">Academic Study Abroad Program (ASAP)</div>
             </div>
-            <div class="row-meta">Mar – Jul 2023</div>
+            <div class="row-meta">Mar – Jul 2023<span class="row-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Irvine, CA</span></div>
           </li>
           <li class="row">
             <span class="row-logo"><img src="images/logos/sustech.png" alt="SUSTech emblem"></span>
             <div>
-              <div class="row-title">Southern University of Science and Technology (SUSTech)</div>
+              <div class="row-title"><a class="row-link" href="https://www.sustech.edu.cn/en/">Southern University of Science and Technology (SUSTech) <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
               <div class="row-sub">B.S. in Data Science and Big Data Technology · Thesis advisor: <a href="https://wangcmath.github.io/">Prof. Chao Wang</a></div>
             </div>
-            <div class="row-meta">2020 – 2024</div>
+            <div class="row-meta">2020 – 2024<span class="row-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Shenzhen, China</span></div>
           </li>
         </ul>
       </div>
