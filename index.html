@@ -228,7 +228,12 @@
     .row-body { font-size: 15.5px; margin-top: 6px; }
     .row-meta { font-size: 14px; font-weight: 600; color: var(--sky-deep); white-space: nowrap; font-variant-numeric: tabular-nums; padding-top: 3px; text-align: right; }
     .row-meta small { display: block; font-size: 12.5px; font-weight: 500; color: var(--ink-3); }
-    .list--icons .row { --inset: 74px; }
+    .list--icons .row { --inset: 78px; }
+    .row-logo { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; padding: 5px; margin-top: 1px; background: #fff; box-shadow: inset 0 0 0 1px rgba(60,60,110,0.1), 0 4px 10px -6px rgba(60,50,110,0.25); }
+    .row-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .row-logo--seal { padding: 2px; }
+    .b-icon--logo { background: #fff; padding: 7px; box-shadow: inset 0 0 0 1px rgba(60,60,110,0.1), 0 6px 14px -8px rgba(60,50,110,0.35); }
+    .b-icon--logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
     .news .row { grid-template-columns: 92px minmax(0,1fr); gap: 16px; }
     .news time { font-size: 14px; font-weight: 600; color: var(--sky-deep); font-variant-numeric: tabular-nums; padding-top: 2px; white-space: nowrap; }
@@ -337,10 +342,10 @@
       .about, .paper, .tile { padding: 22px 20px; }
       .row { padding: 14px 18px; }
       .row + .row::before { left: var(--inset, 18px); }
-      .list--icons .row { --inset: 68px; grid-template-columns: auto minmax(0,1fr); }
+      .list--icons .row { --inset: 72px; grid-template-columns: auto minmax(0,1fr); }
       .row-meta { grid-column: 2; grid-row: 1; text-align: left; padding-top: 0; margin-bottom: -4px; }
       .row-meta small { display: inline; margin-left: 4px; }
-      .list--icons .row-icon { grid-row: 1 / span 2; }
+      .list--icons .row-icon, .list--icons .row-logo { grid-row: 1 / span 2; }
       .news .row { grid-template-columns: 1fr; gap: 2px; }
       details.more summary { padding: 14px 18px; }
       details.more summary::before { left: 18px; }
@@ -433,7 +438,7 @@
         <span class="b-sub">Knowledge-augmented BDL</span>
       </a>
       <a class="card" href="#intern-experience">
-        <span class="b-icon" style="--c: var(--lavender)"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+        <span class="b-icon b-icon--logo"><img src="images/logos/microsoft.svg" alt=""></span>
         <span class="b-label">Internship · Summer 2026</span>
         <span class="b-title">Microsoft</span>
         <span class="b-sub">Applied Science Intern</span>
@@ -522,7 +527,7 @@
       <div class="card">
         <ul class="list list--icons">
           <li class="row">
-            <span class="row-icon" style="--c: var(--lavender)"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+            <span class="row-logo"><img src="images/logos/microsoft.svg" alt="Microsoft logo"></span>
             <div>
               <div class="row-title">Microsoft</div>
               <div class="row-sub">Applied Science Intern · Redmond, WA</div>
@@ -531,7 +536,7 @@
             <div class="row-meta">May – Aug 2026</div>
           </li>
           <li class="row">
-            <span class="row-icon" style="--c: var(--sky)"><i class="fa-solid fa-flask" aria-hidden="true"></i></span>
+            <span class="row-logo"><img src="images/logos/ibm.svg" alt="IBM logo"></span>
             <div>
               <div class="row-title">IBM Research</div>
               <div class="row-sub">Research Extern · Yorktown Heights, NY</div>
@@ -548,7 +553,7 @@
       <div class="card">
         <ul class="list list--icons">
           <li class="row">
-            <span class="row-icon" style="--c: var(--pink)"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+            <span class="row-logo row-logo--seal"><img src="images/logos/rpi.png" alt="RPI seal"></span>
             <div>
               <div class="row-title">Rensselaer Polytechnic Institute (RPI)</div>
               <div class="row-sub">Ph.D. in Computer &amp; Systems Engineering · Advisor: <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a></div>
@@ -556,7 +561,7 @@
             <div class="row-meta">2024 – 2029<small>expected</small></div>
           </li>
           <li class="row">
-            <span class="row-icon" style="--c: var(--mint)"><i class="fa-solid fa-plane" aria-hidden="true"></i></span>
+            <span class="row-logo row-logo--seal"><img src="images/logos/uci.svg" alt="UC Irvine seal"></span>
             <div>
               <div class="row-title">University of California, Irvine (UCI)</div>
               <div class="row-sub">Academic Study Abroad Program (ASAP)</div>
@@ -564,7 +569,7 @@
             <div class="row-meta">Mar – Jul 2023</div>
           </li>
           <li class="row">
-            <span class="row-icon" style="--c: var(--peach)"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
+            <span class="row-logo"><img src="images/logos/sustech.png" alt="SUSTech emblem"></span>
             <div>
               <div class="row-title">Southern University of Science and Technology (SUSTech)</div>
               <div class="row-sub">B.S. in Data Science and Big Data Technology · Thesis advisor: <a href="https://wangcmath.github.io/">Prof. Chao Wang</a></div>
