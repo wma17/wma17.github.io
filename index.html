@@ -237,7 +237,18 @@
 
     .news .row { grid-template-columns: 92px minmax(0,1fr); gap: 16px; }
     .news time { font-size: 14px; font-weight: 600; color: var(--sky-deep); font-variant-numeric: tabular-nums; padding-top: 2px; white-space: nowrap; }
-    .news .row p { font-size: 16px; }
+    .news .row p { font-size: 16px; color: var(--ink-2); line-height: 1.75; }
+    /* semantic highlights inside news */
+    .n-paper { color: var(--ink); font-weight: 700; padding: 0 1px; background: linear-gradient(transparent 60%, var(--pink-soft) 60%, var(--pink-soft) 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    .n-paper a { color: inherit; }
+    .n-venue, .n-award { display: inline-flex; align-items: center; gap: 4px; font-size: .82em; font-weight: 800; line-height: 1; padding: 4px 9px; border-radius: 999px; white-space: nowrap; vertical-align: 1px; }
+    .n-venue { color: var(--pink-deep); background: var(--pink-soft); }
+    a.n-venue:hover { text-decoration: none; filter: saturate(1.3); }
+    .n-award { color: var(--sky-deep); background: var(--sky-soft); }
+    .n-award i { font-size: .82em; }
+    .n-org { color: var(--ink); font-weight: 700; white-space: nowrap; }
+    .n-org img { width: 1.05em; height: 1.05em; object-fit: contain; vertical-align: -0.16em; margin-right: 4px; background: #fff; border-radius: 4px; padding: 1px; box-shadow: 0 0 0 1px rgba(60,60,110,0.08); }
+    .n-role { color: var(--ink); font-weight: 600; }
     .badge-new { display: inline-block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: #fff; background: var(--grad); padding: 2px 8px; border-radius: 999px; margin-right: 6px; vertical-align: 2px; }
 
     details.more summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; color: var(--sky-deep); font-size: 16px; font-weight: 600; position: relative; }
@@ -470,24 +481,24 @@
       <div class="section-head"><div><div class="kicker">Latest</div><h2>News</h2></div></div>
       <div class="card news">
         <ul class="list">
-          <li class="row"><time>Sep 2026</time><p><span class="badge-new">New</span>My first-authored paper from my IBM Research internship, <strong>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</strong>, was accepted to NeurIPS 2026! Many thanks to my collaborators at IBM Research. The full version will come soon.</p></li>
-          <li class="row"><time>Sep 2026</time><p>I completed my Applied Science internship at Microsoft and returned to RPI to continue my Ph.D. journey as a third-year student.</p></li>
-          <li class="row"><time>May 2026</time><p>I was selected as an ICML 2026 Golden Reviewer.</p></li>
-          <li class="row"><time>Apr 2026</time><p>My CVPR 2026 paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was selected as a Highlight.</p></li>
+          <li class="row"><time>Sep 2026</time><p><span class="badge-new">New</span>My first-authored paper from my <span class="n-org"><img src="images/logos/ibm.svg" alt="">IBM Research</span> internship, <span class="n-paper">Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</span>, was accepted to <span class="n-venue">NeurIPS 2026</span>! Many thanks to my collaborators at IBM Research. The full version will come soon.</p></li>
+          <li class="row"><time>Sep 2026</time><p>I completed my <span class="n-role">Applied Science internship</span> at <span class="n-org"><img src="images/logos/microsoft.svg" alt="">Microsoft</span> and returned to <span class="n-org"><img src="images/logos/rpi.png" alt="">RPI</span> to continue my Ph.D. journey as a third-year student.</p></li>
+          <li class="row"><time>May 2026</time><p>I was selected as an <span class="n-venue">ICML 2026</span> <span class="n-award"><i class="fa-solid fa-star" aria-hidden="true"></i>Golden Reviewer</span>.</p></li>
+          <li class="row"><time>Apr 2026</time><p>My <span class="n-venue">CVPR 2026</span> paper <span class="n-paper">Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</span> was selected as a <span class="n-award"><i class="fa-solid fa-star" aria-hidden="true"></i>Highlight</span>.</p></li>
         </ul>
         <details class="more">
           <summary>Older news<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></summary>
           <ul class="list">
-            <li class="row"><time>May 2026</time><p>I arrived in Redmond and officially started my Applied Science internship at Microsoft.</p></li>
-            <li class="row"><time>Feb 2026</time><p>My first-authored paper <strong>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</strong> was accepted to CVPR 2026.</p></li>
-            <li class="row"><time>Nov 2025</time><p>My first-authored paper, <a href="https://openreview.net/forum?id=jfq9DUrW90#discussion"><em>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</em></a>, was accepted to the <a href="https://llmrel.github.io/">AAAI 2026 AIR-FM Workshop</a>.</p></li>
-            <li class="row"><time>Aug 2025</time><p>I completed my summer externship at IBM.</p></li>
-            <li class="row"><time>Mar 2025</time><p>I joined IBM as a visiting student researcher working on uncertainty quantification and reasoning with LLMs under <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a>.</p></li>
-            <li class="row"><time>Aug 2024</time><p>I started my PhD journey at RPI.</p></li>
+            <li class="row"><time>May 2026</time><p>I arrived in Redmond and officially started my <span class="n-role">Applied Science internship</span> at <span class="n-org"><img src="images/logos/microsoft.svg" alt="">Microsoft</span>.</p></li>
+            <li class="row"><time>Feb 2026</time><p>My first-authored paper <span class="n-paper">Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</span> was accepted to <span class="n-venue">CVPR 2026</span>.</p></li>
+            <li class="row"><time>Nov 2025</time><p>My first-authored paper <span class="n-paper"><a href="https://openreview.net/forum?id=jfq9DUrW90#discussion">Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</a></span> was accepted to the <a class="n-venue" href="https://llmrel.github.io/">AAAI 2026 AIR-FM Workshop</a>.</p></li>
+            <li class="row"><time>Aug 2025</time><p>I completed my summer externship at <span class="n-org"><img src="images/logos/ibm.svg" alt="">IBM Research</span>.</p></li>
+            <li class="row"><time>Mar 2025</time><p>I joined <span class="n-org"><img src="images/logos/ibm.svg" alt="">IBM Research</span> as a <span class="n-role">visiting student researcher</span> working on uncertainty quantification and reasoning with LLMs under <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a>.</p></li>
+            <li class="row"><time>Aug 2024</time><p>I started my <span class="n-role">Ph.D.</span> journey at <span class="n-org"><img src="images/logos/rpi.png" alt="">RPI</span>.</p></li>
             <li class="row"><time>Jul 2024</time><p>I organized a seminar titled "AI: Optimization, Theory &amp; Responsibility" at SUSTech; details at the <a href="https://wma17.github.io/24summer/">seminar page</a>.</p></li>
-            <li class="row"><time>Jul 2024</time><p>I started my journey as a visiting student in <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>'s group at SUSTech.</p></li>
-            <li class="row"><time>Jun 2024</time><p>I graduated from SUSTech.</p></li>
-            <li class="row"><time>Mar 2024</time><p>I accepted the offer from RPI and will begin my Ph.D. under <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>.</p></li>
+            <li class="row"><time>Jul 2024</time><p>I started my journey as a <span class="n-role">visiting student</span> in <a href="https://wangcmath.github.io/">Prof. Chao Wang</a>'s group at <span class="n-org"><img src="images/logos/sustech.png" alt="">SUSTech</span>.</p></li>
+            <li class="row"><time>Jun 2024</time><p>I graduated from <span class="n-org"><img src="images/logos/sustech.png" alt="">SUSTech</span>.</p></li>
+            <li class="row"><time>Mar 2024</time><p>I accepted the offer from <span class="n-org"><img src="images/logos/rpi.png" alt="">RPI</span> and will begin my <span class="n-role">Ph.D.</span> under <a href="https://sites.ecse.rpi.edu/~qji/">Prof. Qiang Ji</a>.</p></li>
           </ul>
         </details>
       </div>
