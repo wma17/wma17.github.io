@@ -263,6 +263,7 @@
     .n-paper a { color: inherit; }
     .n-venue, .n-award { display: inline-flex; align-items: center; gap: 4px; font-size: .82em; font-weight: 800; line-height: 1; padding: 4px 9px; border-radius: 999px; white-space: nowrap; vertical-align: 1px; }
     .n-venue { color: var(--pink-deep); background: var(--pink-soft); }
+    .n-venue img { width: 1.25em; height: 1.25em; object-fit: contain; margin: -3px 1px -3px -4px; background: #fff; border-radius: 50%; padding: 1.5px; }
     a.n-venue:hover { text-decoration: none; filter: saturate(1.3); }
     .n-award { color: var(--sky-deep); background: var(--sky-soft); }
     .n-award i { font-size: .82em; }
@@ -284,6 +285,8 @@
     .paper { padding: 26px 30px; position: relative; overflow: hidden; }
     .paper::before { content: ""; position: absolute; left: 0; top: 22px; bottom: 22px; width: 4px; border-radius: 0 4px 4px 0; background: var(--grad); }
     .venue { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800; color: var(--pink-deep); letter-spacing: .01em; }
+    .venue-logo { width: 26px; height: 26px; border-radius: 8px; background: #fff; display: grid; place-items: center; padding: 3px; box-shadow: inset 0 0 0 1px rgba(60,60,110,0.1); }
+    .venue-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .venue .pill-hl { font-size: 12px; font-weight: 700; color: var(--sky-deep); background: var(--sky-soft); padding: 3px 10px; border-radius: 999px; }
     .paper h3 { margin: 8px 0 6px; font-size: 21px; line-height: 1.3; font-weight: 700; letter-spacing: -0.015em; }
     .authors { font-size: 15px; color: var(--ink-2); }
@@ -459,13 +462,13 @@
 
     <nav class="bento" aria-label="Highlights">
       <a class="card" href="#publications">
-        <span class="b-icon" style="--c: var(--sky)"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+        <span class="b-icon b-icon--logo"><img src="images/logos/neurips.png" alt=""></span>
         <span class="b-label">Paper · 2026</span>
         <span class="b-title">NeurIPS 2026</span>
         <span class="b-sub">Black-box LLM uncertainty</span>
       </a>
       <a class="card" href="#publications">
-        <span class="b-icon" style="--c: var(--pink)"><i class="fa-solid fa-star" aria-hidden="true"></i></span>
+        <span class="b-icon b-icon--logo"><img src="images/logos/cvpr.png" alt=""></span>
         <span class="b-label">Paper · 2026</span>
         <span class="b-title">CVPR Highlight</span>
         <span class="b-sub">Knowledge-augmented BDL</span>
@@ -477,7 +480,7 @@
         <span class="b-sub">Applied Science Intern</span>
       </a>
       <a class="card" href="#news">
-        <span class="b-icon" style="--c: var(--peach)"><i class="fa-solid fa-medal" aria-hidden="true"></i></span>
+        <span class="b-icon b-icon--logo"><img src="images/logos/icml.png" alt=""></span>
         <span class="b-label">Service · 2026</span>
         <span class="b-title">ICML</span>
         <span class="b-sub">Golden Reviewer</span>
@@ -503,16 +506,16 @@
       <div class="section-head"><div><div class="kicker">Latest</div><h2>News</h2></div></div>
       <div class="card news">
         <ul class="list">
-          <li class="row"><time>Sep 2026</time><p><span class="badge-new">New</span>My first-authored paper from my <span class="n-org"><img src="images/logos/ibm.svg" alt="">IBM Research</span> internship, <span class="n-paper">Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</span>, was accepted to <span class="n-venue">NeurIPS 2026</span>! Many thanks to my collaborators at IBM Research. The full version will come soon.</p></li>
+          <li class="row"><time>Sep 2026</time><p><span class="badge-new">New</span>My first-authored paper from my <span class="n-org"><img src="images/logos/ibm.svg" alt="">IBM Research</span> internship, <span class="n-paper">Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</span>, was accepted to <span class="n-venue"><img src="images/logos/neurips.png" alt="">NeurIPS 2026</span>! Many thanks to my collaborators at IBM Research. The full version will come soon.</p></li>
           <li class="row"><time>Sep 2026</time><p>I completed my <span class="n-role">Applied Science internship</span> at <span class="n-org"><img src="images/logos/microsoft.svg" alt="">Microsoft</span> and returned to <span class="n-org"><img src="images/logos/rpi.png" alt="">RPI</span> to continue my Ph.D. journey as a third-year student.</p></li>
-          <li class="row"><time>May 2026</time><p>I was selected as an <span class="n-venue">ICML 2026</span> <span class="n-award"><i class="fa-solid fa-star" aria-hidden="true"></i>Golden Reviewer</span>.</p></li>
-          <li class="row"><time>Apr 2026</time><p>My <span class="n-venue">CVPR 2026</span> paper <span class="n-paper">Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</span> was selected as a <span class="n-award"><i class="fa-solid fa-star" aria-hidden="true"></i>Highlight</span>.</p></li>
+          <li class="row"><time>May 2026</time><p>I was selected as an <span class="n-venue"><img src="images/logos/icml.png" alt="">ICML 2026</span> <span class="n-award"><i class="fa-solid fa-star" aria-hidden="true"></i>Golden Reviewer</span>.</p></li>
+          <li class="row"><time>Apr 2026</time><p>My <span class="n-venue"><img src="images/logos/cvpr.png" alt="">CVPR 2026</span> paper <span class="n-paper">Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</span> was selected as a <span class="n-award"><i class="fa-solid fa-star" aria-hidden="true"></i>Highlight</span>.</p></li>
         </ul>
         <details class="more">
           <summary>Older news<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></summary>
           <ul class="list">
             <li class="row"><time>May 2026</time><p>I arrived in Redmond and officially started my <span class="n-role">Applied Science internship</span> at <span class="n-org"><img src="images/logos/microsoft.svg" alt="">Microsoft</span>.</p></li>
-            <li class="row"><time>Feb 2026</time><p>My first-authored paper <span class="n-paper">Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</span> was accepted to <span class="n-venue">CVPR 2026</span>.</p></li>
+            <li class="row"><time>Feb 2026</time><p>My first-authored paper <span class="n-paper">Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</span> was accepted to <span class="n-venue"><img src="images/logos/cvpr.png" alt="">CVPR 2026</span>.</p></li>
             <li class="row"><time>Nov 2025</time><p>My first-authored paper <span class="n-paper"><a href="https://openreview.net/forum?id=jfq9DUrW90#discussion">Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</a></span> was accepted to the <a class="n-venue" href="https://llmrel.github.io/">AAAI 2026 AIR-FM Workshop</a>.</p></li>
             <li class="row"><time>Aug 2025</time><p>I completed my summer externship at <span class="n-org"><img src="images/logos/ibm.svg" alt="">IBM Research</span>.</p></li>
             <li class="row"><time>Mar 2025</time><p>I joined <span class="n-org"><img src="images/logos/ibm.svg" alt="">IBM Research</span> as a <span class="n-role">visiting student researcher</span> working on uncertainty quantification and reasoning with LLMs under <a href="https://scholar.google.com/citations?user=pwfVt-MAAAAJ&hl=en">Dr. Debarun Bhattacharjya</a>.</p></li>
@@ -530,7 +533,7 @@
       <div class="section-head"><div><div class="kicker">Research</div><h2>Papers</h2></div><a class="aside" href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=rD2pPFUAAAAJ">Google Scholar <i class="fa-solid fa-chevron-right" style="font-size:11px" aria-hidden="true"></i></a></div>
       <div class="papers">
         <article class="card paper">
-          <div class="venue">NeurIPS 2026</div>
+          <div class="venue"><span class="venue-logo"><img src="images/logos/neurips.png" alt=""></span>NeurIPS 2026</div>
           <h3>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</h3>
           <p class="authors"><span class="me">Wang Ma</span>, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham, Harsha Kokel, Qiang Ji</p>
           <div class="paper-actions">
@@ -541,7 +544,7 @@
           <p class="abstract" id="abs-1" hidden>Uncertainty quantification (UQ) is essential for building reliable and trustworthy systems with large language models (LLMs). However, conventional Bayesian or ensemble-based UQ methods are computationally intractable at the scale of modern LLMs and often require white-box access to model parameters or logits. This paper introduces a <strong>two-level ensemble framework</strong> for <em>black-box</em> uncertainty estimation that operates entirely at inference time and is theoretically grounded in the <em>law of total variance</em>, decomposing total predictive uncertainty into <em>aleatoric</em> and <em>epistemic</em> components. The inner ensemble captures stochasticity and ambiguity through repeated stochastic decoding, while the outer ensemble approximates parameter-driven uncertainty via semantically perturbed prompts that act as proxy samples from an implicit posterior over plausible inputs. By measuring variability in a continuous embedding space, our framework yields interpretable and scalable uncertainty estimates across diverse LLMs. We further provide finite-sample guarantees for our uncertainty estimators, and bound the gap with Bayesian estimators. Experiments on standard benchmarks show that our black-box estimator achieves AUROC comparable to or surpassing state-of-the-art white-box baselines, while providing a meaningful decomposition that distinguishes linguistic ambiguity from knowledge uncertainty.</p>
         </article>
         <article class="card paper">
-          <div class="venue">CVPR 2026 <span class="pill-hl">Highlight</span></div>
+          <div class="venue"><span class="venue-logo"><img src="images/logos/cvpr.png" alt=""></span>CVPR 2026 <span class="pill-hl">Highlight</span></div>
           <h3>Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision</h3>
           <p class="authors"><span class="me">Wang Ma</span>, Hanjing Wang, Yufei Zhang, Darsha Udayanga, Qiang Ji</p>
           <div class="paper-actions">
